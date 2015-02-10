@@ -11,4 +11,22 @@ import UIKit
 
 class NewCompositionViewController : UIViewController {
     
+    @IBOutlet var keySelect: UISegmentedControl!
+    @IBOutlet var nameInput: UITextField!
+    var composition : Composition!
+    
+    @IBAction func createNewComposition(sender: UIButton) {
+        self.setupEntity()
+        
+        var storyboard = UIStoryboard(name: "Instrument", bundle: nil)
+        var controller = storyboard.instantiateViewControllerWithIdentifier("InitialController") as InstrumentViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    func setupEntity() {
+        composition = Composition.MR_createEntity() as Composition
+        composition.name = nameInput.text
+        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
+    }
 }

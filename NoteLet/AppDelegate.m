@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Intrinsic Audio. All rights reserved.
 //
 
+#import <CoreData+MagicalRecord.h>
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -25,6 +26,7 @@
     }
     PdDispatcher *dispatcher = [PdDispatcher new];
     [PdBase setDelegate:dispatcher];
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"NoteLet"];
     
     return YES;
 }

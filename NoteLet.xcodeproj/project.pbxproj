@@ -10,13 +10,10 @@
 		BE0A87A61A87FE6F00288EE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87A51A87FE6F00288EE6 /* main.m */; };
 		BE0A87A91A87FE6F00288EE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87A81A87FE6F00288EE6 /* AppDelegate.m */; };
 		BE0A87AC1A87FE6F00288EE6 /* NoteLet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87AA1A87FE6F00288EE6 /* NoteLet.xcdatamodeld */; };
-		BE0A87AF1A87FE6F00288EE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87AE1A87FE6F00288EE6 /* ViewController.m */; };
 		BE0A87B21A87FE6F00288EE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0A87B01A87FE6F00288EE6 /* Main.storyboard */; };
 		BE0A87B41A87FE6F00288EE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0A87B31A87FE6F00288EE6 /* Images.xcassets */; };
 		BE0A87B71A87FE6F00288EE6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0A87B51A87FE6F00288EE6 /* LaunchScreen.xib */; };
 		BE0A87C31A87FE6F00288EE6 /* NoteLetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87C21A87FE6F00288EE6 /* NoteLetTests.m */; };
-		BE0A87D81A88037B00288EE6 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87D51A88037B00288EE6 /* Composition.swift */; };
-		BE0A87D91A88037B00288EE6 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87D61A88037B00288EE6 /* Effect.swift */; };
 		BE0A87DA1A88037B00288EE6 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87D71A88037B00288EE6 /* Note.swift */; };
 		BE0A87DD1A88038D00288EE6 /* EffectSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87DB1A88038D00288EE6 /* EffectSlider.swift */; };
 		BE0A87DE1A88038D00288EE6 /* EffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87DC1A88038D00288EE6 /* EffectButton.swift */; };
@@ -24,6 +21,12 @@
 		BE0A87E21A88462B00288EE6 /* InstrumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87E11A88462B00288EE6 /* InstrumentViewController.swift */; };
 		BE0A87E41A88488200288EE6 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87E31A88488200288EE6 /* MainMenuViewController.swift */; };
 		BE0A87E61A89927600288EE6 /* NewCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87E51A89927600288EE6 /* NewCompositionViewController.swift */; };
+		BE0A87E81A89962A00288EE6 /* Instrument.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0A87E71A89962A00288EE6 /* Instrument.storyboard */; };
+		BE0A87EA1A8A49A500288EE6 /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87E91A8A49A500288EE6 /* NoteEntity.swift */; };
+		BE0A87EC1A8A49FD00288EE6 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87EB1A8A49FD00288EE6 /* Effect.swift */; };
+		BE0A87EE1A8A49FE00288EE6 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87ED1A8A49FE00288EE6 /* Composition.swift */; };
+		BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */; };
+		BE0A87F21A8A81A900288EE6 /* LoadTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */; };
 		FC71BB9C06BA030FAC7669C7 /* libPods-NoteLet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +48,6 @@
 		BE0A87A71A87FE6F00288EE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE0A87A81A87FE6F00288EE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BE0A87AB1A87FE6F00288EE6 /* NoteLet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteLet.xcdatamodel; sourceTree = "<group>"; };
-		BE0A87AD1A87FE6F00288EE6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BE0A87AE1A87FE6F00288EE6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BE0A87B11A87FE6F00288EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE0A87B31A87FE6F00288EE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE0A87B61A87FE6F00288EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -54,8 +55,6 @@
 		BE0A87C11A87FE6F00288EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0A87C21A87FE6F00288EE6 /* NoteLetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteLetTests.m; sourceTree = "<group>"; };
 		BE0A87D01A88010C00288EE6 /* NoteLet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoteLet-Bridging-Header.h"; sourceTree = "<group>"; };
-		BE0A87D51A88037B00288EE6 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
-		BE0A87D61A88037B00288EE6 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		BE0A87D71A88037B00288EE6 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		BE0A87DB1A88038D00288EE6 /* EffectSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectSlider.swift; sourceTree = "<group>"; };
 		BE0A87DC1A88038D00288EE6 /* EffectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectButton.swift; sourceTree = "<group>"; };
@@ -63,6 +62,12 @@
 		BE0A87E11A88462B00288EE6 /* InstrumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentViewController.swift; sourceTree = "<group>"; };
 		BE0A87E31A88488200288EE6 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		BE0A87E51A89927600288EE6 /* NewCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCompositionViewController.swift; sourceTree = "<group>"; };
+		BE0A87E71A89962A00288EE6 /* Instrument.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Instrument.storyboard; sourceTree = "<group>"; };
+		BE0A87E91A8A49A500288EE6 /* NoteEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
+		BE0A87EB1A8A49FD00288EE6 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		BE0A87ED1A8A49FE00288EE6 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
+		BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCompositionViewController.swift; sourceTree = "<group>"; };
+		BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadTableVC.swift; sourceTree = "<group>"; };
 		D1C1896D08D91A1A84A05649 /* Pods-NoteLet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteLet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteLet/Pods-NoteLet.debug.xcconfig"; sourceTree = "<group>"; };
 		FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NoteLet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,9 +128,8 @@
 				BE0A87CD1A88006000288EE6 /* Views */,
 				BE0A87A71A87FE6F00288EE6 /* AppDelegate.h */,
 				BE0A87A81A87FE6F00288EE6 /* AppDelegate.m */,
-				BE0A87AD1A87FE6F00288EE6 /* ViewController.h */,
-				BE0A87AE1A87FE6F00288EE6 /* ViewController.m */,
 				BE0A87D01A88010C00288EE6 /* NoteLet-Bridging-Header.h */,
+				BE0A87E71A89962A00288EE6 /* Instrument.storyboard */,
 				BE0A87B01A87FE6F00288EE6 /* Main.storyboard */,
 				BE0A87B31A87FE6F00288EE6 /* Images.xcassets */,
 				BE0A87B51A87FE6F00288EE6 /* LaunchScreen.xib */,
@@ -181,9 +185,10 @@
 		BE0A87CE1A88007800288EE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE0A87D51A88037B00288EE6 /* Composition.swift */,
-				BE0A87D61A88037B00288EE6 /* Effect.swift */,
+				BE0A87ED1A8A49FE00288EE6 /* Composition.swift */,
+				BE0A87EB1A8A49FD00288EE6 /* Effect.swift */,
 				BE0A87D71A88037B00288EE6 /* Note.swift */,
+				BE0A87E91A8A49A500288EE6 /* NoteEntity.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -194,6 +199,8 @@
 				BE0A87E11A88462B00288EE6 /* InstrumentViewController.swift */,
 				BE0A87E31A88488200288EE6 /* MainMenuViewController.swift */,
 				BE0A87E51A89927600288EE6 /* NewCompositionViewController.swift */,
+				BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */,
+				BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0A87B21A87FE6F00288EE6 /* Main.storyboard in Resources */,
+				BE0A87E81A89962A00288EE6 /* Instrument.storyboard in Resources */,
 				BE0A87B71A87FE6F00288EE6 /* LaunchScreen.xib in Resources */,
 				BE0A87B41A87FE6F00288EE6 /* Images.xcassets in Resources */,
 			);
@@ -342,8 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE0A87D81A88037B00288EE6 /* Composition.swift in Sources */,
-				BE0A87D91A88037B00288EE6 /* Effect.swift in Sources */,
+				BE0A87F21A8A81A900288EE6 /* LoadTableVC.swift in Sources */,
+				BE0A87EC1A8A49FD00288EE6 /* Effect.swift in Sources */,
+				BE0A87EE1A8A49FE00288EE6 /* Composition.swift in Sources */,
+				BE0A87EA1A8A49A500288EE6 /* NoteEntity.swift in Sources */,
 				BE0A87DA1A88037B00288EE6 /* Note.swift in Sources */,
 				BE0A87E01A8803A600288EE6 /* NoteView.swift in Sources */,
 				BE0A87E21A88462B00288EE6 /* InstrumentViewController.swift in Sources */,
@@ -352,9 +362,9 @@
 				BE0A87DE1A88038D00288EE6 /* EffectButton.swift in Sources */,
 				BE0A87E41A88488200288EE6 /* MainMenuViewController.swift in Sources */,
 				BE0A87AC1A87FE6F00288EE6 /* NoteLet.xcdatamodeld in Sources */,
-				BE0A87AF1A87FE6F00288EE6 /* ViewController.m in Sources */,
 				BE0A87E61A89927600288EE6 /* NewCompositionViewController.swift in Sources */,
 				BE0A87A61A87FE6F00288EE6 /* main.m in Sources */,
+				BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

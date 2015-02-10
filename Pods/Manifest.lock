@@ -1,10 +1,15 @@
 PODS:
   - libpd (0.7.0)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core (= 2.2)
+  - MagicalRecord/Core (2.2)
 
 DEPENDENCIES:
   - libpd (~> 0.7)
+  - MagicalRecord (~> 2.2)
 
 SPEC CHECKSUMS:
   libpd: f9e63d090e284438826f9b2fdc0810dbb9889e6f
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
 
 COCOAPODS: 0.35.0

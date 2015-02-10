@@ -12,7 +12,15 @@ import UIKit
 class MainMenuViewController : UIViewController {
     
     @IBAction func cancelCreation(segue: UIStoryboardSegue) {
-        
+        // Do nothing for now
+    }
+    
+    @IBAction func cancelLoad(segue: UIStoryboardSegue) {
+        // Do nothing for now
+    }
+    
+    @IBAction func returnFromInstrument(segue: UIStoryboardSegue) {
+        // Do nothing for now
     }
     
 }
