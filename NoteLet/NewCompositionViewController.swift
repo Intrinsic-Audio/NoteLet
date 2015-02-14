@@ -13,20 +13,21 @@ class NewCompositionViewController : UIViewController {
     
     @IBOutlet var keySelect: UISegmentedControl!
     @IBOutlet var nameInput: UITextField!
-    var composition : Composition!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     @IBAction func createNewComposition(sender: UIButton) {
-        self.setupEntity()
+        var composition = Composition.MR_createEntity() as Composition
+        composition.name = nameInput.text
+        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
         
         var storyboard = UIStoryboard(name: "Instrument", bundle: nil)
         var controller = storyboard.instantiateViewControllerWithIdentifier("InitialController") as InstrumentViewController
+        controller.composition = composition
+        controller.initNotes()
         
         self.presentViewController(controller, animated: true, completion: nil)
-    }
-    
-    func setupEntity() {
-        composition = Composition.MR_createEntity() as Composition
-        composition.name = nameInput.text
-        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
     }
 }

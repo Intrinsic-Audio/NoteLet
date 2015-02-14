@@ -19,8 +19,10 @@
     <entity name="NoteEntity" representedClassName="NoteEntity" syncable="YES">
         <attribute name="centerX" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="centerY" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="hold" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="midiNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="octave" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="receiver" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="waveformID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="composition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Composition" inverseName="noteEntities" inverseEntity="Composition" syncable="YES"/>
@@ -29,7 +31,7 @@
     <elements>
         <element name="Composition" positionX="-63" positionY="-18" width="128" height="103"/>
         <element name="GlobalEffect" positionX="-36" positionY="18" width="128" height="88"/>
-        <element name="NoteEntity" positionX="-54" positionY="-9" width="128" height="163"/>
         <element name="NoteEffect" positionX="-18" positionY="72" width="128" height="88"/>
+        <element name="NoteEntity" positionX="-54" positionY="-9" width="128" height="195"/>
     </elements>
 </model>

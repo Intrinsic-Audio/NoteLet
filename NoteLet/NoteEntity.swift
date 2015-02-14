@@ -14,15 +14,19 @@ class NoteEntity: NSManagedObject {
 
     // Relationships
     @NSManaged var composition : Composition
-    @NSManaged var effects : NSSet
+    @NSManaged var effects : NSMutableSet
 
     // Audio configuration
     @NSManaged var midiNumber : Int16
     @NSManaged var waveformID : Int16
+    @NSManaged var octave : Int16
+    
+    // 0 or 1 value about whether a note should stop after a touch
+    @NSManaged var hold : Int16
     
     // Positioning
-    @NSManaged var centerX : NSNumber
-    @NSManaged var centerY : NSNumber
+    @NSManaged var centerX : Float
+    @NSManaged var centerY : Float
     
     // Pd receiver to send to
     @NSManaged var receiver : String

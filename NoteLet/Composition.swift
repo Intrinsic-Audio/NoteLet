@@ -13,11 +13,12 @@ import CoreData
 class Composition: NSManagedObject {
 
     // Relationships
-    @NSManaged var noteEntities: NSSet
-    @NSManaged var effects : NSSet
+    @NSManaged var noteEntities: NSMutableSet
+    @NSManaged var effects : NSMutableSet
     
     // Audio Settings
-    @NSManaged var scale : String
+    @NSManaged var key : Int16
+    @NSManaged var scale : Int16
     
     // Tags and Identifiers
     @NSManaged var name: String

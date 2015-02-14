@@ -18,6 +18,9 @@ class NoteView : UIView {
     override init(frame bounds: CGRect){
         super.init(frame: bounds)
         
+        self.layer.cornerRadius = self.frame.size.width / 2
+        self.layer.borderColor = UIColor.blackColor().CGColor
+        self.layer.borderWidth = 2
         self.backgroundColor = UIColor.redColor()
     }
 }

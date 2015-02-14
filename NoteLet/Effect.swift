@@ -12,7 +12,6 @@ import CoreData
 @objc(Effect)
 class Effect: NSManagedObject {
 
-    
     @NSManaged var name: String
     @NSManaged var value: NSNumber
 

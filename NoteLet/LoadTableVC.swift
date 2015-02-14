@@ -15,6 +15,8 @@ class LoadTableVC : UITableViewController , UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         compositions = Composition.MR_findAll() as [Composition]
+        var numNotes = NoteEntity.MR_numberOfEntities()
+        println("Notes: \(numNotes)")
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,17 +35,28 @@ class LoadTableVC : UITableViewController , UITableViewDelegate, UITableViewData
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var predicate : NSPredicate = NSPredicate(format: "name == %@", compositions[indexPath.row].name)!
+        
+        var fetchRequest = Composition.MR_requestFirstWithPredicate(predicate)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        var composition = Composition.MR_executeFetchRequestAndReturnFirstObject(fetchRequest) as Composition
+            
+//        var composition : Composition = Composition.MR_findFirstByAttribute("name", withValue: compositions[indexPath.row].name) as Composition
+        
+        println("\(composition.name)")
+        
+        var storyboard = UIStoryboard(name: "Instrument", bundle: nil)
+        var controller = storyboard.instantiateViewControllerWithIdentifier("InitialController") as InstrumentViewController
+        controller.composition = composition
+        controller.initNotes()
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         return 1
     }
     
-//    func tableView(tableView: UITableView,
-//        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-//        forRowAtIndexPath indexPath: NSIndexPath) {
-//            if editingStyle == .Delete {
-//                detailEntites.removeAtIndex(indexPath.row).deleteEntity()
-//                NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
-//                tableView.reloadData()
-//            }
-//    }
 }

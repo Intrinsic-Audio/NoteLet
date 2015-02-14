@@ -14,7 +14,6 @@
 		BE0A87B41A87FE6F00288EE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0A87B31A87FE6F00288EE6 /* Images.xcassets */; };
 		BE0A87B71A87FE6F00288EE6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0A87B51A87FE6F00288EE6 /* LaunchScreen.xib */; };
 		BE0A87C31A87FE6F00288EE6 /* NoteLetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87C21A87FE6F00288EE6 /* NoteLetTests.m */; };
-		BE0A87DA1A88037B00288EE6 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87D71A88037B00288EE6 /* Note.swift */; };
 		BE0A87DD1A88038D00288EE6 /* EffectSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87DB1A88038D00288EE6 /* EffectSlider.swift */; };
 		BE0A87DE1A88038D00288EE6 /* EffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87DC1A88038D00288EE6 /* EffectButton.swift */; };
 		BE0A87E01A8803A600288EE6 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87DF1A8803A600288EE6 /* NoteView.swift */; };
@@ -27,6 +26,7 @@
 		BE0A87EE1A8A49FE00288EE6 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87ED1A8A49FE00288EE6 /* Composition.swift */; };
 		BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */; };
 		BE0A87F21A8A81A900288EE6 /* LoadTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */; };
+		BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8E6EBA1A8EDAA600131767 /* Enums.swift */; };
 		FC71BB9C06BA030FAC7669C7 /* libPods-NoteLet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,6 @@
 		BE0A87C11A87FE6F00288EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0A87C21A87FE6F00288EE6 /* NoteLetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteLetTests.m; sourceTree = "<group>"; };
 		BE0A87D01A88010C00288EE6 /* NoteLet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoteLet-Bridging-Header.h"; sourceTree = "<group>"; };
-		BE0A87D71A88037B00288EE6 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		BE0A87DB1A88038D00288EE6 /* EffectSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectSlider.swift; sourceTree = "<group>"; };
 		BE0A87DC1A88038D00288EE6 /* EffectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectButton.swift; sourceTree = "<group>"; };
 		BE0A87DF1A8803A600288EE6 /* NoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		BE0A87ED1A8A49FE00288EE6 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
 		BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCompositionViewController.swift; sourceTree = "<group>"; };
 		BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadTableVC.swift; sourceTree = "<group>"; };
+		BE8E6EBA1A8EDAA600131767 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D1C1896D08D91A1A84A05649 /* Pods-NoteLet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteLet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteLet/Pods-NoteLet.debug.xcconfig"; sourceTree = "<group>"; };
 		FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NoteLet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -187,8 +187,8 @@
 			children = (
 				BE0A87ED1A8A49FE00288EE6 /* Composition.swift */,
 				BE0A87EB1A8A49FD00288EE6 /* Effect.swift */,
-				BE0A87D71A88037B00288EE6 /* Note.swift */,
 				BE0A87E91A8A49A500288EE6 /* NoteEntity.swift */,
+				BE8E6EBA1A8EDAA600131767 /* Enums.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -354,7 +354,6 @@
 				BE0A87EC1A8A49FD00288EE6 /* Effect.swift in Sources */,
 				BE0A87EE1A8A49FE00288EE6 /* Composition.swift in Sources */,
 				BE0A87EA1A8A49A500288EE6 /* NoteEntity.swift in Sources */,
-				BE0A87DA1A88037B00288EE6 /* Note.swift in Sources */,
 				BE0A87E01A8803A600288EE6 /* NoteView.swift in Sources */,
 				BE0A87E21A88462B00288EE6 /* InstrumentViewController.swift in Sources */,
 				BE0A87A91A87FE6F00288EE6 /* AppDelegate.m in Sources */,
@@ -364,6 +363,7 @@
 				BE0A87AC1A87FE6F00288EE6 /* NoteLet.xcdatamodeld in Sources */,
 				BE0A87E61A89927600288EE6 /* NewCompositionViewController.swift in Sources */,
 				BE0A87A61A87FE6F00288EE6 /* main.m in Sources */,
+				BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */,
 				BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
