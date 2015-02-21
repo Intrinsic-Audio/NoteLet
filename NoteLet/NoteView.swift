@@ -20,14 +20,22 @@ class NoteView : UIView {
     override init(frame bounds: CGRect){
         super.init(frame: bounds)
         
-        self.layer.cornerRadius = self.frame.size.width / 2
+        self.layer.cornerRadius = self.frame.width / 2
         self.layer.borderColor = UIColor.blackColor().CGColor
         self.layer.borderWidth = 2
-        self.backgroundColor = UIColor.redColor()
+//        self.backgroundColor = UIColor.redColor()
     
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
-    }
+        
+        var gradientLayer: RadialGradientLayer = RadialGradientLayer()
+        gradientLayer.frame = self.bounds
+        gradientLayer.cornerRadius = self.frame.width / 2
+
+        self.layer.insertSublayer(gradientLayer, atIndex: 0)
+        gradientLayer.setNeedsDisplay()
+        
+}
 
     func editModeChanged(notification: NSNotification){
         self.editMode = !self.editMode
@@ -41,19 +49,14 @@ class NoteView : UIView {
         var touch: UITouch = touches.anyObject() as UITouch
         var width = self.frame.width
         var height = self.frame.height
-        
-        
         var touchPoint: CGPoint = touch.locationInView(self)
         
-        println("Touch \(touchPoint)")
-        println("X: \(self.center)")
-        println("Y: \(touchPoint.y - height / 2)")
-        
-        var newCenter = CGPoint(x: center.x + touchPoint.x - width / 2, y: center.y + touchPoint.y - height / 2)
-        
-        UIView.animateWithDuration(0.05, animations: {
-            self.center = newCenter
-        })
+        if self.editMode {
+            var newCenter = CGPoint(x: center.x + touchPoint.x - width / 2, y: center.y + touchPoint.y - height / 2)
+            UIView.animateWithDuration(0.05, animations: {
+                self.center = newCenter
+            })
+        }
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent){

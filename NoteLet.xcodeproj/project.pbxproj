@@ -29,6 +29,7 @@
 		BE645C081A98298B0045A0B5 /* ControlsContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE645C071A98298B0045A0B5 /* ControlsContainerViewController.m */; };
 		BE645C0A1A982D5C0045A0B5 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645C091A982D5C0045A0B5 /* EmptySegue.swift */; };
 		BE645C0C1A98309F0045A0B5 /* PlayRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */; };
+		BE645C111A985C130045A0B5 /* RadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE645C101A985C130045A0B5 /* RadialGradientLayer.m */; };
 		BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8E6EBA1A8EDAA600131767 /* Enums.swift */; };
 		BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD01A944BEB00912306 /* GlobalEffect.swift */; };
 		BEA98CD31A944BEB00912306 /* NoteEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD21A944BEB00912306 /* NoteEffect.swift */; };
@@ -80,6 +81,8 @@
 		BE645C071A98298B0045A0B5 /* ControlsContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsContainerViewController.m; sourceTree = "<group>"; };
 		BE645C091A982D5C0045A0B5 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRegionViewController.swift; sourceTree = "<group>"; };
+		BE645C0F1A985C130045A0B5 /* RadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadialGradientLayer.h; sourceTree = "<group>"; };
+		BE645C101A985C130045A0B5 /* RadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadialGradientLayer.m; sourceTree = "<group>"; };
 		BE8E6EBA1A8EDAA600131767 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		BEA98CD01A944BEB00912306 /* GlobalEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalEffect.swift; sourceTree = "<group>"; };
 		BEA98CD21A944BEB00912306 /* NoteEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEffect.swift; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				BE0A87DF1A8803A600288EE6 /* NoteView.swift */,
+				BE645C0F1A985C130045A0B5 /* RadialGradientLayer.h */,
+				BE645C101A985C130045A0B5 /* RadialGradientLayer.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				BEA98CDB1A944BEC00912306 /* NoteAudioDetails.swift in Sources */,
 				BE0A87A91A87FE6F00288EE6 /* AppDelegate.m in Sources */,
 				BE0A87DD1A88038D00288EE6 /* EffectSlider.swift in Sources */,
+				BE645C111A985C130045A0B5 /* RadialGradientLayer.m in Sources */,
 				BE645C0C1A98309F0045A0B5 /* PlayRegionViewController.swift in Sources */,
 				BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */,
 				BE0A87DE1A88038D00288EE6 /* EffectButton.swift in Sources */,
