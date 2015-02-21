@@ -21,12 +21,15 @@
 		BE0A87E41A88488200288EE6 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87E31A88488200288EE6 /* MainMenuViewController.swift */; };
 		BE0A87E61A89927600288EE6 /* NewCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87E51A89927600288EE6 /* NewCompositionViewController.swift */; };
 		BE0A87E81A89962A00288EE6 /* Instrument.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0A87E71A89962A00288EE6 /* Instrument.storyboard */; };
-		BE0A87EA1A8A49A500288EE6 /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87E91A8A49A500288EE6 /* NoteEntity.swift */; };
-		BE0A87EC1A8A49FD00288EE6 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87EB1A8A49FD00288EE6 /* Effect.swift */; };
-		BE0A87EE1A8A49FE00288EE6 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87ED1A8A49FE00288EE6 /* Composition.swift */; };
 		BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */; };
 		BE0A87F21A8A81A900288EE6 /* LoadTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */; };
 		BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8E6EBA1A8EDAA600131767 /* Enums.swift */; };
+		BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD01A944BEB00912306 /* GlobalEffect.swift */; };
+		BEA98CD31A944BEB00912306 /* NoteEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD21A944BEB00912306 /* NoteEffect.swift */; };
+		BEA98CD51A944BEC00912306 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD41A944BEC00912306 /* Composition.swift */; };
+		BEA98CD71A944BEC00912306 /* GlobalAudioDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD61A944BEC00912306 /* GlobalAudioDetails.swift */; };
+		BEA98CD91A944BEC00912306 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD81A944BEC00912306 /* Note.swift */; };
+		BEA98CDB1A944BEC00912306 /* NoteAudioDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CDA1A944BEC00912306 /* NoteAudioDetails.swift */; };
 		FC71BB9C06BA030FAC7669C7 /* libPods-NoteLet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */; };
 /* End PBXBuildFile section */
 
@@ -62,12 +65,15 @@
 		BE0A87E31A88488200288EE6 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		BE0A87E51A89927600288EE6 /* NewCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCompositionViewController.swift; sourceTree = "<group>"; };
 		BE0A87E71A89962A00288EE6 /* Instrument.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Instrument.storyboard; sourceTree = "<group>"; };
-		BE0A87E91A8A49A500288EE6 /* NoteEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
-		BE0A87EB1A8A49FD00288EE6 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
-		BE0A87ED1A8A49FE00288EE6 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
 		BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCompositionViewController.swift; sourceTree = "<group>"; };
 		BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadTableVC.swift; sourceTree = "<group>"; };
 		BE8E6EBA1A8EDAA600131767 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		BEA98CD01A944BEB00912306 /* GlobalEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalEffect.swift; sourceTree = "<group>"; };
+		BEA98CD21A944BEB00912306 /* NoteEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEffect.swift; sourceTree = "<group>"; };
+		BEA98CD41A944BEC00912306 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
+		BEA98CD61A944BEC00912306 /* GlobalAudioDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalAudioDetails.swift; sourceTree = "<group>"; };
+		BEA98CD81A944BEC00912306 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		BEA98CDA1A944BEC00912306 /* NoteAudioDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteAudioDetails.swift; sourceTree = "<group>"; };
 		D1C1896D08D91A1A84A05649 /* Pods-NoteLet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteLet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteLet/Pods-NoteLet.debug.xcconfig"; sourceTree = "<group>"; };
 		FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NoteLet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -185,10 +191,13 @@
 		BE0A87CE1A88007800288EE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE0A87ED1A8A49FE00288EE6 /* Composition.swift */,
-				BE0A87EB1A8A49FD00288EE6 /* Effect.swift */,
-				BE0A87E91A8A49A500288EE6 /* NoteEntity.swift */,
 				BE8E6EBA1A8EDAA600131767 /* Enums.swift */,
+				BEA98CDA1A944BEC00912306 /* NoteAudioDetails.swift */,
+				BEA98CD81A944BEC00912306 /* Note.swift */,
+				BEA98CD61A944BEC00912306 /* GlobalAudioDetails.swift */,
+				BEA98CD41A944BEC00912306 /* Composition.swift */,
+				BEA98CD21A944BEB00912306 /* NoteEffect.swift */,
+				BEA98CD01A944BEB00912306 /* GlobalEffect.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -351,17 +360,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0A87F21A8A81A900288EE6 /* LoadTableVC.swift in Sources */,
-				BE0A87EC1A8A49FD00288EE6 /* Effect.swift in Sources */,
-				BE0A87EE1A8A49FE00288EE6 /* Composition.swift in Sources */,
-				BE0A87EA1A8A49A500288EE6 /* NoteEntity.swift in Sources */,
 				BE0A87E01A8803A600288EE6 /* NoteView.swift in Sources */,
+				BEA98CD31A944BEB00912306 /* NoteEffect.swift in Sources */,
 				BE0A87E21A88462B00288EE6 /* InstrumentViewController.swift in Sources */,
+				BEA98CD91A944BEC00912306 /* Note.swift in Sources */,
+				BEA98CDB1A944BEC00912306 /* NoteAudioDetails.swift in Sources */,
 				BE0A87A91A87FE6F00288EE6 /* AppDelegate.m in Sources */,
 				BE0A87DD1A88038D00288EE6 /* EffectSlider.swift in Sources */,
+				BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */,
 				BE0A87DE1A88038D00288EE6 /* EffectButton.swift in Sources */,
 				BE0A87E41A88488200288EE6 /* MainMenuViewController.swift in Sources */,
+				BEA98CD51A944BEC00912306 /* Composition.swift in Sources */,
 				BE0A87AC1A87FE6F00288EE6 /* NoteLet.xcdatamodeld in Sources */,
 				BE0A87E61A89927600288EE6 /* NewCompositionViewController.swift in Sources */,
+				BEA98CD71A944BEC00912306 /* GlobalAudioDetails.swift in Sources */,
 				BE0A87A61A87FE6F00288EE6 /* main.m in Sources */,
 				BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */,
 				BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -183,31 +183,62 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yDY-Ky-rDv">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ai5-yN-nfK">
                                 <rect key="frame" x="79" y="76" width="599" height="29"/>
-                                <color key="backgroundColor" red="0.78624906034132147" green="1" blue="0.73125163222538014" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
                                     <segment title="C"/>
-                                    <segment title="C#"/>
+                                    <segment title="C#/Db"/>
                                     <segment title="D"/>
-                                    <segment title="Eb"/>
+                                    <segment title="D#/Eb"/>
                                     <segment title="E"/>
                                     <segment title="F"/>
-                                    <segment title="F#"/>
+                                    <segment title="F#/Gb"/>
                                     <segment title="G"/>
-                                    <segment title="G#"/>
+                                    <segment title="G#/Ab"/>
                                     <segment title="A"/>
-                                    <segment title="Bb"/>
+                                    <segment title="A#/Bb"/>
                                     <segment title="B"/>
                                 </segments>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="selectKey:" destination="6BW-bn-Z8h" eventType="valueChanged" id="Sfh-sp-M8D"/>
+                                </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scale:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUE-L7-EZ7">
+                                <rect key="frame" x="16" y="182" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A2F-XT-WDY">
+                                <rect key="frame" x="79" y="112" width="300" height="162"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BPM:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN1-1b-dOg">
+                                <rect key="frame" x="16" y="271" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="Yfe-T9-OQL">
+                                <rect key="frame" x="124" y="267" width="211" height="31"/>
+                                <connections>
+                                    <action selector="setBPM:" destination="6BW-bn-Z8h" eventType="valueChanged" id="DbK-ez-9VR"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzf-C9-ldz">
+                                <rect key="frame" x="67" y="271" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="keySelect" destination="yDY-Ky-rDv" id="GtJ-gh-1nw"/>
+                        <outlet property="bpmLabel" destination="Lzf-C9-ldz" id="gli-kB-4bM"/>
+                        <outlet property="bpmSlider" destination="Yfe-T9-OQL" id="NSl-6X-cmU"/>
+                        <outlet property="keyControl" destination="Ai5-yN-nfK" id="hSJ-59-ZZ2"/>
                         <outlet property="nameInput" destination="ozp-hT-B5q" id="dJe-qM-7D0"/>
+                        <outlet property="scalePicker" destination="A2F-XT-WDY" id="9vi-Cp-BQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGk-uJ-6Y9" userLabel="First Responder" sceneMemberID="firstResponder"/>

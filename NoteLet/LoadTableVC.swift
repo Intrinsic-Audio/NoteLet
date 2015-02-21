@@ -15,7 +15,7 @@ class LoadTableVC : UITableViewController , UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         compositions = Composition.MR_findAll() as [Composition]
-        var numNotes = NoteEntity.MR_numberOfEntities()
+        var numNotes = Note.MR_numberOfEntities()
         println("Notes: \(numNotes)")
     }
     
@@ -36,16 +36,9 @@ class LoadTableVC : UITableViewController , UITableViewDelegate, UITableViewData
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var predicate : NSPredicate = NSPredicate(format: "name == %@", compositions[indexPath.row].name)!
+        var composition : Composition = Composition.MR_findFirstByAttribute("name", withValue: compositions[indexPath.row].name) as Composition
         
-        var fetchRequest = Composition.MR_requestFirstWithPredicate(predicate)
-        fetchRequest.returnsObjectsAsFaults = false
-        
-        var composition = Composition.MR_executeFetchRequestAndReturnFirstObject(fetchRequest) as Composition
-            
-//        var composition : Composition = Composition.MR_findFirstByAttribute("name", withValue: compositions[indexPath.row].name) as Composition
-        
-        println("\(composition.name)")
+        println("\(composition.details.key) \(composition.details.scale)")
         
         var storyboard = UIStoryboard(name: "Instrument", bundle: nil)
         var controller = storyboard.instantiateViewControllerWithIdentifier("InitialController") as InstrumentViewController

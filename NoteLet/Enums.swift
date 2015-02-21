@@ -8,12 +8,19 @@
 
 import Foundation
 
-enum Note : Int16 {
+// Mappings of key and scale ids to readable types
+
+// Swift doesnt support '#' in variable names, have to use flats
+enum Key : NSNumber {
     case C = 0, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
 }
 
-enum Scale {
-    case Major(Int, Int, Int, Int, Int, Int, Int)
-    case Minor(Int, Int, Int, Int, Int, Int, Int)
-    case Pentatonic(Int, Int, Int, Int, Int)
+enum Scale : NSNumber {
+    case Major = 0, Minor, Pentatonic
+}
+
+enum NoteConfiguration {
+    case CircleOfFifths
+    case Chords
+    case Spiral
 }

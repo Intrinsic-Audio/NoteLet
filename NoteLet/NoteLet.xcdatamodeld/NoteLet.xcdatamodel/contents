@@ -1,37 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Composition" representedClassName="Composition" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="scale" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="details" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="GlobalAudioDetails" inverseName="composition" inverseEntity="GlobalAudioDetails" syncable="YES"/>
         <relationship name="effects" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="GlobalEffect" inverseName="composition" inverseEntity="GlobalEffect" syncable="YES"/>
-        <relationship name="noteEntities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NoteEntity" inverseName="composition" inverseEntity="NoteEntity" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="composition" inverseEntity="Note" syncable="YES"/>
     </entity>
-    <entity name="GlobalEffect" representedClassName="Effect" syncable="YES">
+    <entity name="GlobalAudioDetails" representedClassName="GlobalAudioDetails" syncable="YES">
+        <attribute name="bpm" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scale" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="composition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Composition" inverseName="details" inverseEntity="Composition" syncable="YES"/>
+    </entity>
+    <entity name="GlobalEffect" representedClassName="GlobalEffect" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiver" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="composition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Composition" inverseName="effects" inverseEntity="Composition" syncable="YES"/>
     </entity>
-    <entity name="NoteEffect" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteEntity" inverseName="effects" inverseEntity="NoteEntity" syncable="YES"/>
-    </entity>
-    <entity name="NoteEntity" representedClassName="NoteEntity" syncable="YES">
+    <entity name="Note" representedClassName="Note" syncable="YES">
         <attribute name="centerX" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="centerY" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="hold" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="midiNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="octave" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="receiver" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="waveformID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="composition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Composition" inverseName="noteEntities" inverseEntity="Composition" syncable="YES"/>
+        <relationship name="composition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Composition" inverseName="notes" inverseEntity="Composition" syncable="YES"/>
+        <relationship name="details" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteAudioDetails" inverseName="note" inverseEntity="NoteAudioDetails" syncable="YES"/>
         <relationship name="effects" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NoteEffect" inverseName="note" inverseEntity="NoteEffect" syncable="YES"/>
+    </entity>
+    <entity name="NoteAudioDetails" representedClassName="NoteAudioDetails" syncable="YES">
+        <attribute name="hold" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="midiNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="octave" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="waveformId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="details" inverseEntity="Note" syncable="YES"/>
+    </entity>
+    <entity name="NoteEffect" representedClassName="NoteEffect" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiver" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="effects" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
         <element name="Composition" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="GlobalEffect" positionX="-36" positionY="18" width="128" height="88"/>
-        <element name="NoteEffect" positionX="-18" positionY="72" width="128" height="88"/>
-        <element name="NoteEntity" positionX="-54" positionY="-9" width="128" height="195"/>
+        <element name="GlobalAudioDetails" positionX="-45" positionY="72" width="128" height="103"/>
+        <element name="GlobalEffect" positionX="-36" positionY="18" width="128" height="103"/>
+        <element name="Note" positionX="-54" positionY="-9" width="128" height="148"/>
+        <element name="NoteAudioDetails" positionX="-36" positionY="81" width="128" height="120"/>
+        <element name="NoteEffect" positionX="-18" positionY="72" width="128" height="103"/>
     </elements>
 </model>

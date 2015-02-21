@@ -11,7 +11,8 @@ import UIKit
 
 class InstrumentViewController : UIViewController {
  
-    var composition : Composition?
+    // Be sure to set this after initializing the controller.
+    var composition : Composition!
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,14 +21,17 @@ class InstrumentViewController : UIViewController {
     func initNotes(){
         var bounds : CGRect = self.view.bounds;
         
-        if (composition!.noteEntities.count == 0){
+        if (composition.notes.count == 0){
+            
+            let coordinates = self.getPresetCoordinates()
+            
             for var i : Float = 0.0; i < Float(bounds.width); i += 80.0 {
-                var note : NoteEntity = NoteEntity.MR_createEntity() as NoteEntity
+                var note : Note = Note.MR_createEntity() as Note
                 note.centerX = i
                 note.centerY = 100.0
-                note.composition = composition!
+                note.composition = composition
                 
-                composition!.noteEntities.addObject(note)
+                composition.notes.addObject(note)
                 NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
                 
                 var noteView = NoteView(frame: CGRectMake(CGFloat(note.centerX),
@@ -35,13 +39,17 @@ class InstrumentViewController : UIViewController {
                 self.view.addSubview(noteView)
             }
         } else {
-            for note in composition!.noteEntities {
-                var unwrappedNote = note as NoteEntity
+            for note in composition.notes {
+                var unwrappedNote : Note = note as Note
                 var noteView = NoteView(frame: CGRectMake(CGFloat(unwrappedNote.centerX),
                     CGFloat(unwrappedNote.centerY), 50.0, 50.0))
                 self.view.addSubview(noteView)
 
             }
         }
+    }
+    
+    func getPresetCoordinates() -> Array<Int> {
+        return []
     }
 }
