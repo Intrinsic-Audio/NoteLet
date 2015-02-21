@@ -23,6 +23,12 @@
 		BE0A87E81A89962A00288EE6 /* Instrument.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0A87E71A89962A00288EE6 /* Instrument.storyboard */; };
 		BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */; };
 		BE0A87F21A8A81A900288EE6 /* LoadTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */; };
+		BE645BFC1A981EFB0045A0B5 /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645BFB1A981EFB0045A0B5 /* ControlsViewController.swift */; };
+		BE645BFE1A9820D10045A0B5 /* PlayControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645BFD1A9820D10045A0B5 /* PlayControlsViewController.swift */; };
+		BE645C001A9820E30045A0B5 /* EditControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645BFF1A9820E30045A0B5 /* EditControlsViewController.swift */; };
+		BE645C081A98298B0045A0B5 /* ControlsContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE645C071A98298B0045A0B5 /* ControlsContainerViewController.m */; };
+		BE645C0A1A982D5C0045A0B5 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645C091A982D5C0045A0B5 /* EmptySegue.swift */; };
+		BE645C0C1A98309F0045A0B5 /* PlayRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */; };
 		BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8E6EBA1A8EDAA600131767 /* Enums.swift */; };
 		BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD01A944BEB00912306 /* GlobalEffect.swift */; };
 		BEA98CD31A944BEB00912306 /* NoteEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD21A944BEB00912306 /* NoteEffect.swift */; };
@@ -67,6 +73,13 @@
 		BE0A87E71A89962A00288EE6 /* Instrument.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Instrument.storyboard; sourceTree = "<group>"; };
 		BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCompositionViewController.swift; sourceTree = "<group>"; };
 		BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadTableVC.swift; sourceTree = "<group>"; };
+		BE645BFB1A981EFB0045A0B5 /* ControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
+		BE645BFD1A9820D10045A0B5 /* PlayControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayControlsViewController.swift; sourceTree = "<group>"; };
+		BE645BFF1A9820E30045A0B5 /* EditControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditControlsViewController.swift; sourceTree = "<group>"; };
+		BE645C061A98298B0045A0B5 /* ControlsContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsContainerViewController.h; sourceTree = "<group>"; };
+		BE645C071A98298B0045A0B5 /* ControlsContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsContainerViewController.m; sourceTree = "<group>"; };
+		BE645C091A982D5C0045A0B5 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
+		BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRegionViewController.swift; sourceTree = "<group>"; };
 		BE8E6EBA1A8EDAA600131767 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		BEA98CD01A944BEB00912306 /* GlobalEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalEffect.swift; sourceTree = "<group>"; };
 		BEA98CD21A944BEB00912306 /* NoteEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEffect.swift; sourceTree = "<group>"; };
@@ -134,9 +147,8 @@
 				BE0A87CD1A88006000288EE6 /* Views */,
 				BE0A87A71A87FE6F00288EE6 /* AppDelegate.h */,
 				BE0A87A81A87FE6F00288EE6 /* AppDelegate.m */,
+				BE645C011A9820F10045A0B5 /* Storyboards */,
 				BE0A87D01A88010C00288EE6 /* NoteLet-Bridging-Header.h */,
-				BE0A87E71A89962A00288EE6 /* Instrument.storyboard */,
-				BE0A87B01A87FE6F00288EE6 /* Main.storyboard */,
 				BE0A87B31A87FE6F00288EE6 /* Images.xcassets */,
 				BE0A87B51A87FE6F00288EE6 /* LaunchScreen.xib */,
 				BE0A87AA1A87FE6F00288EE6 /* NoteLet.xcdatamodeld */,
@@ -205,13 +217,29 @@
 		BE0A87CF1A88008100288EE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE645BFB1A981EFB0045A0B5 /* ControlsViewController.swift */,
+				BE645BFD1A9820D10045A0B5 /* PlayControlsViewController.swift */,
+				BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */,
+				BE645BFF1A9820E30045A0B5 /* EditControlsViewController.swift */,
 				BE0A87E11A88462B00288EE6 /* InstrumentViewController.swift */,
 				BE0A87E31A88488200288EE6 /* MainMenuViewController.swift */,
+				BE645C061A98298B0045A0B5 /* ControlsContainerViewController.h */,
+				BE645C071A98298B0045A0B5 /* ControlsContainerViewController.m */,
 				BE0A87E51A89927600288EE6 /* NewCompositionViewController.swift */,
 				BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */,
 				BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BE645C011A9820F10045A0B5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BE0A87E71A89962A00288EE6 /* Instrument.storyboard */,
+				BE0A87B01A87FE6F00288EE6 /* Main.storyboard */,
+				BE645C091A982D5C0045A0B5 /* EmptySegue.swift */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		E7E94B0E1B3DA8B0912C4DEC /* Pods */ = {
@@ -361,20 +389,26 @@
 			files = (
 				BE0A87F21A8A81A900288EE6 /* LoadTableVC.swift in Sources */,
 				BE0A87E01A8803A600288EE6 /* NoteView.swift in Sources */,
+				BE645C081A98298B0045A0B5 /* ControlsContainerViewController.m in Sources */,
 				BEA98CD31A944BEB00912306 /* NoteEffect.swift in Sources */,
 				BE0A87E21A88462B00288EE6 /* InstrumentViewController.swift in Sources */,
+				BE645BFE1A9820D10045A0B5 /* PlayControlsViewController.swift in Sources */,
 				BEA98CD91A944BEC00912306 /* Note.swift in Sources */,
 				BEA98CDB1A944BEC00912306 /* NoteAudioDetails.swift in Sources */,
 				BE0A87A91A87FE6F00288EE6 /* AppDelegate.m in Sources */,
 				BE0A87DD1A88038D00288EE6 /* EffectSlider.swift in Sources */,
+				BE645C0C1A98309F0045A0B5 /* PlayRegionViewController.swift in Sources */,
 				BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */,
 				BE0A87DE1A88038D00288EE6 /* EffectButton.swift in Sources */,
 				BE0A87E41A88488200288EE6 /* MainMenuViewController.swift in Sources */,
+				BE645C0A1A982D5C0045A0B5 /* EmptySegue.swift in Sources */,
 				BEA98CD51A944BEC00912306 /* Composition.swift in Sources */,
 				BE0A87AC1A87FE6F00288EE6 /* NoteLet.xcdatamodeld in Sources */,
 				BE0A87E61A89927600288EE6 /* NewCompositionViewController.swift in Sources */,
+				BE645BFC1A981EFB0045A0B5 /* ControlsViewController.swift in Sources */,
 				BEA98CD71A944BEC00912306 /* GlobalAudioDetails.swift in Sources */,
 				BE0A87A61A87FE6F00288EE6 /* main.m in Sources */,
+				BE645C001A9820E30045A0B5 /* EditControlsViewController.swift in Sources */,
 				BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */,
 				BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */,
 			);
