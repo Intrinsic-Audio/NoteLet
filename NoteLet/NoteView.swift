@@ -12,12 +12,16 @@ import UIKit
 class NoteView : UIView {
     
     var editMode = false
+    var note: Note!
     
+    // Never called
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override init(frame bounds: CGRect){
+    init(frame bounds: CGRect, note: Note){
+        self.note = note
+
         super.init(frame: bounds)
         
         self.layer.cornerRadius = self.frame.width / 2
@@ -61,6 +65,19 @@ class NoteView : UIView {
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent){
         println("done");
+        var note = self.note
+        var x = self.center.x
+        var y = self.center.y
+        
+        MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) in
+            var localNote: Note = note.MR_inContext(localContext) as Note
+            localNote.centerX = x
+            localNote.centerY = y
+        })
+
+        note.centerX = self.center.x
+        note.centerY = self.center.y
+        
     }
 }
 

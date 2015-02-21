@@ -43,14 +43,14 @@ class PlayRegionViewController: UIViewController {
                 NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
                 
                 var noteView = NoteView(frame: CGRectMake(CGFloat(note.centerX),
-                    CGFloat(note.centerY), 60.0, 60.0))
+                    CGFloat(note.centerY), 60.0, 60.0), note: note)
                 self.view.addSubview(noteView)
             }
         } else {
             for note in composition.notes {
                 var unwrappedNote : Note = note as Note
                 var noteView = NoteView(frame: CGRectMake(CGFloat(unwrappedNote.centerX),
-                    CGFloat(unwrappedNote.centerY), 60.0, 60.0))
+                    CGFloat(unwrappedNote.centerY), 60.0, 60.0), note: unwrappedNote)
                 self.view.addSubview(noteView)
                 
             }
