@@ -45,7 +45,7 @@ class LoadTableVC : UITableViewController , UITableViewDelegate, UITableViewData
         controller.composition = composition
         self.presentViewController(controller, animated: true, completion: nil)
         
-        controller.initNotes()
+        controller.initNotes(NoteConfiguration.LoadedPositions)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {

@@ -24,8 +24,8 @@ class InstrumentViewController : UIViewController {
     }
     
     // Will fail if called before setting composition
-    func initNotes(){
-        self.playRegion.initNotes(self.composition)
+    func initNotes(config: NoteConfiguration){
+        self.playRegion.initNotes(self.composition, config: config)
     }
     
     // MARK: - Navigation

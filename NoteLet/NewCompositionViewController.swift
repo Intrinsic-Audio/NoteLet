@@ -23,6 +23,7 @@ class NewCompositionViewController : UIViewController, UIPickerViewDataSource, U
     
     var key = Key.C
     var scale = Scale.Major
+    var config = NoteConfiguration.CircleOfFifths
     var bpm = 100
     
     var noteConfigType = NoteConfiguration.CircleOfFifths
@@ -78,6 +79,7 @@ class NewCompositionViewController : UIViewController, UIPickerViewDataSource, U
         composition.details.scale = self.scale.rawValue
         composition.details.composition = composition
         
+        // Ensure that composition is created before continuing
         NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
         
         var storyboard = UIStoryboard(name: "Instrument", bundle: nil)
@@ -86,6 +88,8 @@ class NewCompositionViewController : UIViewController, UIPickerViewDataSource, U
         
         self.presentViewController(controller, animated: true, completion: nil)
         
-        controller.initNotes()
+        controller.initNotes(self.config)
     }
+    
+    
 }

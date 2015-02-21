@@ -27,11 +27,12 @@ class NoteView : UIView {
         self.layer.cornerRadius = self.frame.width / 2
         self.layer.borderColor = UIColor.blackColor().CGColor
         self.layer.borderWidth = 2
-//        self.backgroundColor = UIColor.redColor()
     
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
         
+        
+        // Create red-blue gradient for notes
         var gradientLayer: RadialGradientLayer = RadialGradientLayer()
         gradientLayer.frame = self.bounds
         gradientLayer.cornerRadius = self.frame.width / 2
@@ -39,7 +40,7 @@ class NoteView : UIView {
         self.layer.insertSublayer(gradientLayer, atIndex: 0)
         gradientLayer.setNeedsDisplay()
         
-}
+    }
 
     func editModeChanged(notification: NSNotification){
         self.editMode = !self.editMode
@@ -57,14 +58,20 @@ class NoteView : UIView {
         
         if self.editMode {
             var newCenter = CGPoint(x: center.x + touchPoint.x - width / 2, y: center.y + touchPoint.y - height / 2)
-            UIView.animateWithDuration(0.05, animations: {
-                self.center = newCenter
-            })
+            self.reposition(newCenter)
         }
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent){
-        println("done");
+        if self.editMode {
+            self.note.centerX = self.center.x
+            self.note.centerY = self.center.y
+            
+            self.saveNotePosition()
+        }
+    }
+
+    func saveNotePosition(){
         var note = self.note
         var x = self.center.x
         var y = self.center.y
@@ -74,10 +81,12 @@ class NoteView : UIView {
             localNote.centerX = x
             localNote.centerY = y
         })
-
-        note.centerX = self.center.x
-        note.centerY = self.center.y
-        
+    }
+    
+    func reposition(newCenter: CGPoint){
+        UIView.animateWithDuration(0.05, animations: {
+            self.center = newCenter
+        })
     }
 }
 

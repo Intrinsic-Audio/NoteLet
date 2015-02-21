@@ -26,7 +26,7 @@ class PlayRegionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func initNotes(composition: Composition){
+    func initNotes(composition: Composition, config: NoteConfiguration){
         var bounds : CGRect = self.view.bounds;
         
         if (composition.notes.count == 0){
@@ -52,7 +52,7 @@ class PlayRegionViewController: UIViewController {
                 var noteView = NoteView(frame: CGRectMake(CGFloat(unwrappedNote.centerX),
                     CGFloat(unwrappedNote.centerY), 60.0, 60.0), note: unwrappedNote)
                 self.view.addSubview(noteView)
-                
+            
             }
         }
     }

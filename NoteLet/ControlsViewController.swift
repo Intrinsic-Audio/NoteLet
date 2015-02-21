@@ -36,7 +36,7 @@ class ControlsViewController: UIViewController {
             button.setTitle("Play", forState: UIControlState.Normal)
         }
         
-        self.container!.swapViewControllers()
+        self.container.swapViewControllers()
         self.editMode = !self.editMode
         
         var center = NSNotificationCenter.defaultCenter()

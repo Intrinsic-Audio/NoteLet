@@ -20,6 +20,7 @@ enum Scale : NSNumber {
 }
 
 enum NoteConfiguration {
+    case LoadedPositions
     case CircleOfFifths
     case Chords
     case Spiral
