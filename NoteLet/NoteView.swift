@@ -11,6 +11,8 @@ import UIKit
 
 class NoteView : UIView {
     
+    var editMode = false
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -22,6 +24,40 @@ class NoteView : UIView {
         self.layer.borderColor = UIColor.blackColor().CGColor
         self.layer.borderWidth = 2
         self.backgroundColor = UIColor.redColor()
+    
+        var center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
+    }
+
+    func editModeChanged(notification: NSNotification){
+        self.editMode = !self.editMode
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        println("wokring");
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent){
+        var touch: UITouch = touches.anyObject() as UITouch
+        var width = self.frame.width
+        var height = self.frame.height
+        
+        
+        var touchPoint: CGPoint = touch.locationInView(self)
+        
+        println("Touch \(touchPoint)")
+        println("X: \(self.center)")
+        println("Y: \(touchPoint.y - height / 2)")
+        
+        var newCenter = CGPoint(x: center.x + touchPoint.x - width / 2, y: center.y + touchPoint.y - height / 2)
+        
+        UIView.animateWithDuration(0.05, animations: {
+            self.center = newCenter
+        })
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent){
+        println("done");
     }
 }
 

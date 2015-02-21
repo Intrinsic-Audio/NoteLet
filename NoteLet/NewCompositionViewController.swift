@@ -83,8 +83,9 @@ class NewCompositionViewController : UIViewController, UIPickerViewDataSource, U
         var storyboard = UIStoryboard(name: "Instrument", bundle: nil)
         var controller = storyboard.instantiateViewControllerWithIdentifier("InitialController") as InstrumentViewController
         controller.composition = composition
-        controller.initNotes()
         
         self.presentViewController(controller, animated: true, completion: nil)
+        
+        controller.initNotes()
     }
 }

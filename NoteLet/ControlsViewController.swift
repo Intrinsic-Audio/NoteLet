@@ -38,6 +38,9 @@ class ControlsViewController: UIViewController {
         
         self.container!.swapViewControllers()
         self.editMode = !self.editMode
+        
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("toggleEditMode", object: nil)
     }
 
     // MARK: - Navigation
