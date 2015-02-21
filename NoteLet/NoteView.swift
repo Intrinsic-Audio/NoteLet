@@ -41,6 +41,11 @@ class NoteView : UIView {
         gradientLayer.setNeedsDisplay()
         
     }
+    
+    deinit {
+        var center = NSNotificationCenter.defaultCenter()
+        center.removeObserver(self)
+    }
 
     func editModeChanged(notification: NSNotification){
         self.editMode = !self.editMode

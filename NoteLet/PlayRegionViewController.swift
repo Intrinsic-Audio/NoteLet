@@ -26,12 +26,17 @@ class PlayRegionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    deinit {
+        var center = NSNotificationCenter.defaultCenter()
+        center.removeObserver(self)
+    }
+    
     func initNotes(composition: Composition, config: NoteConfiguration){
         var bounds : CGRect = self.view.bounds;
         
         if (composition.notes.count == 0){
             
-            let coordinates = self.getPresetCoordinates()
+            let coordinates = self.getPresetCoordinates(config)
             
             for var i : Float = 0.0; i < Float(bounds.width); i += 80.0 {
                 var note : Note = Note.MR_createEntity() as Note
@@ -57,8 +62,17 @@ class PlayRegionViewController: UIViewController {
         }
     }
     
-    func getPresetCoordinates() -> Array<Int> {
-        return []
+    func getPresetCoordinates(config: NoteConfiguration) -> Array<Int> {
+        switch config {
+        case .LoadedPositions:
+            return [1,2,3,4,5]
+        case .CircleOfFifths:
+            return [1,2]
+        case .Chords:
+            return [1,2]
+        case .Spiral:
+            return [1,2]
+        }
     }
     
     func editModeChanged(notification : NSNotification){
