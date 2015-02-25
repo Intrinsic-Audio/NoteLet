@@ -10,10 +10,40 @@ import UIKit
 
 class EditControlsViewController: UIViewController {
 
+    var settingsControls: SettingsControlsController
+    var synthControls: SynthControlsController
+    var effectsControls: EffectsControlsController
+    var editMenu: EditMenuController
+    
+    required init(coder aDecoder: NSCoder){
+        var storyboard = UIStoryboard(name: "Instrument", bundle: nil)
+        settingsControls = storyboard.instantiateViewControllerWithIdentifier("SettingsControls") as SettingsControlsController
+        synthControls = storyboard.instantiateViewControllerWithIdentifier("SynthControls") as SynthControlsController
+        effectsControls = storyboard.instantiateViewControllerWithIdentifier("EffectsControls") as EffectsControlsController
+        editMenu = storyboard.instantiateViewControllerWithIdentifier("EditMenu") as EditMenuController
+
+        super.init(coder: aDecoder)
+        
+        // Set up notification listeners
+        var center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "moveToSynth:", name: "toggleSynth", object: nil)
+
+    }
+    
+    deinit {
+        var center = NSNotificationCenter.defaultCenter()
+        center.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.addChildViewController(settingsControls)
+        self.addChildViewController(synthControls)
+        self.addChildViewController(effectsControls)
+        self.addChildViewController(editMenu)
+        self.view.addSubview(editMenu.view)
+        editMenu.didMoveToParentViewController(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +51,17 @@ class EditControlsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func moveToSynth(notification: NSNotification!){
+        if let info = notification.userInfo as? Dictionary<String, UIView> {
+            var view: UIView! = info["view"]
+            view.removeFromSuperview()
+            
+            self.view.addSubview(synthControls.view)
+            synthControls.didMoveToParentViewController(self)
+        }
+        
+        println("move to synth")
+    }
 
     /*
     // MARK: - Navigation

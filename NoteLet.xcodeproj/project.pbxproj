@@ -31,6 +31,10 @@
 		BE645C0C1A98309F0045A0B5 /* PlayRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */; };
 		BE645C111A985C130045A0B5 /* RadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE645C101A985C130045A0B5 /* RadialGradientLayer.m */; };
 		BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8E6EBA1A8EDAA600131767 /* Enums.swift */; };
+		BE995D311A9D5DFF00B6F8E4 /* SynthControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D301A9D5DFF00B6F8E4 /* SynthControlsController.swift */; };
+		BE995D331A9D5E1100B6F8E4 /* SettingsControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D321A9D5E1100B6F8E4 /* SettingsControlsController.swift */; };
+		BE995D351A9D5E3C00B6F8E4 /* EffectsControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D341A9D5E3C00B6F8E4 /* EffectsControlsController.swift */; };
+		BE995D3B1A9D62B600B6F8E4 /* EditMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D3A1A9D62B600B6F8E4 /* EditMenuController.swift */; };
 		BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD01A944BEB00912306 /* GlobalEffect.swift */; };
 		BEA98CD31A944BEB00912306 /* NoteEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD21A944BEB00912306 /* NoteEffect.swift */; };
 		BEA98CD51A944BEC00912306 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD41A944BEC00912306 /* Composition.swift */; };
@@ -84,6 +88,10 @@
 		BE645C0F1A985C130045A0B5 /* RadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadialGradientLayer.h; sourceTree = "<group>"; };
 		BE645C101A985C130045A0B5 /* RadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadialGradientLayer.m; sourceTree = "<group>"; };
 		BE8E6EBA1A8EDAA600131767 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		BE995D301A9D5DFF00B6F8E4 /* SynthControlsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynthControlsController.swift; sourceTree = "<group>"; };
+		BE995D321A9D5E1100B6F8E4 /* SettingsControlsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsControlsController.swift; sourceTree = "<group>"; };
+		BE995D341A9D5E3C00B6F8E4 /* EffectsControlsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsControlsController.swift; sourceTree = "<group>"; };
+		BE995D3A1A9D62B600B6F8E4 /* EditMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMenuController.swift; sourceTree = "<group>"; };
 		BEA98CD01A944BEB00912306 /* GlobalEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalEffect.swift; sourceTree = "<group>"; };
 		BEA98CD21A944BEB00912306 /* NoteEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEffect.swift; sourceTree = "<group>"; };
 		BEA98CD41A944BEC00912306 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
@@ -222,17 +230,9 @@
 		BE0A87CF1A88008100288EE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE645BFB1A981EFB0045A0B5 /* ControlsViewController.swift */,
-				BE645BFD1A9820D10045A0B5 /* PlayControlsViewController.swift */,
-				BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */,
-				BE645BFF1A9820E30045A0B5 /* EditControlsViewController.swift */,
-				BE0A87E11A88462B00288EE6 /* InstrumentViewController.swift */,
-				BE0A87E31A88488200288EE6 /* MainMenuViewController.swift */,
-				BE645C061A98298B0045A0B5 /* ControlsContainerViewController.h */,
-				BE645C071A98298B0045A0B5 /* ControlsContainerViewController.m */,
-				BE0A87E51A89927600288EE6 /* NewCompositionViewController.swift */,
-				BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */,
-				BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */,
+				BE995D2F1A9D5DC400B6F8E4 /* Controls */,
+				BE995D361A9D5E5C00B6F8E4 /* Main Menu */,
+				BE995D371A9D5E9B00B6F8E4 /* NoteRegions */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +245,50 @@
 				BE645C091A982D5C0045A0B5 /* EmptySegue.swift */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		BE995D2F1A9D5DC400B6F8E4 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				BE995D3C1A9D62C000B6F8E4 /* Edit */,
+				BE645BFB1A981EFB0045A0B5 /* ControlsViewController.swift */,
+				BE645C061A98298B0045A0B5 /* ControlsContainerViewController.h */,
+				BE645C071A98298B0045A0B5 /* ControlsContainerViewController.m */,
+				BE645BFD1A9820D10045A0B5 /* PlayControlsViewController.swift */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		BE995D361A9D5E5C00B6F8E4 /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				BE0A87E31A88488200288EE6 /* MainMenuViewController.swift */,
+				BE0A87E51A89927600288EE6 /* NewCompositionViewController.swift */,
+				BE0A87EF1A8A68A300288EE6 /* LoadCompositionViewController.swift */,
+				BE0A87F11A8A81A900288EE6 /* LoadTableVC.swift */,
+			);
+			name = "Main Menu";
+			sourceTree = "<group>";
+		};
+		BE995D371A9D5E9B00B6F8E4 /* NoteRegions */ = {
+			isa = PBXGroup;
+			children = (
+				BE0A87E11A88462B00288EE6 /* InstrumentViewController.swift */,
+				BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */,
+			);
+			name = NoteRegions;
+			sourceTree = "<group>";
+		};
+		BE995D3C1A9D62C000B6F8E4 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				BE645BFF1A9820E30045A0B5 /* EditControlsViewController.swift */,
+				BE995D3A1A9D62B600B6F8E4 /* EditMenuController.swift */,
+				BE995D301A9D5DFF00B6F8E4 /* SynthControlsController.swift */,
+				BE995D321A9D5E1100B6F8E4 /* SettingsControlsController.swift */,
+				BE995D341A9D5E3C00B6F8E4 /* EffectsControlsController.swift */,
+			);
+			name = Edit;
 			sourceTree = "<group>";
 		};
 		E7E94B0E1B3DA8B0912C4DEC /* Pods */ = {
@@ -402,6 +446,8 @@
 				BEA98CDB1A944BEC00912306 /* NoteAudioDetails.swift in Sources */,
 				BE0A87A91A87FE6F00288EE6 /* AppDelegate.m in Sources */,
 				BE0A87DD1A88038D00288EE6 /* EffectSlider.swift in Sources */,
+				BE995D3B1A9D62B600B6F8E4 /* EditMenuController.swift in Sources */,
+				BE995D351A9D5E3C00B6F8E4 /* EffectsControlsController.swift in Sources */,
 				BE645C111A985C130045A0B5 /* RadialGradientLayer.m in Sources */,
 				BE645C0C1A98309F0045A0B5 /* PlayRegionViewController.swift in Sources */,
 				BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */,
@@ -412,11 +458,13 @@
 				BE0A87AC1A87FE6F00288EE6 /* NoteLet.xcdatamodeld in Sources */,
 				BE0A87E61A89927600288EE6 /* NewCompositionViewController.swift in Sources */,
 				BE645BFC1A981EFB0045A0B5 /* ControlsViewController.swift in Sources */,
+				BE995D311A9D5DFF00B6F8E4 /* SynthControlsController.swift in Sources */,
 				BEA98CD71A944BEC00912306 /* GlobalAudioDetails.swift in Sources */,
 				BE0A87A61A87FE6F00288EE6 /* main.m in Sources */,
 				BE645C001A9820E30045A0B5 /* EditControlsViewController.swift in Sources */,
 				BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */,
 				BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */,
+				BE995D331A9D5E1100B6F8E4 /* SettingsControlsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

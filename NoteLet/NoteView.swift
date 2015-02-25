@@ -31,7 +31,6 @@ class NoteView : UIView {
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
         
-        
         // Create red-blue gradient for notes
         var gradientLayer: RadialGradientLayer = RadialGradientLayer()
         gradientLayer.frame = self.bounds
