@@ -1,54 +1,59 @@
 
 Master Interface:
 
-// MOD means this parameter can be connected to the LFO or Envelope
+	master.pd
 
-chorus on <float>			0 or 108
-chorus rate <float>			> 0, frequency in Hz					MOD
-chorus depth <float>		usually from 0 to 1, can be any value	MOD
+Receiver: master
+Possible Messages:
 
-tremolo on <float> 			0 or 1
-tremolo rate <float> 		> 0, frequency in Hz					MOD
-tremolo depth <float> 		usually 0 to 1, can be any number		MOD
-tremolo shape <float> 		0 - sine, 1 - sawtooth, 2 - reverse sawtooth, 3 - square
+	// MOD means this parameter can be connected to the LFO or Envelope
 
-delay on <float> 			0 or 1
-delay feedback <float>		from 0 to 1 							MOD
-delay time <float> 			time in ms 								MOD
-delay amount <float> 		0 to 1, can be any number 				MOD
+	chorus on <float>			0 or 108
+	chorus rate <float>			> 0, frequency in Hz					MOD
+	chorus depth <float>		usually from 0 to 1, can be any value	MOD
 
-ringmod on <float> 			0 or 1
-ringmod rate <float> 		> 0, frequency in Hz 					MOD
-ringmod depth <float> 		0 to 1 									MOD
+	tremolo on <float> 			0 or 1
+	tremolo rate <float> 		> 0, frequency in Hz					MOD
+	tremolo depth <float> 		usually 0 to 1, can be any number		MOD
+	tremolo shape <float> 		0 - sine, 1 - sawtooth, 2 - reverse sawtooth, 3 - square
 
-filter on <float> 			0 or 1
-filter frequency <float> 	> 40 and < 22000 - frequency in Hz 		MOD
-filter resonance <float> 	> 0, usually from 0 to ~20  			MOD
-filter type <symbol>		"lowpass", "bandpass", "highpass", "notch", "peak", "highshelf", "lowshelf"
+	delay on <float> 			0 or 1
+	delay feedback <float>		from 0 to 1 							MOD
+	delay time <float> 			time in ms 								MOD
+	delay amount <float> 		0 to 1, can be any number 				MOD
 
-reverb on <float> 			0 or 1
-reverb size <float> 		0 to 1, size of room
-reverb damping <float> 		0 to 1, reflectiveness of the room
-reverb width <float> 		0 to 1, stereo width
-reverb wet <float> 			0 to 1, amount of signal after reverb
-reverb dry <float> 			0 to 1, amount of signal before reverb
+	ringmod on <float> 			0 or 1
+	ringmod rate <float> 		> 0, frequency in Hz 					MOD
+	ringmod depth <float> 		0 to 1 									MOD
 
-envelope amount <float> 	0 to 1, 0 is default and means off
-envelope adsr <list> 		"attack, decay, sustain, release" - sustain is 0 to 1, rest are time in ms (0 - 10000 works)
-envelope invert <float> 	0 is normal, 1 is inverted (goes in opposite direction)
-envelope dest <symbol>		possible destination is any effect parameter besides toggles ("_" instead of " "):
-							"filter_frequency", "filter_resonance", "delay_feedback", "chorus_depth", "pitchbend", etc
-							gain/amplitude has a separate envelope
+	filter on <float> 			0 or 1
+	filter frequency <float> 	> 40 and < 22000 - frequency in Hz 		MOD
+	filter resonance <float> 	> 0, usually from 0 to ~20  			MOD
+	filter type <symbol>		"lowpass", "bandpass", "highpass", "notch", "peak", "highshelf", "lowshelf"
 
-lfo amount <float> 			0 to 1, 0 is default and means off
-lfo rate <float> 			> 0, frequency in Hz  (0 to 50 works, also cool if it's > 50)
-lfo waveform <float> 		0 - triangle, 1 - sawtooth, 2 - reverse sawtooth, 3 - square
-lfo dest <symbol>			possible destination is any effect parameter besides toggles ("_" instead of " "):
-							"filter_frequency", "filter_resonance", "delay_feedback", "gain", "pitchbend", "pan"
+	reverb on <float> 			0 or 1
+	reverb size <float> 		0 to 1, size of room
+	reverb damping <float> 		0 to 1, reflectiveness of the room
+	reverb width <float> 		0 to 1, stereo width
+	reverb wet <float> 			0 to 1, amount of signal after reverb
+	reverb dry <float> 			0 to 1, amount of signal before reverb
 
-gain <float> 				1 is default (no change), 0 to 1 is quieter, >1 is louder 		MOD
-volume <float> 				same as gain, but only from 0 to 1
-pan <float> 				0 to 1, 0 is left, 1 is right, .5 is equal in both speakers  	MOD
+	envelope amount <float> 	0 to 1, 0 is default and means off
+	envelope adsr <list> 		"attack, decay, sustain, release" - sustain is 0 to 1, rest are time in ms (0 - 10000)
+	envelope invert <float> 	0 is normal, 1 is inverted (goes in opposite direction)
+	envelope dest <symbol>		possible destination is any effect parameter besides toggles ("_" instead of " "):
+								"filter_frequency", "filter_resonance", "delay_feedback", "chorus_depth", "pitchbend", etc
+								gain/amplitude has a separate envelope
+
+	lfo amount <float> 			0 to 1, 0 is default and means off
+	lfo rate <float> 			> 0, frequency in Hz  (0 to 50 works, also cool if it's > 50)
+	lfo waveform <float> 		0 - triangle, 1 - sawtooth, 2 - reverse sawtooth, 3 - square
+	lfo dest <symbol>			possible destination is any effect parameter besides toggles ("_" instead of " "):
+								"filter_frequency", "filter_resonance", "delay_feedback", "gain", "pitchbend", "pan"
+
+	gain <float> 				1 is default (no change), 0 to 1 is quieter, >1 is louder 		MOD
+	volume <float> 				same as gain, but only from 0 to 1
+	pan <float> 				0 to 1, 0 is left, 1 is right, .5 is equal in both speakers  	MOD
 
 
 
@@ -104,7 +109,7 @@ Possible messages (all lists):
 	reverb dry <float> 			0 to 1, amount of signal before reverb
 
 	envelope amount <float> 	0 to 1, 0 is default and means off
-	envelope adsr <list> 		"attack, decay, sustain, release" - sustain is 0 to 1, rest are time in ms (0 - 10000 works)
+	envelope adsr <list> 		"attack, decay, sustain, release" - sustain is 0 to 1, rest are time in ms (0 - 10000)
 	envelope invert <float> 	0 is normal, 1 is inverted (goes in opposite direction)
 	envelope dest <symbol>		possible destination is any effect parameter besides toggles ("_" instead of " "):
 								"filter_frequency", "filter_resonance", "delay_feedback", "chorus_depth", "pitchbend", etc
@@ -120,6 +125,9 @@ Possible messages (all lists):
 	volume <float> 				same as gain, but only from 0 to 1
 	pan <float> 				0 to 1, 0 is left, 1 is right, .5 is equal in both speakers  	MOD
 
+	adsr <list>					"attack, decay, sustain, release" - sustain is 0 to 1, rest are time in ms (0 - 10000)
+								only for amplitude
+								
 
 Unique Parameters, depending on which patch is opened:
 
