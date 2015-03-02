@@ -14,6 +14,11 @@ class NoteView : UIView {
     var editMode = false
     var note: Note!
     
+    var isActive = false
+    var playing = false
+    var selected = false
+    var touchStart: CGPoint?
+    
     // Never called
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -52,6 +57,12 @@ class NoteView : UIView {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         println("wokring");
+        var touch: UITouch = touches.anyObject() as UITouch
+        touchStart = touch.locationInView(self)
+        
+        if !self.editMode {
+            // start playing the note
+        }
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent){
@@ -63,13 +74,19 @@ class NoteView : UIView {
         if self.editMode {
             var newCenter = CGPoint(x: center.x + touchPoint.x - width / 2, y: center.y + touchPoint.y - height / 2)
             self.reposition(newCenter)
+        } else {
+            self.bendWithXdiff(touchPoint.x - touchStart!.x, ydiff: touchStart!.y - touchPoint.y )
         }
+    }
+    
+    func bendWithXdiff(xdiff: CGFloat, ydiff: CGFloat){
+        println("\(xdiff) \(ydiff)")
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent){
         if self.editMode {
-            self.note.centerX = self.center.x
-            self.note.centerY = self.center.y
+            self.note.x = self.frame.origin.x
+            self.note.y = self.frame.origin.y
             
             self.saveNotePosition()
         }
@@ -77,13 +94,13 @@ class NoteView : UIView {
 
     func saveNotePosition(){
         var note = self.note
-        var x = self.center.x
-        var y = self.center.y
+        var x = self.frame.origin.x
+        var y = self.frame.origin.y
         
         MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) in
             var localNote: Note = note.MR_inContext(localContext) as Note
-            localNote.centerX = x
-            localNote.centerY = y
+            localNote.x = x
+            localNote.y = y
         })
     }
     

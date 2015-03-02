@@ -40,22 +40,22 @@ class PlayRegionViewController: UIViewController {
             
             for var i : Float = 0.0; i < Float(bounds.width); i += 80.0 {
                 var note : Note = Note.MR_createEntity() as Note
-                note.centerX = i
-                note.centerY = 100.0
+                note.x = i
+                note.y = 100.0
                 note.composition = composition
                 
                 composition.notes.addObject(note)
                 NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
                 
-                var noteView = NoteView(frame: CGRectMake(CGFloat(note.centerX),
-                    CGFloat(note.centerY), 60.0, 60.0), note: note)
+                var noteView = NoteView(frame: CGRectMake(CGFloat(note.x),
+                    CGFloat(note.y), 60.0, 60.0), note: note)
                 self.view.addSubview(noteView)
             }
         } else {
             for note in composition.notes {
                 var unwrappedNote : Note = note as Note
-                var noteView = NoteView(frame: CGRectMake(CGFloat(unwrappedNote.centerX),
-                    CGFloat(unwrappedNote.centerY), 60.0, 60.0), note: unwrappedNote)
+                var noteView = NoteView(frame: CGRectMake(CGFloat(unwrappedNote.x),
+                    CGFloat(unwrappedNote.y), 60.0, 60.0), note: unwrappedNote)
                 self.view.addSubview(noteView)
             
             }

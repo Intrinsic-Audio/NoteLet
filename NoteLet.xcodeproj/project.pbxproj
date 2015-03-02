@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE097C7F1AA41781007BC73E /* GlobalEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE097C7E1AA41781007BC73E /* GlobalEffect.swift */; };
+		BE097C811AA41781007BC73E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE097C801AA41781007BC73E /* Note.swift */; };
+		BE097C831AA41781007BC73E /* NoteAudioDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE097C821AA41781007BC73E /* NoteAudioDetails.swift */; };
+		BE097C851AA41781007BC73E /* NoteEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE097C841AA41781007BC73E /* NoteEffect.swift */; };
+		BE097C871AA41781007BC73E /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE097C861AA41781007BC73E /* Composition.swift */; };
+		BE097C891AA41781007BC73E /* GlobalAudioDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE097C881AA41781007BC73E /* GlobalAudioDetails.swift */; };
+		BE097C8B1AA417C3007BC73E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE097C8A1AA417C3007BC73E /* Enums.swift */; };
 		BE0A87A61A87FE6F00288EE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87A51A87FE6F00288EE6 /* main.m */; };
 		BE0A87A91A87FE6F00288EE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87A81A87FE6F00288EE6 /* AppDelegate.m */; };
 		BE0A87AC1A87FE6F00288EE6 /* NoteLet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE0A87AA1A87FE6F00288EE6 /* NoteLet.xcdatamodeld */; };
@@ -30,17 +37,10 @@
 		BE645C0A1A982D5C0045A0B5 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645C091A982D5C0045A0B5 /* EmptySegue.swift */; };
 		BE645C0C1A98309F0045A0B5 /* PlayRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */; };
 		BE645C111A985C130045A0B5 /* RadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE645C101A985C130045A0B5 /* RadialGradientLayer.m */; };
-		BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8E6EBA1A8EDAA600131767 /* Enums.swift */; };
 		BE995D311A9D5DFF00B6F8E4 /* SynthControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D301A9D5DFF00B6F8E4 /* SynthControlsController.swift */; };
 		BE995D331A9D5E1100B6F8E4 /* SettingsControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D321A9D5E1100B6F8E4 /* SettingsControlsController.swift */; };
 		BE995D351A9D5E3C00B6F8E4 /* EffectsControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D341A9D5E3C00B6F8E4 /* EffectsControlsController.swift */; };
 		BE995D3B1A9D62B600B6F8E4 /* EditMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D3A1A9D62B600B6F8E4 /* EditMenuController.swift */; };
-		BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD01A944BEB00912306 /* GlobalEffect.swift */; };
-		BEA98CD31A944BEB00912306 /* NoteEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD21A944BEB00912306 /* NoteEffect.swift */; };
-		BEA98CD51A944BEC00912306 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD41A944BEC00912306 /* Composition.swift */; };
-		BEA98CD71A944BEC00912306 /* GlobalAudioDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD61A944BEC00912306 /* GlobalAudioDetails.swift */; };
-		BEA98CD91A944BEC00912306 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CD81A944BEC00912306 /* Note.swift */; };
-		BEA98CDB1A944BEC00912306 /* NoteAudioDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA98CDA1A944BEC00912306 /* NoteAudioDetails.swift */; };
 		FC71BB9C06BA030FAC7669C7 /* libPods-NoteLet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +56,13 @@
 
 /* Begin PBXFileReference section */
 		AED921E93985B900DC7027A9 /* Pods-NoteLet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteLet.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteLet/Pods-NoteLet.release.xcconfig"; sourceTree = "<group>"; };
+		BE097C7E1AA41781007BC73E /* GlobalEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalEffect.swift; path = ../GlobalEffect.swift; sourceTree = "<group>"; };
+		BE097C801AA41781007BC73E /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = ../Note.swift; sourceTree = "<group>"; };
+		BE097C821AA41781007BC73E /* NoteAudioDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteAudioDetails.swift; path = ../NoteAudioDetails.swift; sourceTree = "<group>"; };
+		BE097C841AA41781007BC73E /* NoteEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteEffect.swift; path = ../NoteEffect.swift; sourceTree = "<group>"; };
+		BE097C861AA41781007BC73E /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Composition.swift; path = ../Composition.swift; sourceTree = "<group>"; };
+		BE097C881AA41781007BC73E /* GlobalAudioDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalAudioDetails.swift; path = ../GlobalAudioDetails.swift; sourceTree = "<group>"; };
+		BE097C8A1AA417C3007BC73E /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enums.swift; path = ../../../.Trash/Enums.swift; sourceTree = "<group>"; };
 		BE0A87A01A87FE6F00288EE6 /* NoteLet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteLet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0A87A41A87FE6F00288EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0A87A51A87FE6F00288EE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,17 +94,10 @@
 		BE645C0B1A98309F0045A0B5 /* PlayRegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRegionViewController.swift; sourceTree = "<group>"; };
 		BE645C0F1A985C130045A0B5 /* RadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadialGradientLayer.h; sourceTree = "<group>"; };
 		BE645C101A985C130045A0B5 /* RadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadialGradientLayer.m; sourceTree = "<group>"; };
-		BE8E6EBA1A8EDAA600131767 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		BE995D301A9D5DFF00B6F8E4 /* SynthControlsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynthControlsController.swift; sourceTree = "<group>"; };
 		BE995D321A9D5E1100B6F8E4 /* SettingsControlsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsControlsController.swift; sourceTree = "<group>"; };
 		BE995D341A9D5E3C00B6F8E4 /* EffectsControlsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsControlsController.swift; sourceTree = "<group>"; };
 		BE995D3A1A9D62B600B6F8E4 /* EditMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMenuController.swift; sourceTree = "<group>"; };
-		BEA98CD01A944BEB00912306 /* GlobalEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalEffect.swift; sourceTree = "<group>"; };
-		BEA98CD21A944BEB00912306 /* NoteEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEffect.swift; sourceTree = "<group>"; };
-		BEA98CD41A944BEC00912306 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
-		BEA98CD61A944BEC00912306 /* GlobalAudioDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalAudioDetails.swift; sourceTree = "<group>"; };
-		BEA98CD81A944BEC00912306 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		BEA98CDA1A944BEC00912306 /* NoteAudioDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteAudioDetails.swift; sourceTree = "<group>"; };
 		D1C1896D08D91A1A84A05649 /* Pods-NoteLet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteLet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteLet/Pods-NoteLet.debug.xcconfig"; sourceTree = "<group>"; };
 		FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NoteLet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -216,13 +216,13 @@
 		BE0A87CE1A88007800288EE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE8E6EBA1A8EDAA600131767 /* Enums.swift */,
-				BEA98CDA1A944BEC00912306 /* NoteAudioDetails.swift */,
-				BEA98CD81A944BEC00912306 /* Note.swift */,
-				BEA98CD61A944BEC00912306 /* GlobalAudioDetails.swift */,
-				BEA98CD41A944BEC00912306 /* Composition.swift */,
-				BEA98CD21A944BEB00912306 /* NoteEffect.swift */,
-				BEA98CD01A944BEB00912306 /* GlobalEffect.swift */,
+				BE097C881AA41781007BC73E /* GlobalAudioDetails.swift */,
+				BE097C861AA41781007BC73E /* Composition.swift */,
+				BE097C841AA41781007BC73E /* NoteEffect.swift */,
+				BE097C821AA41781007BC73E /* NoteAudioDetails.swift */,
+				BE097C801AA41781007BC73E /* Note.swift */,
+				BE097C7E1AA41781007BC73E /* GlobalEffect.swift */,
+				BE097C8A1AA417C3007BC73E /* Enums.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -439,30 +439,30 @@
 				BE0A87F21A8A81A900288EE6 /* LoadTableVC.swift in Sources */,
 				BE0A87E01A8803A600288EE6 /* NoteView.swift in Sources */,
 				BE645C081A98298B0045A0B5 /* ControlsContainerViewController.m in Sources */,
-				BEA98CD31A944BEB00912306 /* NoteEffect.swift in Sources */,
 				BE0A87E21A88462B00288EE6 /* InstrumentViewController.swift in Sources */,
 				BE645BFE1A9820D10045A0B5 /* PlayControlsViewController.swift in Sources */,
-				BEA98CD91A944BEC00912306 /* Note.swift in Sources */,
-				BEA98CDB1A944BEC00912306 /* NoteAudioDetails.swift in Sources */,
 				BE0A87A91A87FE6F00288EE6 /* AppDelegate.m in Sources */,
+				BE097C871AA41781007BC73E /* Composition.swift in Sources */,
 				BE0A87DD1A88038D00288EE6 /* EffectSlider.swift in Sources */,
 				BE995D3B1A9D62B600B6F8E4 /* EditMenuController.swift in Sources */,
 				BE995D351A9D5E3C00B6F8E4 /* EffectsControlsController.swift in Sources */,
 				BE645C111A985C130045A0B5 /* RadialGradientLayer.m in Sources */,
 				BE645C0C1A98309F0045A0B5 /* PlayRegionViewController.swift in Sources */,
-				BEA98CD11A944BEB00912306 /* GlobalEffect.swift in Sources */,
+				BE097C811AA41781007BC73E /* Note.swift in Sources */,
 				BE0A87DE1A88038D00288EE6 /* EffectButton.swift in Sources */,
 				BE0A87E41A88488200288EE6 /* MainMenuViewController.swift in Sources */,
 				BE645C0A1A982D5C0045A0B5 /* EmptySegue.swift in Sources */,
-				BEA98CD51A944BEC00912306 /* Composition.swift in Sources */,
+				BE097C831AA41781007BC73E /* NoteAudioDetails.swift in Sources */,
+				BE097C8B1AA417C3007BC73E /* Enums.swift in Sources */,
 				BE0A87AC1A87FE6F00288EE6 /* NoteLet.xcdatamodeld in Sources */,
 				BE0A87E61A89927600288EE6 /* NewCompositionViewController.swift in Sources */,
 				BE645BFC1A981EFB0045A0B5 /* ControlsViewController.swift in Sources */,
+				BE097C891AA41781007BC73E /* GlobalAudioDetails.swift in Sources */,
 				BE995D311A9D5DFF00B6F8E4 /* SynthControlsController.swift in Sources */,
-				BEA98CD71A944BEC00912306 /* GlobalAudioDetails.swift in Sources */,
 				BE0A87A61A87FE6F00288EE6 /* main.m in Sources */,
 				BE645C001A9820E30045A0B5 /* EditControlsViewController.swift in Sources */,
-				BE8E6EBB1A8EDAA600131767 /* Enums.swift in Sources */,
+				BE097C851AA41781007BC73E /* NoteEffect.swift in Sources */,
+				BE097C7F1AA41781007BC73E /* GlobalEffect.swift in Sources */,
 				BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */,
 				BE995D331A9D5E1100B6F8E4 /* SettingsControlsController.swift in Sources */,
 			);
@@ -594,6 +594,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoteLet/NoteLet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -608,6 +609,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoteLet/NoteLet-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
