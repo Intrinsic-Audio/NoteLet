@@ -21,6 +21,10 @@ class SynthControlsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func toggleMenu(){
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("toggleMenu", object: nil, userInfo: ["view": self.view])
+    }
 
     /*
     // MARK: - Navigation

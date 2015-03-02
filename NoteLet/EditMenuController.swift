@@ -28,11 +28,13 @@ class EditMenuController: UIViewController {
     }
 
     @IBAction func toggleEffects(){
-        
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("toggleEffects", object: nil, userInfo: ["view": self.view])
     }
     
     @IBAction func toggleSettings(){
-        
+        var center = NSNotificationCenter.defaultCenter()
+        center.postNotificationName("toggleSettings", object: nil, userInfo: ["view": self.view])
     }
     
     /*

@@ -27,7 +27,9 @@ class EditControlsViewController: UIViewController {
         // Set up notification listeners
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "moveToSynth:", name: "toggleSynth", object: nil)
-
+        center.addObserver(self, selector: "moveToEffects:", name: "toggleEffects", object: nil)
+        center.addObserver(self, selector: "moveToSettings:", name: "toggleSettings", object: nil)
+        center.addObserver(self, selector: "moveToMenu:", name: "toggleMenu", object: nil)
     }
     
     deinit {
@@ -59,8 +61,36 @@ class EditControlsViewController: UIViewController {
             self.view.addSubview(synthControls.view)
             synthControls.didMoveToParentViewController(self)
         }
-        
-        println("move to synth")
+    }
+    
+    func moveToEffects(notification: NSNotification!){
+        if let info = notification.userInfo as? Dictionary<String, UIView> {
+            var view: UIView! = info["view"]
+            view.removeFromSuperview()
+            
+            self.view.addSubview(effectsControls.view)
+            effectsControls.didMoveToParentViewController(self)
+        }
+    }
+    
+    func moveToSettings(notification: NSNotification!){
+        if let info = notification.userInfo as? Dictionary<String, UIView> {
+            var view: UIView! = info["view"]
+            view.removeFromSuperview()
+            
+            self.view.addSubview(settingsControls.view)
+            settingsControls.didMoveToParentViewController(self)
+        }
+    }
+    
+    func moveToMenu(notification: NSNotification!){
+        if let info = notification.userInfo as? Dictionary<String, UIView> {
+            var view: UIView! = info["view"]
+            view.removeFromSuperview()
+            
+            self.view.addSubview(editMenu.view)
+            editMenu.didMoveToParentViewController(self)
+        }
     }
 
     /*
