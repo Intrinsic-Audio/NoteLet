@@ -37,7 +37,7 @@ class NoteView : UIView {
         self.layer.borderColor = UIColor.blackColor().CGColor
         self.layer.borderWidth = 2
         
-        var noteLabel = UILabel(frame: CGRectMake(24, 21, 20, 20))
+        var noteLabel = UILabel(frame: CGRectMake(24, 18, 25, 25))
         noteLabel.text = note.name
         noteLabel.textColor = UIColor.whiteColor()
         self.addSubview(noteLabel)
