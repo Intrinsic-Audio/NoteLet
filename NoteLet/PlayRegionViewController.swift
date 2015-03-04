@@ -17,13 +17,10 @@ class PlayRegionViewController: UIViewController {
         
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     deinit {
@@ -33,46 +30,69 @@ class PlayRegionViewController: UIViewController {
     
     func initNotes(composition: Composition, config: NoteConfiguration){
         var bounds : CGRect = self.view.bounds;
-        
+
+        println("HERE HER")
+
         if (composition.notes.count == 0){
-            
-            let coordinates = self.getPresetCoordinates(config)
-            
-            for var i : Float = 0.0; i < Float(bounds.width); i += 80.0 {
-                var note : Note = Note.MR_createEntity() as Note
-                note.x = i
-                note.y = 100.0
-                note.composition = composition
-                
-                composition.notes.addObject(note)
-                NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
-                
-                var noteView = NoteView(frame: CGRectMake(CGFloat(note.x),
-                    CGFloat(note.y), 60.0, 60.0), note: note)
-                self.view.addSubview(noteView)
-            }
+            println("HERE HER")
+            self.createNotes(config, composition: composition)
         } else {
             for note in composition.notes {
                 var unwrappedNote : Note = note as Note
                 var noteView = NoteView(frame: CGRectMake(CGFloat(unwrappedNote.x),
                     CGFloat(unwrappedNote.y), 60.0, 60.0), note: unwrappedNote)
                 self.view.addSubview(noteView)
-            
             }
         }
     }
     
-    func getPresetCoordinates(config: NoteConfiguration) -> Array<Int> {
+    func createNotes(config: NoteConfiguration, composition: Composition) {
         switch config {
         case .LoadedPositions:
-            return [1,2,3,4,5]
+            println("foo")
         case .CircleOfFifths:
-            return [1,2]
+            println("foo")
         case .Chords:
-            return [1,2]
+            self.makeChordPosition(composition)
         case .Spiral:
-            return [1,2]
+            println("foo")
         }
+    }
+    
+    func makeChordPosition(composition: Composition) {
+        println("making chords")
+        var x = 60.0
+        var y = 60.0
+        
+        // Create 4 rows of 2 chords.  Each chord has 2 octaves and 4 notes
+        for var rows = 0; rows < 4; rows += 1 {
+            for var chords = 0; chords < 2; chords += 1 {
+                for var octaves = 0; octaves < 2; octaves += 1 {
+                    for var notes = 0; notes < 4; notes += 1 {
+                        var note : Note = Note.MR_createEntity() as Note
+                        note.x = x
+                        note.y = y
+                        note.composition = composition
+                        
+                        composition.notes.addObject(note)
+                        var noteView = NoteView(frame: CGRectMake(CGFloat(note.x),
+                            CGFloat(note.y), 60.0, 60.0), note: note)
+                        self.view.addSubview(noteView)
+                        
+                        x += 70.0
+                    }
+                    x -= 280.0
+                    y += 70.0
+                }
+                x += 350.0
+                y -= 140.0
+            }
+            y += 170.0
+            x = 60.0
+            
+            println("x: \(x) y: \(y)")
+        }
+        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
     }
     
     func editModeChanged(notification : NSNotification){

@@ -23,7 +23,7 @@ class NewCompositionViewController : UIViewController, UIPickerViewDataSource, U
     
     var key = Key.C
     var scale = Scale.Major
-    var config = NoteConfiguration.CircleOfFifths
+    var config = NoteConfiguration.Chords
     var bpm = 100
     
     var noteConfigType = NoteConfiguration.CircleOfFifths
@@ -88,6 +88,7 @@ class NewCompositionViewController : UIViewController, UIPickerViewDataSource, U
         
         self.presentViewController(controller, animated: true, completion: nil)
         
+        println("about to call")
         controller.initNotes(self.config)
     }
     
