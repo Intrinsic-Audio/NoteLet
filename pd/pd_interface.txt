@@ -1,0 +1,214 @@
+
+Master Interface:
+
+	master.pd
+	
+	// MOD means this parameter can be connected to the LFO or Envelope
+
+	IGNORE ALL RANGES (BESIDES SELECTORS LIKE 0-1 TOGGLE or TREMOLO SHAPE)
+	ASSUME ALL RANGES ARE FROM 0-127!!!!!!!!!!!!!!!!!!!!!!!!
+	I didn't bother to change the whole file yet, but this is how it will be.
+
+Receiver: effects
+Possible Messages:
+	chorus on <float>			
+	chorus rate <float>			> 0, frequency in Hz					MOD
+	chorus depth <float>												MOD
+	chorus mix <float>				 									MOD
+	chorus rate mod <float>		Set mod range
+	chorus depth mod <float>	Set mod range
+	chorus mix mod <float>		Set mod range
+
+	tremolo on <float> 			0 or 1
+	tremolo rate <float> 		> 0, frequency in Hz					MOD
+	tremolo depth <float> 		usually 0 to 1, can be any number		MOD
+	tremolo shape <float> 		0 - sine, 1 - sawtooth, 2 - reverse sawtooth, 3 - square
+	tremolo rate mod <float>	Set mod range
+	tremolo depth mod <float>	Set mod range
+
+	delay on <float> 			0 or 1
+	delay feedback <float>		from 0 to 1 							MOD
+	delay time <float> 			time in ms 								MOD
+	delay amount <float> 		0 to 1, can be any number 				MOD
+	delay feedback mod <float>	Set mod range
+	delay time mod <float>	Set mod range
+	delay amount mod <float>	Set mod range
+
+	ringmod on <float> 			0 or 1
+	ringmod rate <float> 		> 0, frequency in Hz 					MOD
+	ringmod depth <float> 		0 to 1 									MOD
+	ringmod rate mod <float>	Set mod range
+	ringmod depth mod <float>	Set mod range
+
+	filter on <float> 			0 or 1
+	filter frequency <float> 	> 40 and < 22000 - frequency in Hz 		MOD
+	filter resonance <float> 	> 0, usually from 0 to ~20  			MOD
+	filter gain <float> 		Any number								MOD
+	filter type <symbol>		"lowpass", 		// No effect from Gain
+								"bandpass", 	// No effect from Gain
+								"highpass",		// No effect from Gain
+								"notch", 		// No effect from Gain
+								"peak", 		// Gain effects this
+								"highshelf", 	// Gain effects this
+								"lowshelf",		// Gain effects this
+								"allpass"		// No effect on frequencies (probably shouldn't be used)
+	filter frequency mod <float>Set mod range
+	filter resonance mod <float>Set mod range
+	filter gain mod <float>		Set mod range
+
+	reverb on <float> 			0 or 1
+	reverb roomsize <float> 	0 to 1, size of room
+	reverb damping <float> 		0 to 1, reflectiveness of the room
+	reverb width <float> 		0 to 1, stereo width
+	reverb wet <float> 			0 to 1, amount of signal after reverb
+	reverb dry <float> 			0 to 1, amount of signal before reverb
+
+	gain on <float>				0 or 1
+	gain <float> 				0 to 1 is quieter, >1 is louder 								MOD
+	gain mod <float>			Set mod range
+
+	pan <float> 				0 to 1, 0 is left, 1 is right, .5 is equal in both speakers  	MOD
+	pan mod <float>				Set mod range
+
+	volume <float> 				same as gain, but only from 0 to 1
+
+	envelope amount <float> 	0 to 1, 0 is default and means off
+	envelope adsr <list> 		"attack, decay, sustain, release", all time in ms except sustain (0-1)
+	envelope invert <float> 	0 is normal, 1 is inverted (goes in opposite direction)
+	envelope dest <symbol>		destination is any effect parameter with MOD ("_" instead of " "):
+								"filter_frequency", "filter_resonance", "delay_feedback", "chorus_depth", "pitchbend", etc
+								gain/amplitude has a separate envelope
+
+	lfo amount <float> 			0 to 1, 0 is default and means off
+	lfo rate <float> 			> 0, frequency in Hz  (0 to 50 works, also cool if it's > 50)
+	lfo waveform <float> 		0 - triangle, 1 - sawtooth, 2 - reverse sawtooth, 3 - square
+	lfo dest <symbol>			possible destination is any effect parameter besides toggles ("_" instead of " "):
+								examples: "filter_frequency", "filter_resonance", "delay_feedback", "gain", "pitchbend", "pan"
+
+
+
+
+Note Interface:
+
+Patches:
+
+	wavetable_synth.pd
+	sampler.pd
+
+
+Universal Parameters:
+
+// Send two floats for note-on & note-off
+Receiver: $0-note 
+Possible messages:  
+
+	<float> <float> 			key, velocity pair as a list, key & velocity from 0 to 127
+	pitchbend <float>
+	pitchbend_range <float>
+	adsr <list>					"attack, decay, sustain, release",  
+	waveform <symbol>			name of waveform. see bottom for names. takes format: $0-<name>_table 
+	flush <bang>				sends note-off to all notes
+	print 						Prints adsr note-on & offs in Pd - debugging
+
+Receiver: $0-effects
+Possible messages (all lists):
+
+	// MOD means this parameter can be connected to the LFO or Envelope
+
+	chorus on <float>			0 or 108
+	chorus rate <float>			> 0, frequency in Hz					MOD
+	chorus depth <float>		usually from 0 to 1, can be any value	MOD
+	chorus mix <float>			0 to 1 									MOD
+	chorus rate mod <float>		Set mod range
+	chorus depth mod <float>	Set mod range
+	chorus mix mod <float>		Set mod range
+
+	tremolo on <float> 			0 or 1
+	tremolo rate <float> 		> 0, frequency in Hz					MOD
+	tremolo depth <float> 		usually 0 to 1, can be any number		MOD
+	tremolo shape <float> 		0 - sine, 1 - sawtooth, 2 - reverse sawtooth, 3 - square
+	tremolo rate mod <float>	Set mod range
+	tremolo depth mod <float>	Set mod range
+
+	delay on <float> 			0 or 1
+	delay feedback <float>		from 0 to 1 							MOD
+	delay time <float> 			time in ms 								MOD
+	delay amount <float> 		0 to 1, can be any number 				MOD
+	delay feedback mod <float>	Set mod range
+	delay time mod <float>	Set mod range
+	delay amount mod <float>	Set mod range
+
+	ringmod on <float> 			0 or 1
+	ringmod rate <float> 		> 0, frequency in Hz 					MOD
+	ringmod depth <float> 		0 to 1 									MOD
+	ringmod rate mod <float>	Set mod range
+	ringmod depth mod <float>	Set mod range
+
+	filter on <float> 			0 or 1
+	filter frequency <float> 	> 40 and < 22000 - frequency in Hz 		MOD
+	filter resonance <float> 	> 0, usually from 0 to ~20  			MOD
+	filter gain <float> 		Any number								MOD
+	filter type <symbol>		"lowpass", 		// No effect from Gain
+								"bandpass", 	// No effect from Gain
+								"highpass",		// No effect from Gain
+								"notch", 		// No effect from Gain
+								"peak", 		// Gain effects this
+								"highshelf", 	// Gain effects this
+								"lowshelf",		// Gain effects this
+								"allpass"		// No effect on frequencies (probably shouldn't be used)
+	filter frequency mod <float>Set mod range
+	filter resonance mod <float>Set mod range
+	filter gain mod <float>		Set mod range
+
+	reverb on <float> 			0 or 1
+	reverb roomsize <float> 	0 to 1, size of room
+	reverb damping <float> 		0 to 1, reflectiveness of the room
+	reverb width <float> 		0 to 1, stereo width
+	reverb wet <float> 			0 to 1, amount of signal after reverb
+	reverb dry <float> 			0 to 1, amount of signal before reverb
+
+	gain on <float>				0 or 1
+	gain <float> 				0 to 1 is quieter, >1 is louder 								MOD
+	gain mod <float>			Set mod range
+
+	pan <float> 				0 to 1, 0 is left, 1 is right, .5 is equal in both speakers  	MOD
+	pan mod <float>				Set mod range
+
+	volume <float> 				same as gain, but only from 0 to 1
+
+	envelope amount <float> 	0 to 1, 0 is default and means off
+	envelope adsr <list> 		"attack, decay, sustain, release", all time in ms except sustain (0-1)
+	envelope invert <float> 	0 is normal, 1 is inverted (goes in opposite direction)
+	envelope dest <symbol>		destination is any effect parameter with MOD ("_" instead of " "):
+								"filter_frequency", "filter_resonance", "delay_feedback", "chorus_depth", "pitchbend", etc
+								gain/amplitude has a separate envelope
+
+	lfo amount <float> 			0 to 1, 0 is default and means off
+	lfo rate <float> 			> 0, frequency in Hz  (0 to 50 works, also cool if it's > 50)
+	lfo waveform <float> 		0 - triangle, 1 - sawtooth, 2 - reverse sawtooth, 3 - square
+	lfo dest <symbol>			possible destination is any effect parameter besides toggles ("_" instead of " "):
+								examples: "filter_frequency", "filter_resonance", "delay_feedback", "gain", "pitchbend", "pan"
+
+
+
+								
+
+Unique Parameters, depending on which patch is opened:
+
+	
+	wavetable_synth.pd:
+
+		Receiver: $0-waveform
+		Possible messages:
+
+			<float> 			0 - sine, 1 - triangle, 2 - sawtooth, 3 - square, 4 to 25 - additional waveforms
+
+
+	sampler.pd:
+
+		Receiver: $0-type
+		Possible messages:
+
+			<symbol> 			"piano", "drums", "guitar", "violin", etc — actual sample packs TBD
+
+

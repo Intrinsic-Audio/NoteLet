@@ -1,0 +1,22 @@
+#N canvas 590 60 197 155 10;
+#X obj 6 109 cleanup~;
+#X obj 6 131 dac~;
+#X obj 123 67 r effects;
+#N canvas 172 210 200 128 init 0;
+#X obj -151 5 loadbang;
+#X obj -151 27 f \$0;
+#X msg -151 48 \; pd dsp 1 \; effects reverb bypass 1 \; effects pan
+0.5 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 6 5 pd init;
+#X obj 6 87 effects_rack_stereo~;
+#X obj 64 47 catch~ master_busR;
+#X obj 6 26 catch~ master_busL;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 2 0 4 2;
+#X connect 4 0 0 0;
+#X connect 4 1 0 1;
+#X connect 5 0 4 1;
+#X connect 6 0 4 0;
