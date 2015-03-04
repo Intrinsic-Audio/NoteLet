@@ -8,6 +8,7 @@
 
 #import <CoreData+MagicalRecord.h>
 #import "AppDelegate.h"
+#import "PdExternals.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,7 @@
     }
     PdDispatcher *dispatcher = [PdDispatcher new];
     [PdBase setDelegate:dispatcher];
+    [PdExternals setup];
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"NoteLet"];
     
     return YES;

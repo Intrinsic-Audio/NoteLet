@@ -118,19 +118,24 @@
 #X msg 26 161 note on \$1;
 #X obj 17 -123 inlet COMMANDS;
 #X obj 271 -60 unpack 0 0 0 0;
-#N canvas 567 22 389 227 help 0;
+#N canvas 567 23 440 339 help 0;
 #X obj 13 -95 inlet;
-#X obj 13 98 print HELP;
-#X obj 13 -68 help_builder --title adsr.pd --description ADSR Envelope
-Generator --inlet velocity or [adsr] method --inlet ADSR List (attack
-decay sustain release) --outlet Signal multiplier (between 0 and 1)
---outlet Indicator: 1 if active or 0 if off --method attack: set attack
-time (ms) --method decay: set decay time (ms) --method sustain: set
-sustain level (0-1) --method release: set release time (ms) --method
-kill: bang to immediately set envelope to 0 --method print: print note-on
-& note-off commands --method set: set adsr coefficients with List --method
-help: print help information to the console --method methods: print
-available methods to the console;
+#X obj 13 188 print HELP;
+#X msg 13 -74 ----------------------- adsr.pd -----------------------
+\, ------------------------------------------------------------------------
+\, --------------- ADSR Envelope Generator --------------- \, ----
+\, ---- Inlets: \, ---------- 0: velocity or [adsr] method \, ----------
+1: ADSR List (attack decay sustain release) \, ---- \, ---- Outlets:
+\, ---------- 0: Signal multiplier (between 0 and 1) \, ----------
+1: Indicator: 1 if active or 0 if off \, ---- \, ---- Methods (sent
+to inlet 0): \, ---------- attack: set attack time (ms) \, ----------
+decay: set decay time (ms) \, ---------- sustain: set sustain level
+(0-1) \, ---------- release: set release time (ms) \, ---------- kill:
+to immediately set envelope to 0 \, ---------- print: print note-on
+& note-off commands \, ---------- set: set adsr coefficients with List
+\, ---------- help: print help information to the console \, ----------
+methods: print available methods to the console \, ------------------------------------------------------------------------
+\, ----------------------- adsr.pd ----------------------- \,;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 697 -62 pd help;
