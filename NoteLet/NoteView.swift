@@ -14,6 +14,8 @@ class NoteView : UIView {
     var editMode = false
     var note: Note!
     
+    var patch = PdBase.openFile("wavetable_synth.pd", path: NSBundle.mainBundle().resourcePath)
+    var dollarZero: Int32
     var isActive = false
     var playing = false
     var selected = false
@@ -21,17 +23,24 @@ class NoteView : UIView {
     
     // Never called
     required init(coder aDecoder: NSCoder) {
+        dollarZero = PdBase.dollarZeroForFile(patch)
         super.init(coder: aDecoder)
     }
     
     init(frame bounds: CGRect, note: Note){
         self.note = note
+        dollarZero = PdBase.dollarZeroForFile(patch)
 
         super.init(frame: bounds)
         
         self.layer.cornerRadius = self.frame.width / 2
         self.layer.borderColor = UIColor.blackColor().CGColor
         self.layer.borderWidth = 2
+        
+        var noteLabel = UILabel(frame: CGRectMake(24, 21, 20, 20))
+        noteLabel.text = note.name
+        noteLabel.textColor = UIColor.whiteColor()
+        self.addSubview(noteLabel)
     
         var center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
@@ -62,6 +71,9 @@ class NoteView : UIView {
         
         if !self.editMode {
             // start playing the note
+            var receiver = String(dollarZero) + "-note"
+            println(receiver)
+            PdBase.sendList([50, 50], toReceiver: receiver)
         }
     }
     
@@ -89,6 +101,10 @@ class NoteView : UIView {
             self.note.y = self.frame.origin.y
             
             self.saveNotePosition()
+        } else {
+            var receiver = String(dollarZero) + "-note"
+            println(receiver)
+            PdBase.sendList([50, 0], toReceiver: receiver)
         }
     }
 

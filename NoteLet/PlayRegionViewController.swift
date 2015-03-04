@@ -11,6 +11,7 @@ import UIKit
 class PlayRegionViewController: UIViewController {
 
     var editMode = false
+    var patch = PdBase.openFile("master.pd", path: NSBundle.mainBundle().resourcePath)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +32,7 @@ class PlayRegionViewController: UIViewController {
     func initNotes(composition: Composition, config: NoteConfiguration){
         var bounds : CGRect = self.view.bounds;
 
-        println("HERE HER")
-
         if (composition.notes.count == 0){
-            println("HERE HER")
             self.createNotes(config, composition: composition)
         } else {
             for note in composition.notes {
@@ -60,9 +58,15 @@ class PlayRegionViewController: UIViewController {
     }
     
     func makeChordPosition(composition: Composition) {
-        println("making chords")
         var x = 60.0
         var y = 60.0
+        
+        var major = [2, 2, 1, 2, 2, 2, 1]
+        // Start at C
+        var midiNote = 0
+        var scale_index = 0
+        var octave = 2
+        var scale_len = major.count
         
         // Create 4 rows of 2 chords.  Each chord has 2 octaves and 4 notes
         for var rows = 0; rows < 4; rows += 1 {
@@ -72,6 +76,14 @@ class PlayRegionViewController: UIViewController {
                         var note : Note = Note.MR_createEntity() as Note
                         note.x = x
                         note.y = y
+                        note.name = self.getNoteName(midiNote)
+                        
+                        println(scale_index)
+                        
+                        midiNote = (midiNote + major[scale_index]) % 12
+                        scale_index = ((scale_index + 1) % scale_len + 1 % scale_len)
+                        
+                        
                         note.composition = composition
                         
                         composition.notes.addObject(note)
@@ -81,6 +93,7 @@ class PlayRegionViewController: UIViewController {
                         
                         x += 70.0
                     }
+                    scale_index -= 5
                     x -= 280.0
                     y += 70.0
                 }
@@ -105,6 +118,37 @@ class PlayRegionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    
+    func getNoteName(midiNum: Int) -> String{
+        switch midiNum {
+        case 0:
+            return "C"
+        case 1:
+            return "C#"
+        case 2:
+             return "D"
+        case 3:
+            return "D#"
+        case 4:
+            return "E"
+        case 5:
+            return "F"
+        case 6:
+            return "F#"
+        case 7:
+            return "G"
+        case 8:
+            return "G#"
+        case 9:
+            return "A"
+        case 10:
+            return "A#"
+        case 11:
+            return "B"
+        default:
+            return "?"
+        }
     }
 
 }

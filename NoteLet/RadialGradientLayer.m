@@ -11,7 +11,6 @@
 @implementation RadialGradientLayer
 
 - (instancetype)init{
-    NSLog(@"Initializing");
     self = [super init];
     if (self){
         
@@ -21,8 +20,6 @@
 
 - (void)drawInContext:(CGContextRef)context
 {
-    NSLog(@"drawn");
-
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     NSArray* colors = @[(id)[UIColor redColor].CGColor, (id)[UIColor blueColor].CGColor];
     
