@@ -1,0 +1,24 @@
+#N canvas 814 45 359 168 10;
+#X obj 1 2 r \$0-note;
+#X obj 148 75 r \$0-effects;
+#X obj 1 25 route waveform adsr flush pitchbend pitchbend_range print
+;
+#X obj 73 96 effects_rack~;
+#X obj 73 116 throw~ master_busL;
+#X obj 148 136 throw~ master_busR;
+#X obj 73 53 synth8~ ____________;
+#X obj 190 96 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 0 0 2 0;
+#X connect 1 0 3 1;
+#X connect 2 0 6 1;
+#X connect 2 1 6 2;
+#X connect 2 2 6 3;
+#X connect 2 3 6 4;
+#X connect 2 4 6 5;
+#X connect 2 5 6 6;
+#X connect 2 6 6 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 6 0 3 0;
+#X connect 6 2 7 0;
