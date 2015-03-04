@@ -102,7 +102,7 @@ Universal Parameters:
 Receiver: $0-note 
 Possible messages:  
 
-	<float> <float> 			key, velocity pair as a list, key & velocity from 0 to 127
+	<list> 						(key, velocity) pair as a list, both from 0 to 127
 	pitchbend <float>
 	pitchbend_range <float>
 	adsr <list>					"attack, decay, sustain, release",  
