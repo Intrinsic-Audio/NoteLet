@@ -69,12 +69,25 @@ class NoteView : UIView {
         var touch: UITouch = touches.anyObject() as UITouch
         touchStart = touch.locationInView(self)
         
+        // start playing the note
         if !self.editMode {
-            // start playing the note
-            var receiver = String(dollarZero) + "-note"
-            println(receiver)
-            PdBase.sendList([50, 50], toReceiver: receiver)
+            self.play()
         }
+    }
+    
+    func play() {
+        var receiver = String(dollarZero) + "-note"
+        println(receiver)
+        
+        PdBase.sendList([50, 50], toReceiver: receiver)
+        
+        var animation = CABasicAnimation(keyPath: "transform.scale")
+        animation.repeatCount = HUGE
+        animation.autoreverses = false
+        animation.duration = 0.3
+        animation.fromValue = 1.0
+        animation.toValue = 0.3
+        self.layer.addAnimation(animation, forKey: "animatePlaying")
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent){
@@ -102,10 +115,16 @@ class NoteView : UIView {
             
             self.saveNotePosition()
         } else {
-            var receiver = String(dollarZero) + "-note"
-            println(receiver)
-            PdBase.sendList([50, 0], toReceiver: receiver)
+            self.stop()
         }
+    }
+    
+    func stop () {
+        var receiver = String(dollarZero) + "-note"
+        println(receiver)
+        PdBase.sendList([50, 0], toReceiver: receiver)
+        
+        self.layer.removeAllAnimations()
     }
 
     func saveNotePosition(){
