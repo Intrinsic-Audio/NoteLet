@@ -83,13 +83,13 @@ class NewCompositionViewController : UIViewController, UIPickerViewDataSource, U
         NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
         
         var storyboard = UIStoryboard(name: "Instrument", bundle: nil)
-        var controller = storyboard.instantiateViewControllerWithIdentifier("InitialController") as InstrumentViewController
-        controller.composition = composition
+        var instrumentVC = storyboard.instantiateViewControllerWithIdentifier("InitialController") as InstrumentViewController
+        instrumentVC.composition = composition
         
-        self.presentViewController(controller, animated: true, completion: nil)
+        self.presentViewController(instrumentVC, animated: true, completion: nil)
         
         println("about to call")
-        controller.initNotes(self.config)
+        instrumentVC.initNotes(self.config)
     }
     
     

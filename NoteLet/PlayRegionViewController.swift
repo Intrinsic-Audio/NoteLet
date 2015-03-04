@@ -11,6 +11,7 @@ import UIKit
 class PlayRegionViewController: UIViewController {
 
     var editMode = false
+    var composition: Composition!
     var patch = PdBase.openFile("master.pd", path: NSBundle.mainBundle().resourcePath)
     
     override func viewDidLoad() {
@@ -31,9 +32,10 @@ class PlayRegionViewController: UIViewController {
     
     func initNotes(composition: Composition, config: NoteConfiguration){
         var bounds : CGRect = self.view.bounds;
+        self.composition = composition
 
         if (composition.notes.count == 0){
-            self.createNotes(config, composition: composition)
+            self.createNotes(config)
         } else {
             for note in composition.notes {
                 var unwrappedNote : Note = note as Note
@@ -44,20 +46,20 @@ class PlayRegionViewController: UIViewController {
         }
     }
     
-    func createNotes(config: NoteConfiguration, composition: Composition) {
+    func createNotes(config: NoteConfiguration) {
         switch config {
         case .LoadedPositions:
             println("foo")
         case .CircleOfFifths:
             println("foo")
         case .Chords:
-            self.makeChordPosition(composition)
+            self.makeChordPosition()
         case .Spiral:
             println("foo")
         }
     }
     
-    func makeChordPosition(composition: Composition) {
+    func makeChordPosition() {
         var x = 60.0
         var y = 60.0
         
@@ -73,14 +75,27 @@ class PlayRegionViewController: UIViewController {
         println("length \(scale_len)")
         
         // Create 4 rows of 2 chords.  Each chord has 2 octaves and 4 notes
-        for var rows = 0; rows < 4; rows += 1 {
+        for var rows = 0; rows < 2; rows += 1 {
             for var chords = 0; chords < 2; chords += 1 {
                 for var octaves = 0; octaves < 2; octaves += 1 {
                     for var notes = 0; notes < 4; notes += 1 {
                         var note : Note = Note.MR_createEntity() as Note
+                        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
                         note.x = x
                         note.y = y
                         note.name = self.getNoteName(midiNote)
+                        
+                        MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) in
+                            var localNote: Note = note.MR_inContext(localContext) as Note
+                            var localComposition = self.composition.MR_inContext(localContext) as Composition
+                            
+                            localNote.x = x
+                            localNote.y = y
+                            localNote.name = note.name
+                            
+                            localNote.composition = localComposition
+                            localComposition.notes.addObject(note)
+                        })
                         
                         println(scale_index)
                         
@@ -90,7 +105,6 @@ class PlayRegionViewController: UIViewController {
                         
                         note.composition = composition
                         
-                        composition.notes.addObject(note)
                         var noteView = NoteView(frame: CGRectMake(CGFloat(note.x),
                             CGFloat(note.y), 60.0, 60.0), note: note)
                         self.view.addSubview(noteView)

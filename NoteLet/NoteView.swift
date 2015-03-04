@@ -21,6 +21,8 @@ class NoteView : UIView {
     var selected = false
     var touchStart: CGPoint?
     
+    var notifCenter = NSNotificationCenter.defaultCenter()
+    
     // Never called
     required init(coder aDecoder: NSCoder) {
         dollarZero = PdBase.dollarZeroForFile(patch)
@@ -42,8 +44,7 @@ class NoteView : UIView {
         noteLabel.textColor = UIColor.whiteColor()
         self.addSubview(noteLabel)
     
-        var center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
+        notifCenter.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
         
         // Create red-blue gradient for notes
         var gradientLayer: RadialGradientLayer = RadialGradientLayer()
@@ -56,8 +57,8 @@ class NoteView : UIView {
     }
     
     deinit {
-        var center = NSNotificationCenter.defaultCenter()
-        center.removeObserver(self)
+        PdBase.closeFile(patch)
+        notifCenter.removeObserver(self)
     }
 
     func editModeChanged(notification: NSNotification){
@@ -65,9 +66,10 @@ class NoteView : UIView {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        println("wokring");
         var touch: UITouch = touches.anyObject() as UITouch
         touchStart = touch.locationInView(self)
+        
+        notifCenter.postNotificationName("updateNote", object: nil, userInfo: ["note": note])
         
         // start playing the note
         if !self.editMode {

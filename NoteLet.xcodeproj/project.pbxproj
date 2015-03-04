@@ -140,7 +140,6 @@
 		FA41193A1AA6D92900F84F84 /* guifilter~.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118551AA6D92900F84F84 /* guifilter~.pd */; };
 		FA41193B1AA6D92900F84F84 /* hann_table-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118561AA6D92900F84F84 /* hann_table-help.pd */; };
 		FA41193C1AA6D92900F84F84 /* hann_table.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118571AA6D92900F84F84 /* hann_table.pd */; };
-		FA41193D1AA6D92900F84F84 /* helloworld.pd_darwin in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4118581AA6D92900F84F84 /* helloworld.pd_darwin */; };
 		FA41193E1AA6D92900F84F84 /* help_builder-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118591AA6D92900F84F84 /* help_builder-help.pd */; };
 		FA41193F1AA6D92900F84F84 /* help_builder.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA41185A1AA6D92900F84F84 /* help_builder.pd */; };
 		FA4119401AA6D92900F84F84 /* if-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA41185B1AA6D92900F84F84 /* if-help.pd */; };
@@ -209,7 +208,6 @@
 		FA41197F1AA6D92900F84F84 /* minigun-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA41189A1AA6D92900F84F84 /* minigun-help.pd */; };
 		FA4119801AA6D92900F84F84 /* minigun.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA41189B1AA6D92900F84F84 /* minigun.pd */; };
 		FA4119811AA6D92900F84F84 /* mp3play~-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA41189C1AA6D92900F84F84 /* mp3play~-help.pd */; };
-		FA4119821AA6D92900F84F84 /* mp3play~.pd_darwin in Frameworks */ = {isa = PBXBuildFile; fileRef = FA41189D1AA6D92900F84F84 /* mp3play~.pd_darwin */; };
 		FA4119831AA6D92900F84F84 /* multidelay~.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA41189E1AA6D92900F84F84 /* multidelay~.pd */; };
 		FA4119841AA6D92900F84F84 /* multifilter~.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA41189F1AA6D92900F84F84 /* multifilter~.pd */; };
 		FA4119851AA6D92900F84F84 /* multitremolo~.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118A01AA6D92900F84F84 /* multitremolo~.pd */; };
@@ -224,7 +222,6 @@
 		FA41198E1AA6D92900F84F84 /* numbertonote.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118A91AA6D92900F84F84 /* numbertonote.pd */; };
 		FA41198F1AA6D92900F84F84 /* once-help.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118AA1AA6D92900F84F84 /* once-help.pd */; };
 		FA4119901AA6D92900F84F84 /* once.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118AB1AA6D92900F84F84 /* once.pd */; };
-		FA4119911AA6D92900F84F84 /* pan_example_tilde.pd_darwin in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4118AC1AA6D92900F84F84 /* pan_example_tilde.pd_darwin */; };
 		FA4119921AA6D92900F84F84 /* panner~.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118AD1AA6D92900F84F84 /* panner~.pd */; };
 		FA4119931AA6D92900F84F84 /* pd_for_libpd.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118AE1AA6D92900F84F84 /* pd_for_libpd.pd */; };
 		FA4119941AA6D92900F84F84 /* pi.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA4118AF1AA6D92900F84F84 /* pi.pd */; };
@@ -427,7 +424,6 @@
 		FA4118551AA6D92900F84F84 /* guifilter~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "guifilter~.pd"; sourceTree = "<group>"; };
 		FA4118561AA6D92900F84F84 /* hann_table-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "hann_table-help.pd"; sourceTree = "<group>"; };
 		FA4118571AA6D92900F84F84 /* hann_table.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hann_table.pd; sourceTree = "<group>"; };
-		FA4118581AA6D92900F84F84 /* helloworld.pd_darwin */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = helloworld.pd_darwin; sourceTree = "<group>"; };
 		FA4118591AA6D92900F84F84 /* help_builder-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "help_builder-help.pd"; sourceTree = "<group>"; };
 		FA41185A1AA6D92900F84F84 /* help_builder.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = help_builder.pd; sourceTree = "<group>"; };
 		FA41185B1AA6D92900F84F84 /* if-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "if-help.pd"; sourceTree = "<group>"; };
@@ -496,7 +492,6 @@
 		FA41189A1AA6D92900F84F84 /* minigun-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "minigun-help.pd"; sourceTree = "<group>"; };
 		FA41189B1AA6D92900F84F84 /* minigun.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = minigun.pd; sourceTree = "<group>"; };
 		FA41189C1AA6D92900F84F84 /* mp3play~-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mp3play~-help.pd"; sourceTree = "<group>"; };
-		FA41189D1AA6D92900F84F84 /* mp3play~.pd_darwin */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "mp3play~.pd_darwin"; sourceTree = "<group>"; };
 		FA41189E1AA6D92900F84F84 /* multidelay~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "multidelay~.pd"; sourceTree = "<group>"; };
 		FA41189F1AA6D92900F84F84 /* multifilter~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "multifilter~.pd"; sourceTree = "<group>"; };
 		FA4118A01AA6D92900F84F84 /* multitremolo~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "multitremolo~.pd"; sourceTree = "<group>"; };
@@ -511,7 +506,6 @@
 		FA4118A91AA6D92900F84F84 /* numbertonote.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = numbertonote.pd; sourceTree = "<group>"; };
 		FA4118AA1AA6D92900F84F84 /* once-help.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "once-help.pd"; sourceTree = "<group>"; };
 		FA4118AB1AA6D92900F84F84 /* once.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = once.pd; sourceTree = "<group>"; };
-		FA4118AC1AA6D92900F84F84 /* pan_example_tilde.pd_darwin */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = pan_example_tilde.pd_darwin; sourceTree = "<group>"; };
 		FA4118AD1AA6D92900F84F84 /* panner~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "panner~.pd"; sourceTree = "<group>"; };
 		FA4118AE1AA6D92900F84F84 /* pd_for_libpd.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pd_for_libpd.pd; sourceTree = "<group>"; };
 		FA4118AF1AA6D92900F84F84 /* pi.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pi.pd; sourceTree = "<group>"; };
@@ -565,9 +559,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4119911AA6D92900F84F84 /* pan_example_tilde.pd_darwin in Frameworks */,
-				FA41193D1AA6D92900F84F84 /* helloworld.pd_darwin in Frameworks */,
-				FA4119821AA6D92900F84F84 /* mp3play~.pd_darwin in Frameworks */,
 				FC71BB9C06BA030FAC7669C7 /* libPods-NoteLet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -874,7 +865,6 @@
 				FA4118551AA6D92900F84F84 /* guifilter~.pd */,
 				FA4118561AA6D92900F84F84 /* hann_table-help.pd */,
 				FA4118571AA6D92900F84F84 /* hann_table.pd */,
-				FA4118581AA6D92900F84F84 /* helloworld.pd_darwin */,
 				FA4118591AA6D92900F84F84 /* help_builder-help.pd */,
 				FA41185A1AA6D92900F84F84 /* help_builder.pd */,
 				FA41185B1AA6D92900F84F84 /* if-help.pd */,
@@ -943,7 +933,6 @@
 				FA41189A1AA6D92900F84F84 /* minigun-help.pd */,
 				FA41189B1AA6D92900F84F84 /* minigun.pd */,
 				FA41189C1AA6D92900F84F84 /* mp3play~-help.pd */,
-				FA41189D1AA6D92900F84F84 /* mp3play~.pd_darwin */,
 				FA41189E1AA6D92900F84F84 /* multidelay~.pd */,
 				FA41189F1AA6D92900F84F84 /* multifilter~.pd */,
 				FA4118A01AA6D92900F84F84 /* multitremolo~.pd */,
@@ -958,7 +947,6 @@
 				FA4118A91AA6D92900F84F84 /* numbertonote.pd */,
 				FA4118AA1AA6D92900F84F84 /* once-help.pd */,
 				FA4118AB1AA6D92900F84F84 /* once.pd */,
-				FA4118AC1AA6D92900F84F84 /* pan_example_tilde.pd_darwin */,
 				FA4118AD1AA6D92900F84F84 /* panner~.pd */,
 				FA4118AE1AA6D92900F84F84 /* pd_for_libpd.pd */,
 				FA4118AF1AA6D92900F84F84 /* pi.pd */,
