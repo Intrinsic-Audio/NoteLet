@@ -12,6 +12,9 @@ class PlayRegionViewController: UIViewController {
 
     var editMode = false
     var composition: Composition!
+    var noteViews: [NoteView] = []
+    
+    var validID = 1
     var patch = PdBase.openFile("master.pd", path: NSBundle.mainBundle().resourcePath)
     
     override func viewDidLoad() {
@@ -93,6 +96,13 @@ class PlayRegionViewController: UIViewController {
                         note.y = y
                         note.name = self.getNoteName(midiNote)
                         
+                        midiNote = (midiNote + major[scale_index]) % 12
+                        midiNote = (midiNote + major[(scale_index + 1) % scale_len]) % 12
+                        
+                        note.details.midiNumber = midiNote
+                        note.details.octave = octaves + 4
+                        note.composition = composition
+                        
                         MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) in
                             var localNote: Note = note.MR_inContext(localContext) as Note
                             var localComposition = self.composition.MR_inContext(localContext) as Composition
@@ -109,16 +119,19 @@ class PlayRegionViewController: UIViewController {
                             localComposition.notes.addObject(note)
                         })
                         
-                        println(scale_index)
-                        
-                        midiNote = (midiNote + major[scale_index]) % 12
-                        midiNote = (midiNote + major[(scale_index + 1) % scale_len]) % 12
                         scale_index = (scale_index + 2) % scale_len
-                        
-                        note.composition = composition
                         
                         var noteView = NoteView(frame: CGRectMake(CGFloat(note.x),
                             CGFloat(note.y), 60.0, 60.0), note: note)
+                        
+                        PdBase.sendMessage("new", withArguments: [], toReceiver: "master")
+                        noteView.id = validID
+                        
+                        var receiver = "note" + String(noteView.id)
+                        PdBase.sendMessage("print 1", withArguments: [], toReceiver: receiver)
+                        validID += 1
+                        
+                        self.noteViews.append(noteView)
                         self.view.addSubview(noteView)
                         
                         x += 70.0
@@ -134,8 +147,6 @@ class PlayRegionViewController: UIViewController {
                 scale_index = nextChord
                 currentChord = nextChord
                 nextChord = (nextChord + 1) % scale_len
-                
-
 
                 x += 350.0
                 y -= 140.0
@@ -148,6 +159,12 @@ class PlayRegionViewController: UIViewController {
     
     func editModeChanged(notification : NSNotification){
         self.editMode = !self.editMode
+        
+        println("killing animations")
+
+        for noteView in noteViews {
+            noteView.modeChange()
+        }
     }
     
     // MARK: - Navigation

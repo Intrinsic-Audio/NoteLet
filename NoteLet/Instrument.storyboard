@@ -145,35 +145,35 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LK9-7b-doC" customClass="EffectSlider" customModule="NoteLet" customModuleProvider="target">
-                                <rect key="frame" x="80" y="309" width="160" height="40"/>
+                                <rect key="frame" x="80" y="309" width="160" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNu-IS-wIw" customClass="EffectSlider" customModule="NoteLet" customModuleProvider="target">
-                                <rect key="frame" x="80" y="357" width="160" height="40"/>
+                                <rect key="frame" x="80" y="357" width="160" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ekn-ua-100" customClass="EffectSlider" customModule="NoteLet" customModuleProvider="target">
-                                <rect key="frame" x="80" y="405" width="160" height="40"/>
+                                <rect key="frame" x="80" y="405" width="160" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vXv-Sd-86P" customClass="EffectSlider" customModule="NoteLet" customModuleProvider="target">
-                                <rect key="frame" x="80" y="453" width="160" height="40"/>
+                                <rect key="frame" x="80" y="453" width="160" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kxf-n2-6z7" customClass="EffectSlider" customModule="NoteLet" customModuleProvider="target">
-                                <rect key="frame" x="80" y="501" width="160" height="40"/>
+                                <rect key="frame" x="80" y="501" width="160" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCn-Hc-qZD" customClass="EffectSlider" customModule="NoteLet" customModuleProvider="target">
-                                <rect key="frame" x="80" y="549" width="160" height="40"/>
+                                <rect key="frame" x="80" y="549" width="160" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddV-ec-UV3" customClass="EffectSlider" customModule="NoteLet" customModuleProvider="target">
-                                <rect key="frame" x="80" y="597" width="160" height="40"/>
+                                <rect key="frame" x="80" y="597" width="160" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EdY-YV-SnF" customClass="EffectSlider" customModule="NoteLet" customModuleProvider="target">
-                                <rect key="frame" x="80" y="645" width="160" height="40"/>
+                                <rect key="frame" x="80" y="645" width="160" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Effect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzO-BP-XBH">
@@ -540,6 +540,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRG-fB-Een">
+                                <rect key="frame" x="170" y="112" width="38" height="38"/>
+                                <state key="normal" image="Minus">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="decrementPitch:" destination="0em-sL-woJ" eventType="touchUpInside" id="sxo-0I-95q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pitch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dk1-PU-NzA">
+                                <rect key="frame" x="170" y="37" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nf1-Zw-eIi">
+                                <rect key="frame" x="170" y="66" width="38" height="38"/>
+                                <state key="normal" image="Plus">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="incrementPitch:" destination="0em-sL-woJ" eventType="touchUpInside" id="eyZ-Xo-6fj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -605,4 +629,8 @@
             <point key="canvasLocation" x="961" y="2005"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Minus" width="50" height="50"/>
+        <image name="Plus" width="50" height="50"/>
+    </resources>
 </document>

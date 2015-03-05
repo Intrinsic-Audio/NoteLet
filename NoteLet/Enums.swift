@@ -25,3 +25,14 @@ enum NoteConfiguration {
     case Chords
     case Spiral
 }
+
+func getScale(scale: Scale) -> [Int]{
+    switch scale {
+    case .Major:
+        return [2, 2, 1, 2, 2, 2, 1]
+    case .Minor:
+        return [2, 1, 2, 2, 2, 1, 2]
+    case .Pentatonic:
+        return [2, 2, 2, 2, 2]
+    }
+}

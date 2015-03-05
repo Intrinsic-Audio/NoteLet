@@ -36,21 +36,18 @@ class CurrentPlayNoteViewController: UIViewController {
     }
     
     func updateCurrentNote(notification: NSNotification) {
-        if let info = notification.userInfo as? Dictionary<String, Note> {
-
-            let note = info["note"] as Note!
-            
-            println("\(currentNoteView.frame.origin)")
+        if let info = notification.userInfo as? Dictionary<String, NoteView> {
+            let noteView = info["note"] as NoteView!
             
             if let curNote = currentNote {
                 curNote.removeFromSuperview()
                 currentNote = nil
             }
             
-            currentNote = NoteView(frame: CGRectMake(20.0, 20.0, 60.0, 60.0), note: note)
+            currentNote = NoteView(frame: CGRectMake(20.0, 20.0, 60.0, 60.0), note: noteView.note)
             currentNoteView.addSubview(currentNote!)
             
-            holdSwitch.on = Bool(note.details.hold)
+            holdSwitch.on = Bool(noteView.note.details.hold)
         }
     }
     

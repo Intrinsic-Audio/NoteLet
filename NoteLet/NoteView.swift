@@ -14,24 +14,26 @@ class NoteView : UIView {
     var editMode = false
     var note: Note!
     
-    var patch = PdBase.openFile("wavetable_synth.pd", path: NSBundle.mainBundle().resourcePath)
-    var dollarZero: Int32
     var isActive = false
     var playing = false
     var selected = false
     var touchStart: CGPoint?
     
+    var scaledNote: NSNumber
+    var id = 1
+    
     var notifCenter = NSNotificationCenter.defaultCenter()
     
-    // Never called
+    // Never called, will fail if it is
     required init(coder aDecoder: NSCoder) {
-        dollarZero = PdBase.dollarZeroForFile(patch)
+        scaledNote = Int(note.details.midiNumber) + (Int(note.details.note.details.octave) * 12)
+
         super.init(coder: aDecoder)
     }
     
     init(frame bounds: CGRect, note: Note){
         self.note = note
-        dollarZero = PdBase.dollarZeroForFile(patch)
+        scaledNote = Int(note.details.midiNumber) + (Int(note.details.note.details.octave) * 12)
 
         super.init(frame: bounds)
         
@@ -45,6 +47,9 @@ class NoteView : UIView {
         self.addSubview(noteLabel)
     
         notifCenter.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
+        notifCenter.addObserver(self, selector: "pitchChanged:", name: "updatePitch", object: nil)
+
+        
         
         // Create red-blue gradient for notes
         var gradientLayer: RadialGradientLayer = RadialGradientLayer()
@@ -56,7 +61,6 @@ class NoteView : UIView {
     }
     
     deinit {
-        PdBase.closeFile(patch)
         notifCenter.removeObserver(self)
     }
 
@@ -68,7 +72,7 @@ class NoteView : UIView {
         var touch: UITouch = touches.anyObject() as UITouch
         touchStart = touch.locationInView(self)
         
-        notifCenter.postNotificationName("updateNote", object: nil, userInfo: ["note": note])
+        notifCenter.postNotificationName("updateNote", object: nil, userInfo: ["note": self])
         
         // start playing the note
         if !self.editMode {
@@ -77,16 +81,14 @@ class NoteView : UIView {
             } else {
                 self.play()
             }
+        } else {
+            self.select()
         }
     }
     
     func play() {
-        var receiver = String(dollarZero) + "-note"
-        println(receiver)
-        
-        var scaledNote = Int(note.details.midiNumber) + (Int(note.details.note.details.octave) * 12)
-        println("Note \(scaledNote)")
-        
+        var receiver = "note" + String(id)
+        println(scaledNote)
         PdBase.sendList([scaledNote, 50], toReceiver: receiver)
         
         var animation = CABasicAnimation(keyPath: "transform.scale")
@@ -97,6 +99,30 @@ class NoteView : UIView {
         animation.toValue = 0.3
         self.layer.addAnimation(animation, forKey: "animatePlaying")
         self.playing = true
+    }
+    
+    func select(){
+        if self.selected {
+            self.layer.removeAllAnimations()
+        } else {
+            var borderColor = CABasicAnimation(keyPath: "borderColor")
+            borderColor.fromValue = UIColor.blackColor().CGColor
+            borderColor.toValue = UIColor.yellowColor().CGColor
+            
+            var borderWidth = CABasicAnimation(keyPath: "borderWidth")
+            borderWidth.fromValue = 2
+            borderWidth.toValue = 6
+            
+            var group = CAAnimationGroup()
+            group.duration = 0.25
+            group.autoreverses = true
+            group.repeatCount = HUGE
+            group.animations = [borderWidth, borderColor]
+            self.layer.addAnimation(group, forKey: "color and width")
+    
+        }
+        
+        self.selected = !self.selected
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent){
@@ -122,7 +148,7 @@ class NoteView : UIView {
             convertedY = 0
         }
         
-        var receiver = String(dollarZero) + "-note"
+        var receiver = "note" + String(id)
         PdBase.sendMessage("pitchbend", withArguments: [convertedY], toReceiver: receiver)
     }
     
@@ -140,11 +166,7 @@ class NoteView : UIView {
     }
     
     func stop () {
-        var receiver = String(dollarZero) + "-note"
-        println(receiver)
-        var scaledNote = Int(note.details.midiNumber) + (Int(note.details.note.details.octave) * 12)
-        println("Note \(scaledNote)")
-        
+        var receiver = "note" + String(id)
         PdBase.sendList([scaledNote, 0], toReceiver: receiver)
         
         self.layer.removeAllAnimations()
@@ -167,5 +189,15 @@ class NoteView : UIView {
         UIView.animateWithDuration(0.05, animations: {
             self.center = newCenter
         })
+    }
+    
+    func modeChange() {        
+        self.layer.removeAllAnimations()
+        self.selected = false
+        
+        if self.playing {
+            var receiver = "note" + String(id)
+            PdBase.sendList([scaledNote, 0], toReceiver: receiver)
+        }
     }
 }

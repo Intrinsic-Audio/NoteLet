@@ -16,20 +16,24 @@ class EffectSlider : UIView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        var fillFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+        var fillFrame = CGRectMake(0, 0, self.frame.size.width / 2, self.frame.size.height)
         fill = UIView(frame: fillFrame)
         fill.backgroundColor = UIColor.redColor()
         
         
         self.layer.cornerRadius = self.frame.size.height / 2
         self.fill.layer.cornerRadius = self.fill.frame.size.height / 2
+        
+        self.addSubview(fill)
     }
+    
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         var touch = touches.anyObject() as UITouch
         var touchPoint = touch.locationInView(self)
         
         self.updateValue(touchPoint)
+        self.updateFill(touchPoint)
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
@@ -37,6 +41,7 @@ class EffectSlider : UIView {
         var touchPoint = touch.locationInView(self)
         
         self.updateValue(touchPoint)
+        self.updateFill(touchPoint)
     }
     
     func updateFill(touchPoint: CGPoint){
@@ -56,6 +61,8 @@ class EffectSlider : UIView {
         var scaleFactor = currentWidth / self.frame.size.width
         
         var value = 127 * scaleFactor
+        
+        // Send value to receiver in pure data
         
     }
 }
