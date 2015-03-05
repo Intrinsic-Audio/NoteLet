@@ -94,6 +94,8 @@ class NoteView : UIView {
                     effect = ["volume": []]
                 case 2:
                     effect = ["filter": ["frequency"]]
+                case 3:
+                    effect = ["phase": []]
                 default:
                     println("unsupported mod type")
                 }
