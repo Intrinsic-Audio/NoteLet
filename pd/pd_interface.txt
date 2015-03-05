@@ -8,36 +8,36 @@ Possible Messages:
 	new							Spawn a new note
 	reset 						Delete all notes
 
+ALL RANGES ARE FROM 0-127
+
 Receiver: effects
 Possible Messages:
 
-	chorus on <float>			
-	chorus rate <float>			> 0, frequency in Hz					
+	chorus on <float>			0 or 1
+	chorus rate <float>								
 	chorus depth <float>												
 	chorus mix <float>				 									
 
 	tremolo on <float> 			0 or 1
-	tremolo rate <float> 		> 0, frequency in Hz					
-	tremolo depth <float> 		usually 0 to 1, can be any number		
+	tremolo rate <float> 							
+	tremolo depth <float> 				
 	tremolo shape <float> 		0 - sine, 
 								1 - sawtooth, 
 								2 - reverse sawtooth, 
 								3 - square
 
 	delay on <float> 			0 or 1
-	delay feedback <float>		from 0 to 1 							
-	delay time <float> 			time in ms 								
-	delay amount <float> 		0 to 1, can be any number 				
+	delay feedback <float>		 							
+	delay time <float> 			 								
+	delay amount <float> 						
 
 	ringmod on <float> 			0 or 1
-	ringmod rate <float> 		> 0, frequency in Hz 					
-	ringmod depth <float> 		0 to 1 									
-	ringmod rate mod <float>	Set mod range
-	ringmod depth mod <float>	Set mod range
+	ringmod rate <float> 							
+	ringmod depth <float> 											
 
 	filter on <float> 			0 or 1
-	filter frequency <float> 	> 40 and < 22000 - frequency in Hz 		
-	filter resonance <float> 	> 0, usually from 0 to ~20  			
+	filter frequency <float> 	 		
+	filter resonance <float> 				
 	filter gain <float> 		Any number								
 	filter type <symbol>		"lowpass", 		// No effect from Gain
 								"bandpass", 	// No effect from Gain
@@ -47,12 +47,8 @@ Possible Messages:
 								"highshelf", 	// Gain effects this
 								"lowshelf",		// Gain effects this
 
-	pan <float> 				0 to 1, 
-								0 is left, 
-								1 is right, 
-								.5 is equal in both speakers 
-
-	volume <float> 				same as gain, but only from 0 to 1
+	pan <float> 				0 = left, 64 = center, 127 = right 
+	volume <float> 				
 
 
 Receiver: note#  (e.g. "note1", "note2", etc) 
@@ -72,34 +68,38 @@ Possible messages:
 	filter frequency <float>	set lowpass filter frequency
 	volume <float> 				set volume
 
-Available Waveforms:
+Available Waveforms: 
 
-	sine_table
-	sawtooth_table
-	triangle_table
-	square_table
-	random_table
-	random2_table
-	5_table
-	6_table
-	7_table
-	8_table
-	9_table
-	10_table
-	11_table
-	12_table
-	13_table
-	14_table
-	15_table
-	16_table
-	17_table
-	18_table
-	19_table
-	20_table
-	21_table
-	22_table
-	23_table
-	24_table
+	Most of these have been taken from Subtractor Synth
+	<table_id> - table description/name
+
+	1_table  - sine_table
+	2_table  - sawtooth_table
+	3_table  - triangle_table
+	4_table  - square_table
+	5_table  - random_table
+	6_table  - random2_table
+	7_table  - inverse sawtooth table
+	8_table  - 5_table
+	9_table  - 6_table
+	10_table - 7_table
+	11_table - 8_table
+	12_table - 9_table
+	13_table - 10_table
+	14_table - 11_table
+	15_table - 12_table
+	16_table - 13_table
+	17_table - 14_table
+	18_table - 15_table
+	19_table - 16_table
+	20_table - 17_table
+	21_table - 18_table
+	22_table - 19_table
+	23_table - 20_table
+	24_table - 21_table
+	25_table - 22_table
+	26_table - 23_table
+	27_table - 24_table
 	default_wavetable
 
 

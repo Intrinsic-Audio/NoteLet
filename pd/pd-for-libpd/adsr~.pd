@@ -1,123 +1,123 @@
-#N canvas 114 60 910 451 10;
-#X obj 17 -64 sel 0;
-#X obj 17 50 s \$0-off;
-#X obj 183 58 pack 1 100;
-#X obj 309 66 delay 100;
-#X obj 309 152 pack 0.5 500;
-#X obj 569 15 pack 0 300;
-#X obj 569 -6 r \$0-off;
-#X obj 240 17 t f f;
-#X obj 703 62 b;
-#X obj 703 84 pack 0 50;
-#X obj 164 18 t b b b;
-#X obj 17 2 t b b;
-#X msg 411 65 0;
-#X msg 385 65 1;
-#X obj 309 99 spigot;
-#X msg 17 120 note off;
-#X msg 34 203 kill note;
-#X obj 568 242 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 114 60 907 532 10;
+#X obj 17 7 sel 0;
+#X obj 17 121 s \$0-off;
+#X obj 183 129 pack 1 100;
+#X obj 309 137 delay 100;
+#X obj 309 223 pack 0.5 500;
+#X obj 569 86 pack 0 300;
+#X obj 569 65 r \$0-off;
+#X obj 240 88 t f f;
+#X obj 703 133 b;
+#X obj 703 155 pack 0 50;
+#X obj 164 89 t b b b;
+#X obj 17 73 t b b;
+#X msg 411 136 0;
+#X msg 385 136 1;
+#X obj 309 170 spigot;
+#X msg 17 191 note off;
+#X msg 34 274 kill note;
+#X obj 568 313 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 735 -40 s \$0-print;
-#X obj 50 229 r \$0-print;
-#X obj 17 254 spigot;
-#X obj 703 117 t l l;
-#X obj 730 142 s \$0-indicate;
-#X obj 569 37 t l l;
-#X obj 183 81 t l l;
-#X obj 356 198 t l l;
-#X obj 635 -40 s \$0-kill;
-#X obj 34 182 r \$0-kill;
-#X obj 356 175 spigot;
-#X obj 568 151 r \$0-indicate;
-#X obj 44 -20 s \$0-on;
-#X obj 17 99 r \$0-off;
-#X obj 26 140 r \$0-on;
-#X obj 17 277 print ADSR-\$0;
-#X obj 164 -7 r \$0-on;
-#X obj 308 -40 s \$0-decay;
-#X obj 378 104 r \$0-decay;
-#X obj 412 -40 s \$0-sustain;
-#X obj 462 76 r \$0-sustain;
-#X obj 518 -40 s \$0-release;
-#X obj 626 -7 r \$0-release;
-#X obj 703 39 r \$0-kill;
-#X obj 569 82 s \$0-out_gain;
-#X obj 185 219 r \$0-out_gain;
-#X obj 356 243 s \$0-out_gain;
-#X obj 183 122 s \$0-out_gain;
-#X obj 210 102 s \$0-indicate;
-#X obj 703 163 s \$0-out_gain;
-#X obj 596 60 s \$0-indicate;
-#X obj 383 222 s \$0-indicate;
-#X obj 462 98 t b f b;
-#X obj 568 196 == 0;
-#X obj 568 217 == 0;
-#X text 79 56 Start Note On ->;
-#X text 168 151 Start Sustain Phase ->;
-#X text 430 13 Start Release Phase ->;
-#X text 766 86 <- Kill Immediately;
-#X obj 44 29 s \$0-kill_decay;
-#X obj 411 39 r \$0-kill_decay;
-#X obj 171 -38 cnv 15 15 15 empty empty empty 20 12 0 14 -181071 -66577
+#X obj 735 31 s \$0-print;
+#X obj 50 300 r \$0-print;
+#X obj 17 325 spigot;
+#X obj 703 188 t l l;
+#X obj 730 213 s \$0-indicate;
+#X obj 569 108 t l l;
+#X obj 183 152 t l l;
+#X obj 356 269 t l l;
+#X obj 635 31 s \$0-kill;
+#X obj 34 253 r \$0-kill;
+#X obj 356 246 spigot;
+#X obj 568 222 r \$0-indicate;
+#X obj 44 51 s \$0-on;
+#X obj 17 170 r \$0-off;
+#X obj 26 211 r \$0-on;
+#X obj 17 348 print ADSR-\$0;
+#X obj 164 64 r \$0-on;
+#X obj 308 31 s \$0-decay;
+#X obj 378 175 r \$0-decay;
+#X obj 412 31 s \$0-sustain;
+#X obj 462 147 r \$0-sustain;
+#X obj 518 31 s \$0-release;
+#X obj 626 64 r \$0-release;
+#X obj 703 110 r \$0-kill;
+#X obj 569 153 s \$0-out_gain;
+#X obj 185 290 r \$0-out_gain;
+#X obj 356 314 s \$0-out_gain;
+#X obj 183 193 s \$0-out_gain;
+#X obj 210 173 s \$0-indicate;
+#X obj 703 234 s \$0-out_gain;
+#X obj 596 131 s \$0-indicate;
+#X obj 383 293 s \$0-indicate;
+#X obj 462 169 t b f b;
+#X obj 568 267 == 0;
+#X obj 568 288 == 0;
+#X text 79 127 Start Note On ->;
+#X text 168 222 Start Sustain Phase ->;
+#X text 430 84 Start Release Phase ->;
+#X text 766 157 <- Kill Immediately;
+#X obj 44 100 s \$0-kill_decay;
+#X obj 411 110 r \$0-kill_decay;
+#X obj 171 33 cnv 15 15 15 empty empty empty 20 12 0 14 -181071 -66577
 0;
-#X obj 223 -7 cnv 15 15 15 empty empty empty 20 12 0 14 -181071 -66577
+#X obj 223 64 cnv 15 15 15 empty empty empty 20 12 0 14 -181071 -66577
 0;
-#X obj 395 -38 cnv 15 15 15 empty empty empty 20 12 0 14 -71602 -66577
+#X obj 395 33 cnv 15 15 15 empty empty empty 20 12 0 14 -71602 -66577
 0;
-#X obj 444 76 cnv 15 15 15 empty empty empty 20 12 0 14 -71602 -66577
+#X obj 444 147 cnv 15 15 15 empty empty empty 20 12 0 14 -71602 -66577
 0;
-#X obj 361 105 cnv 15 15 15 empty empty empty 20 12 0 14 -259329 -66577
+#X obj 361 176 cnv 15 15 15 empty empty empty 20 12 0 14 -259329 -66577
 0;
-#X obj 291 -38 cnv 15 15 15 empty empty empty 20 12 0 14 -259329 -66577
+#X obj 291 33 cnv 15 15 15 empty empty empty 20 12 0 14 -259329 -66577
 0;
-#X obj 501 -38 cnv 15 15 15 empty empty empty 20 12 0 14 -11423 -66577
+#X obj 501 33 cnv 15 15 15 empty empty empty 20 12 0 14 -11423 -66577
 0;
-#X obj 704 -5 cnv 15 15 15 empty empty empty 20 12 0 14 -11423 -66577
+#X obj 704 66 cnv 15 15 15 empty empty empty 20 12 0 14 -11423 -66577
 0;
-#X msg 462 122 1;
+#X msg 462 193 1;
 #X text 16 -142 Note on/off command;
-#X text 584 240 <- 1 when Note On \, 0 when Note Off;
-#X obj 185 273 outlet~ VOL_MULTIPLIER;
-#X obj 568 280 outlet NOTE_INDICATOR;
-#X obj 147 -6 cnv 15 15 15 empty empty empty 20 12 0 14 -219230 -66577
+#X text 584 311 <- 1 when Note On \, 0 when Note Off;
+#X obj 185 344 outlet~ VOL_MULTIPLIER;
+#X obj 568 351 outlet NOTE_INDICATOR;
+#X obj 147 65 cnv 15 15 15 empty empty empty 20 12 0 14 -219230 -66577
 0;
-#X obj -1 50 cnv 15 15 15 empty empty empty 20 12 0 14 -129714 -66577
+#X obj -1 121 cnv 15 15 15 empty empty empty 20 12 0 14 -129714 -66577
 0;
-#X obj 552 -5 cnv 15 15 15 empty empty empty 20 12 0 14 -129714 -66577
+#X obj 552 66 cnv 15 15 15 empty empty empty 20 12 0 14 -129714 -66577
 0;
-#X obj 27 -18 cnv 15 15 15 empty empty empty 20 12 0 14 -219230 -66577
+#X obj 27 53 cnv 15 15 15 empty empty empty 20 12 0 14 -219230 -66577
 0;
-#X obj 72 100 cnv 15 15 15 empty empty empty 20 12 0 14 -129714 -66577
+#X obj 72 171 cnv 15 15 15 empty empty empty 20 12 0 14 -129714 -66577
 0;
-#X obj 74 141 cnv 15 15 15 empty empty empty 20 12 0 14 -219230 -66577
+#X obj 74 212 cnv 15 15 15 empty empty empty 20 12 0 14 -219230 -66577
 0;
-#X obj 618 -38 cnv 15 15 15 empty empty empty 20 12 0 14 -36887 -66577
+#X obj 618 33 cnv 15 15 15 empty empty empty 20 12 0 14 -36887 -66577
 0;
-#X obj 685 40 cnv 15 15 15 empty empty empty 20 12 0 14 -36887 -66577
+#X obj 685 111 cnv 15 15 15 empty empty empty 20 12 0 14 -36887 -66577
 0;
-#X obj 94 183 cnv 15 15 15 empty empty empty 20 12 0 14 -36887 -66577
+#X obj 94 254 cnv 15 15 15 empty empty empty 20 12 0 14 -36887 -66577
 0;
-#X obj 568 260 change;
-#X obj 718 -40 cnv 15 15 15 empty empty empty 20 12 0 14 -191407 -66577
+#X obj 568 331 change;
+#X obj 718 31 cnv 15 15 15 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X obj 116 230 cnv 15 15 15 empty empty empty 20 12 0 14 -191407 -66577
+#X obj 116 301 cnv 15 15 15 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X obj 568 174 line 0 0 1;
-#X floatatom 324 1 5 0 0 0 - - -;
-#X obj 188 -40 s \$0-attack;
-#X obj 71 3 s \$0-vol;
-#X obj 108 -40 r \$0-vol;
-#X obj 108 -20 / 127;
-#X obj 183 39 f;
-#X obj 240 -7 r \$0-attack;
-#X obj 185 243 vline~;
-#X text 526 122 0;
-#X msg 501 122 0;
-#X obj 44 -41 t f f;
-#X msg 26 161 note on \$1;
+#X obj 568 245 line 0 0 1;
+#X floatatom 324 72 5 0 0 0 - - -;
+#X obj 188 31 s \$0-attack;
+#X obj 71 74 s \$0-vol;
+#X obj 108 31 r \$0-vol;
+#X obj 108 51 / 127;
+#X obj 183 110 f;
+#X obj 240 64 r \$0-attack;
+#X obj 185 314 vline~;
+#X text 526 193 0;
+#X msg 501 193 0;
+#X obj 44 30 t f f;
+#X msg 26 232 note on \$1;
 #X obj 17 -123 inlet COMMANDS;
-#X obj 271 -60 unpack 0 0 0 0;
+#X obj 271 11 unpack 0 0 0 0;
 #N canvas 567 23 440 339 help 0;
 #X obj 13 -95 inlet;
 #X obj 13 188 print HELP;
@@ -138,7 +138,7 @@ methods: print available methods to the console \, -----------------------------
 \, ----------------------- adsr.pd ----------------------- \,;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
-#X restore 697 -62 pd help;
+#X restore 697 9 pd help;
 #X obj 435 -142 inlet ADSR_LIST;
 #X msg 435 -121 set \$1 \$2 \$3 \$4;
 #N canvas 803 22 450 300 methods 0;
@@ -148,10 +148,13 @@ methods: print available methods to the console \, -----------------------------
 #X obj -433 17 print ADSR_METHODS;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X restore 758 -65 pd methods;
+#X restore 758 6 pd methods;
 #X obj 17 -102 route attack decay sustain release kill print set help
 methods adsr;
-#X obj 17 -41 b;
+#X obj 17 30 b;
+#X obj 334 -34 list trim;
+#X obj 133 300 loadbang;
+#X msg 131 323 1;
 #X connect 0 0 104 0;
 #X connect 0 1 95 0;
 #X connect 2 0 24 0;
@@ -227,9 +230,12 @@ methods adsr;
 #X connect 103 3 39 0;
 #X connect 103 4 26 0;
 #X connect 103 5 18 0;
-#X connect 103 6 98 0;
+#X connect 103 6 105 0;
 #X connect 103 7 99 0;
 #X connect 103 8 102 0;
-#X connect 103 9 98 0;
+#X connect 103 9 105 0;
 #X connect 103 10 0 0;
 #X connect 104 0 11 0;
+#X connect 105 0 98 0;
+#X connect 106 0 107 0;
+#X connect 107 0 20 1;
