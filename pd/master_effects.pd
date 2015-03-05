@@ -7,8 +7,8 @@
 #X obj 15 215 multifilter~;
 #X obj 174 18 inlet METHODS;
 #N canvas 374 353 368 204 methods 0;
-#X obj -143 -27 inlet;
-#X obj 121 20 s \$0-volume;
+#X obj -145 -25 inlet;
+#X obj 119 57 s \$0-volume;
 #N canvas 720 412 395 196 init 0;
 #X obj 0 -2 loadbang;
 #X obj 0 160 outlet;
@@ -21,17 +21,18 @@ resonance 10 \, filter gain 30 \, filter on 0 \, pan 64 \, volume 127
 \,;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
-#X restore -78 -26 pd init;
-#X obj -143 20 s \$0-chorus;
-#X obj -99 41 s \$0-ringmod;
-#X obj -143 -6 route chorus ringmod delay tremolo filter pan volume
+#X restore -80 11 pd init;
+#X obj -145 57 s \$0-chorus;
+#X obj -101 78 s \$0-ringmod;
+#X obj -145 31 route chorus ringmod delay tremolo filter pan volume
 ;
-#X obj -55 20 s \$0-delay;
-#X obj -11 41 s \$0-tremolo;
-#X obj 33 20 s \$0-filter;
-#X obj 77 42 s \$0-pan;
-#X obj -25 97 print ERROR invalid effects method;
-#X connect 0 0 5 0;
+#X obj -57 57 s \$0-delay;
+#X obj -13 78 s \$0-tremolo;
+#X obj 31 57 s \$0-filter;
+#X obj 75 79 s \$0-pan;
+#X obj -27 134 print ERROR invalid effects method;
+#X obj -145 2 list trim;
+#X connect 0 0 11 0;
 #X connect 2 0 5 0;
 #X connect 5 0 3 0;
 #X connect 5 1 4 0;
@@ -41,6 +42,7 @@ resonance 10 \, filter gain 30 \, filter on 0 \, pan 64 \, volume 127
 #X connect 5 5 9 0;
 #X connect 5 6 1 0;
 #X connect 5 7 10 0;
+#X connect 11 0 5 0;
 #X restore 174 38 pd methods;
 #X obj 15 266 panner~;
 #X obj 82 266 r \$0-volume;
