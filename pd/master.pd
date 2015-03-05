@@ -4,7 +4,7 @@
 #N canvas 172 210 190 151 init 0;
 #X obj -151 5 loadbang;
 #X obj -151 27 f \$0;
-#X msg -151 48 \; pd dsp 1 \; all waveform sawtooth_table \;;
+#X msg -151 48 \; pd dsp 1 \;;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 6 5 pd init;
