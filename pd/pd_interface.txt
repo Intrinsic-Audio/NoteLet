@@ -1,6 +1,6 @@
 Interface:
 
-	master.pd 
+	master.pd
 
 Receiver: master
 Possible Messages:
@@ -10,14 +10,28 @@ Possible Messages:
 
 ALL RANGES ARE FROM 0-127
 
+I recommend you use the following effects for Play Mode sliders (in this order!):
+Note that all have "auto" methods except phase, which just takes a float (0-127).
+
+	phase
+	chorus
+	ringmod
+	delay
+	tremolo
+	filter
+
 Receiver: effects
 Possible Messages:
 
+	// all auto methods will automatically turn effects on & off (0 == off)
+
+	chorus auto <float>
 	chorus on <float>			0 or 1
 	chorus rate <float>								
 	chorus depth <float>												
 	chorus mix <float>				 									
 
+	tremolo auto <float>
 	tremolo on <float> 			0 or 1
 	tremolo rate <float> 							
 	tremolo depth <float> 				
@@ -26,15 +40,18 @@ Possible Messages:
 								2 - reverse sawtooth, 
 								3 - square
 
+	delay auto <float>
 	delay on <float> 			0 or 1
 	delay feedback <float>		 							
 	delay time <float> 			 								
 	delay amount <float> 						
 
+	ringmod auto <float>
 	ringmod on <float> 			0 or 1
 	ringmod rate <float> 							
 	ringmod depth <float> 											
 
+	filter auto <float>
 	filter on <float> 			0 or 1
 	filter frequency <float> 	 		
 	filter resonance <float> 				
