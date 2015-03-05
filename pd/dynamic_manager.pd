@@ -1,7 +1,7 @@
 #N canvas 621 233 377 255 10;
 #X obj 16 99 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#N canvas 121 66 116 77 \$0-guts 0;
+#N canvas 121 66 116 77 \$0-guts 1;
 #X obj 5 45 outlet~;
 #N canvas 20 410 443 300 \$0-shell 0;
 #X obj 0 200 outlet~;
@@ -34,7 +34,7 @@
 #X connect 9 0 2 0;
 #X restore 103 140 pd \$0-reset;
 #X obj 16 8 inlet CONTROLS;
-#N canvas 858 23 230 388 \$0-new 0;
+#N canvas 858 23 230 388 \$0-new 1;
 #X obj 77 4 inlet;
 #X obj 5 3 r \$0-count;
 #X obj 5 28 + 1;
