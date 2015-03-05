@@ -23,7 +23,7 @@ class NewCompositionViewController : UIViewController, UIPickerViewDataSource, U
     
     var key = Key.C
     var scale = Scale.Major
-    var config = NoteConfiguration.Chords
+    var config = NoteConfiguration.CircleOfFifths
     var bpm = 100
     
     var noteConfigType = NoteConfiguration.CircleOfFifths

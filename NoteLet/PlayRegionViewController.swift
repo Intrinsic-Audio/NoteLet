@@ -160,18 +160,18 @@ class PlayRegionViewController: UIViewController {
         NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
     }
     
-    func septagonCoordinates(radius: Float, xCenter: Float, yCenter: Float) -> Array {
-        var theta = [ 0, 0.897597901025655, 1.795195802051310, 2.692793703076966, 3.590391604102621,4.487989505128276, 5.385587406153931 ]
+    func septagonCoordinates(radius: Double, xCenter: Double, yCenter: Double) -> Array<Array<Double>> {
+        var theta = [0, 0.897597901025655, 1.795195802051310, 2.692793703076966, 3.590391604102621,4.487989505128276, 5.385587406153931]
         
         var x: Array<Double> = []
         var y: Array<Double> = []
         
         for var i = 0; i < 7; i++ {
-            x[i] = (-1 * radius) * sin(theta[i])
-            y[i] = (-1 * radius) * cos(theta[i])
+            x.append((-1 * radius) * sin(theta[i]))
+            y.append((-1 * radius) * cos(theta[i]))
         }
         
-        var coordinates: Array<Array<Double>>
+        var coordinates: Array<Array<Double>> = [[],[]]
         coordinates[0] = x;
         coordinates[1] = y;
         
@@ -189,103 +189,72 @@ class PlayRegionViewController: UIViewController {
     
     func makeCircleOfFifths() {
         
-        var width = Double(self.view.bounds.size.width)
-        var height = Double(self.view.bounds.size.height)
-        var radius: Double
+        var width = self.view.bounds.size.width - CGFloat(55)
+        var height = self.view.bounds.size.height - CGFloat(50)
 
         var x = 0.0
         var y = 0.0
         
-        var scale_index: Int
         var octave: Int
         
-        var midiNums = [2, 2, 1, 2, 2, 2, 1]
+        var midiNums = [0, 2, 4, 5, 7, 9, 11]
         
-        for var i = 0; i < 4; i++ {
-            radius = (i + 1) * (Double(height) / 8)
-            var coordinates = self.septagonCoordinates(radius / 1.12, width/2, height/2)
+        for var rows = 0; rows < 4; rows++ {
+            var radius = (Float(rows) + 1) * (Float(height) / 8)
+            var xCenter = width / 2
+            var yCenter = height / 2
+            var coordinates = self.septagonCoordinates(Double(radius / 1.12), xCenter: Double(xCenter), yCenter: Double(yCenter))
             
-            for var j = 0; j < 7; j++ {
-                x = coordinates[0][j]
-                y = coordinates[1][j]
-                scale_index = midiNums[self.circleOfFifths(j + (i*4))]
-            }
-        }
-        
-        // Add 1 since we're modding on this
-        var scale_len = major.count
-        
-        // Create 4 rows of 2 chords.  Each chord has 2 octaves and 4 notes
-        for var rows = 0; rows < 4; rows += 1 {
-            for var chords = 0; chords < 2; chords += 1 {
-                for var octaves = 0; octaves < 2; octaves += 1 {
-                    for var notes = 0; notes < 4; notes += 1 {
+            for var angles = 0; angles < 7; angles++ {
+                x = coordinates[0][angles]
+                y = coordinates[1][angles]
+                
+                var midiNote = midiNums[self.circleOfFifths(angles + (rows * 4))]
+                octave = rows + 3
                         
-                        // Create the entities and ensure they are saved before setting positions
-                        var note : Note = Note.MR_createEntity() as Note
-                        var noteDetails = NoteAudioDetails.MR_createEntity() as NoteAudioDetails
-                        noteDetails.note = note
-                        note.details = noteDetails
-                        NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
-                        
-                        note.x = x
-                        note.y = y
-                        note.name = getNoteName(midiNote)
-                        
-                        midiNote = (midiNote + major[scale_index]) % 12
-                        midiNote = (midiNote + major[(scale_index + 1) % scale_len]) % 12
-                        
-                        note.details.midiNumber = midiNote
-                        note.details.octave = octaves + 4
-                        note.composition = composition
-                        
-                        MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) in
-                            var localNote: Note = note.MR_inContext(localContext) as Note
-                            var localComposition = self.composition.MR_inContext(localContext) as Composition
-                            var localDetails = note.details.MR_inContext(localContext)  as NoteAudioDetails
-                            
-                            localNote.x = x
-                            localNote.y = y
-                            localNote.name = note.name
-                            
-                            localDetails.midiNumber = midiNote
-                            localDetails.octave = octaves + 4
-                            
-                            localNote.composition = localComposition
-                            localComposition.notes.addObject(note)
-                        })
-                        
-                        scale_index = (scale_index + 2) % scale_len
-                        
-                        var noteView = NoteView(frame: CGRectMake(CGFloat(note.x),
+                // Create the entities and ensure they are saved before setting positions
+                var note : Note = Note.MR_createEntity() as Note
+                var noteDetails = NoteAudioDetails.MR_createEntity() as NoteAudioDetails
+                noteDetails.note = note
+                note.details = noteDetails
+                NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
+                
+                note.x = x
+                note.y = y
+                note.name = getNoteName(midiNote)
+                
+                note.details.midiNumber = midiNote
+                note.details.octave = octave
+                note.composition = composition
+                
+                MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) in
+                    var localNote: Note = note.MR_inContext(localContext) as Note
+                    var localComposition = self.composition.MR_inContext(localContext) as Composition
+                    var localDetails = note.details.MR_inContext(localContext)  as NoteAudioDetails
+                    
+                    localNote.x = x
+                    localNote.y = y
+                    localNote.name = note.name
+                    
+                    localDetails.midiNumber = midiNote
+                    localDetails.octave = octave
+                    
+                    localNote.composition = localComposition
+                    localComposition.notes.addObject(note)
+                })
+                
+                var noteView = NoteView(frame: CGRectMake(CGFloat(note.x),
                             CGFloat(note.y), 60.0, 60.0), note: note)
                         
-                        PdBase.sendMessage("new", withArguments: [], toReceiver: "master")
-                        noteView.id = validID
-                        validID += 1
-                        
-                        self.noteViews.append(noteView)
-                        self.view.addSubview(noteView)
-                        
-                        x += 70.0
-                    }
-                    scale_index = currentChord
-                    midiNote = currentMidiNote
-                    x -= 280.0
-                    y += 70.0
-                }
-                currentMidiNote = (currentMidiNote + major[scale_index]) % 12
-                midiNote = currentMidiNote
+                PdBase.sendMessage("new", withArguments: [], toReceiver: "master")
+                noteView.id = validID
+                validID += 1
                 
-                scale_index = nextChord
-                currentChord = nextChord
-                nextChord = (nextChord + 1) % scale_len
+                self.noteViews.append(noteView)
+                self.view.addSubview(noteView)
                 
-                x += 350.0
-                y -= 140.0
+            
             }
-            y += 170.0
-            x = 60.0
         }
         NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
     }
