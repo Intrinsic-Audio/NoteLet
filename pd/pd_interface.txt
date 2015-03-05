@@ -1,10 +1,16 @@
-
-Master Interface:
+Interface:
 
 	master.pd 
 
+Receiver: master
+Possible Messages:
+	
+	new							Spawn a new note
+	reset 						Delete all notes
+
 Receiver: effects
 Possible Messages:
+
 	chorus on <float>			
 	chorus rate <float>			> 0, frequency in Hz					
 	chorus depth <float>												
@@ -48,37 +54,25 @@ Possible Messages:
 
 	volume <float> 				same as gain, but only from 0 to 1
 
-Note Interface:
 
-Patches:
-
-	wavetable_synth.pd
-	sampler.pd  		// Not yet implemented, use wavetable_synth.pd for now
-
-// Send two floats for note-on & note-off
-Receiver: $0-note 
+Receiver: note#  (e.g. "note1", "note2", etc) 
 Possible messages:  
 
 	<list> 						(key, velocity) pair as a list, both from 0 to 127
 	pitchbend <float>
 	pitchbend_range <float>
 	adsr <list>					"attack, decay, sustain, release",  
-	waveform <symbol>			name of waveform. see bottom for names. takes format: <name>_table 
+	waveform <symbol>			name of waveform. see bottom for names
 	flush <bang>				sends note-off to all notes
-	print 						Prints adsr note-on & offs in Pd - debugging
+	print <float>				0 or 1 - Prints adsr note-on & offs in Pd - debugging
+	phase <float>				Phase offset
+	mode <float>				0 - Normal (phase does nothing)
+								1 - Subtraction (subtracting wave with phase offset)
+								2 - Multiplication
+	filter frequency <float>	set lowpass filter frequency
+	volume <float> 				set volume
 
-Receiver: $0-effects
-Possible messages (all lists):
-
-	filter frequency <float> 	> 40 and < 22000 - frequency in Hz 		
-								Lowpass filter
-								Filter is always on, frequency of 22000 means no effect
-
-	volume <float> 				same as gain, but only from 0 to 1
-
-
-
-Available Waveforms for wavetable_synth.pd:
+Available Waveforms:
 
 	sine_table
 	sawtooth_table
