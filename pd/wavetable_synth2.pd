@@ -1,4 +1,4 @@
-#N canvas 769 23 371 178 10;
+#N canvas -8 23 371 178 10;
 #X obj 7 -58 r \$0-note;
 #X obj 82 24 r \$0-effects;
 #N canvas 457 536 387 102 init 0;
@@ -22,10 +22,10 @@
 #X obj 139 88 print TO_WAVETABLE_EFFECTS-\$0;
 #X obj 119 -57 r \$0-wavetable;
 #X obj 119 -35 route effect;
-#X obj 68 -58 r note1;
 #X obj 24 6 synth2~;
+#X obj 68 -58 r note2;
 #X connect 0 0 9 0;
-#X connect 0 0 14 0;
+#X connect 0 0 13 0;
 #X connect 1 0 10 0;
 #X connect 1 0 7 1;
 #X connect 4 0 5 0;
@@ -34,6 +34,6 @@
 #X connect 7 0 8 0;
 #X connect 11 0 12 0;
 #X connect 12 0 7 1;
-#X connect 12 1 14 0;
-#X connect 13 0 14 0;
-#X connect 14 0 7 0;
+#X connect 12 1 13 0;
+#X connect 13 0 7 0;
+#X connect 14 0 13 0;
