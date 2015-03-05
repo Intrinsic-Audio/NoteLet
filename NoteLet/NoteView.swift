@@ -15,6 +15,8 @@ class NoteView : UIView {
     var note: Note!
     
     var isActive = false
+    var touched = false
+    
     var playing = false
     var selected = false
     var touchStart: CGPoint?
@@ -81,6 +83,8 @@ class NoteView : UIView {
             } else {
                 self.play()
             }
+            
+            self.isActive = true
         } else {
             self.select()
         }
@@ -163,6 +167,8 @@ class NoteView : UIView {
                 self.stop()
             }
         }
+        
+        self.isActive = false
     }
     
     func stop () {

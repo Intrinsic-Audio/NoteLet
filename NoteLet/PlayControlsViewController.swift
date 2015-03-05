@@ -11,10 +11,26 @@ import UIKit
 class PlayControlsViewController: UIViewController {
 
     @IBOutlet var sliders: [EffectSlider]!
+    @IBOutlet var toggles: [EffectButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var messages = [""]
+        var effects = ["chorus", "tremolo", "delay", "filter", "ringmod"]
+        var index = 0
+        
+        for button in toggles {
+            button.effect = effects[index]
+            index += 1
+        }
+        
+        index = 0
+        
+        for slider in sliders {
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +39,9 @@ class PlayControlsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func toggleEffect(sender: EffectButton) {
+        sender.sendMessage()
+    }
 
     /*
     // MARK: - Navigation

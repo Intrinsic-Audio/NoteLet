@@ -15,6 +15,8 @@ class EditControlsViewController: UIViewController {
     var effectsControls: EffectsControlsController
     var editMenu: EditMenuController
     
+    var currentNote: NoteView?
+    
     required init(coder aDecoder: NSCoder){
         var storyboard = UIStoryboard(name: "Instrument", bundle: nil)
         settingsControls = storyboard.instantiateViewControllerWithIdentifier("SettingsControls") as SettingsControlsController
@@ -30,6 +32,8 @@ class EditControlsViewController: UIViewController {
         center.addObserver(self, selector: "moveToEffects:", name: "toggleEffects", object: nil)
         center.addObserver(self, selector: "moveToSettings:", name: "toggleSettings", object: nil)
         center.addObserver(self, selector: "moveToMenu:", name: "toggleMenu", object: nil)
+        center.addObserver(self, selector: "updateCurrentNote:", name: "updateNote", object: nil)
+
     }
     
     deinit {
@@ -93,6 +97,16 @@ class EditControlsViewController: UIViewController {
         }
     }
 
+    func updateCurrentNote(notification: NSNotification) {
+        if let info = notification.userInfo as? Dictionary<String, NoteView> {
+            currentNote = info["note"] as NoteView!
+            
+            println(currentNote!.note.details.midiNumber)
+        }
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

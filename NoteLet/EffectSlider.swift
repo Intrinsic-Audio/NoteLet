@@ -11,7 +11,8 @@ import Foundation
 class EffectSlider : UIView {
     var fill = UIView()
     var currentWidth:CGFloat = 0.0
-    var receiver = ""
+    var effect = ""
+    var parameter = ""
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -61,6 +62,8 @@ class EffectSlider : UIView {
         var scaleFactor = currentWidth / self.frame.size.width
         
         var value = 127 * scaleFactor
+        
+        PdBase.sendMessage(effect, withArguments: [parameter, value], toReceiver: "effects")
         
         // Send value to receiver in pure data
         

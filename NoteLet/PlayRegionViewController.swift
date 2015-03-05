@@ -94,7 +94,7 @@ class PlayRegionViewController: UIViewController {
                         
                         note.x = x
                         note.y = y
-                        note.name = self.getNoteName(midiNote)
+                        note.name = getNoteName(midiNote)
                         
                         midiNote = (midiNote + major[scale_index]) % 12
                         midiNote = (midiNote + major[(scale_index + 1) % scale_len]) % 12
@@ -126,9 +126,6 @@ class PlayRegionViewController: UIViewController {
                         
                         PdBase.sendMessage("new", withArguments: [], toReceiver: "master")
                         noteView.id = validID
-                        
-                        var receiver = "note" + String(noteView.id)
-                        PdBase.sendMessage("print 1", withArguments: [], toReceiver: receiver)
                         validID += 1
                         
                         self.noteViews.append(noteView)
@@ -167,6 +164,113 @@ class PlayRegionViewController: UIViewController {
         }
     }
     
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        
+        var touch = touches.anyObject() as UITouch
+        var touchPoint = touch.locationInView(self.view)
+        
+        var tappedNotes = self.getIntersectsInEvent(event)
+        var untappedNotes = self.getNonIntersectsInEvent(event)
+        
+        for note in tappedNotes {
+            if !note.touched {
+                if self.editMode {
+                    note.select()
+                } else {
+                    if note.playing {
+                        note.stop()
+                    } else {
+                        note.play()
+                    }
+                }
+            }
+            
+            note.touched = true
+        }
+        
+        for note in untappedNotes {
+            if !self.editMode && !Bool(note.note.details.hold) && note.playing {
+                note.stop()
+            }
+            note.touched = false
+        }
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        var touch = touches.anyObject() as UITouch
+        var touchPoint = touch.locationInView(self.view)
+        
+        var tappedNotes = self.getIntersectsInEvent(event)
+        var untappedNotes = self.getNonIntersectsInEvent(event)
+        
+        for note in tappedNotes {
+            if !self.editMode {
+                note.stop()
+            }
+        }
+        
+        for note in untappedNotes {
+            if !self.editMode && !Bool(note.note.details.hold) && note.playing{
+                note.stop()
+            }
+            note.touched = false
+        }
+    }
+    
+    func getIntersectsInEvent(event: UIEvent) -> [NoteView] {
+        var touchRects: [CGRect] = []
+        var notes: [NoteView] = []
+        var eventTouches = event.allTouches()
+        
+        if let touches = eventTouches {
+            for touch in touches {
+                var touchLocation = touch.locationInView(self.view)
+                var touchRect = CGRectMake(touchLocation.x, touchLocation.y, 0, 0)
+                touchRects.append(touchRect)
+            }
+        }
+        
+        for noteView in noteViews {
+            var noteRect = noteView.frame
+            for touchRect in touchRects{
+                if CGRectIntersectsRect(touchRect, noteRect){
+                    notes.append(noteView)
+                }
+            }
+        }
+        return notes
+    }
+    
+    func getNonIntersectsInEvent(event: UIEvent) -> [NoteView] {
+        var notes: [NoteView] = []
+        var touchRects: [CGRect] = []
+        var eventTouches = event.allTouches()
+        
+        if let touches = eventTouches {
+            for touch in touches {
+                var touchLocation = touch.locationInView(self.view)
+                var touchRect = CGRectMake(touchLocation.x, touchLocation.y, 0, 0)
+                touchRects.append(touchRect)
+            }
+        }
+        
+        for noteView in noteViews {
+            var noteRect = noteView.frame
+            var shouldAdd = true
+
+            for touchRect in touchRects {
+                if CGRectIntersectsRect(touchRect, noteRect) || noteView.isActive {
+                    shouldAdd = false
+                }
+            }
+            if shouldAdd {
+                notes.append(noteView)
+            }
+        }
+        
+        return notes
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -174,36 +278,4 @@ class PlayRegionViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    
-    func getNoteName(midiNum: Int) -> String{
-        switch midiNum {
-        case 0:
-            return "C"
-        case 1:
-            return "C#"
-        case 2:
-             return "D"
-        case 3:
-            return "D#"
-        case 4:
-            return "E"
-        case 5:
-            return "F"
-        case 6:
-            return "F#"
-        case 7:
-            return "G"
-        case 8:
-            return "G#"
-        case 9:
-            return "A"
-        case 10:
-            return "A#"
-        case 11:
-            return "B"
-        default:
-            return "?"
-        }
-    }
-
 }
