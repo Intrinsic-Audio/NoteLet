@@ -12,7 +12,7 @@ class EffectSlider : UIView {
     var fill = UIView()
     var currentWidth:CGFloat = 0.0
     var effect = ""
-    var parameter = ""
+    var parameter = "auto"
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

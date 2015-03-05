@@ -11,6 +11,13 @@ import UIKit
 
 class NoteView : UIView {
     
+    // Array of Arrays of Dictionaries
+    // Top level is vertical or horizontal effects (0 is vert, 1 is horz)
+    // Mid level holds array of effect dictionaries
+    // bottom level is a dictionary keyed on message name and holding the string
+    // arguments to pass with value
+    var modEffects: [[ [String: [String]] ]] = [[], []]
+    
     var editMode = false
     var note: Note!
     
@@ -50,8 +57,7 @@ class NoteView : UIView {
     
         notifCenter.addObserver(self, selector: "editModeChanged:", name: "toggleEditMode", object: nil)
         notifCenter.addObserver(self, selector: "pitchChanged:", name: "updatePitch", object: nil)
-
-        
+        notifCenter.addObserver(self, selector: "updateModEffect:", name: "updateModEffect", object: nil)
         
         // Create red-blue gradient for notes
         var gradientLayer: RadialGradientLayer = RadialGradientLayer()
@@ -70,13 +76,41 @@ class NoteView : UIView {
         self.editMode = !self.editMode
     }
     
+    func updateModEffect(notification: NSNotification){
+        var effect: [String:[String]] = ["": []]
+        
+        if let info = notification.userInfo as? [String: Int] {
+            let axis = info["axis"]!
+            let effectId = info["effect"]!
+            let noteId = info["id"]!
+            
+            if (noteId == id){
+                println("match")
+                
+                switch effectId {
+                case 0:
+                    effect = ["pitchbend": []]
+                case 1:
+                    effect = ["volume": []]
+                case 2:
+                    effect = ["filter": ["frequency"]]
+                default:
+                    println("unsupported mod type")
+                }
+                
+                modEffects[axis].append(effect)
+            }
+        }
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         var touch: UITouch = touches.anyObject() as UITouch
         touchStart = touch.locationInView(self)
+        self.isActive = true
+
         
         notifCenter.postNotificationName("updateNote", object: nil, userInfo: ["note": self])
         
-        // start playing the note
         if !self.editMode {
             if self.playing{
                 self.stop()
@@ -84,7 +118,7 @@ class NoteView : UIView {
                 self.play()
             }
             
-            self.isActive = true
+            println("active")
         } else {
             self.select()
         }
@@ -144,6 +178,7 @@ class NoteView : UIView {
     }
     
     func bendWithXdiff(xdiff: CGFloat, ydiff: CGFloat){
+        var receiver = "note" + String(id)
         var convertedY = ydiff * 0.33 + 64
         
         if convertedY > 127{
@@ -152,8 +187,36 @@ class NoteView : UIView {
             convertedY = 0
         }
         
-        var receiver = "note" + String(id)
-        PdBase.sendMessage("pitchbend", withArguments: [convertedY], toReceiver: receiver)
+        var convertedX = xdiff * 0.33 + 64
+        
+        if convertedX > 127{
+            convertedX = 127
+        } else if convertedX < 0 {
+            convertedX = 0
+        }
+        
+        // vertical effects 
+        var vertEffects = modEffects[0]
+        var horzEffects = modEffects[1]
+
+        
+        for effects in vertEffects {
+            for (name, args) in effects {
+                var newArgs = args as [AnyObject]
+                newArgs.append(convertedY)
+                
+                PdBase.sendMessage(name, withArguments: newArgs, toReceiver: receiver)
+            }
+        }
+        
+        for effects in horzEffects {
+            for (name, args) in effects {
+                var newArgs = args as [AnyObject]
+                newArgs.append(convertedX)
+                
+                PdBase.sendMessage(name, withArguments: newArgs, toReceiver: receiver)
+            }
+        }
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent){
@@ -167,7 +230,6 @@ class NoteView : UIView {
                 self.stop()
             }
         }
-        
         self.isActive = false
     }
     

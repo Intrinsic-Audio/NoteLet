@@ -44,6 +44,12 @@ class PlayRegionViewController: UIViewController {
                 var unwrappedNote : Note = note as Note
                 var noteView = NoteView(frame: CGRectMake(CGFloat(unwrappedNote.x),
                     CGFloat(unwrappedNote.y), 60.0, 60.0), note: unwrappedNote)
+
+                noteView.id = validID
+                validID += 1
+                PdBase.sendMessage("new", withArguments: [], toReceiver: "master")
+                
+                self.noteViews.append(noteView)
                 self.view.addSubview(noteView)
             }
         }

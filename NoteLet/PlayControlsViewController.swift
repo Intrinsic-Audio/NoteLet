@@ -28,10 +28,9 @@ class PlayControlsViewController: UIViewController {
         index = 0
         
         for slider in sliders {
-            
+            slider.effect = effects[index]
+            index += 1
         }
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

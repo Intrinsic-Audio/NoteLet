@@ -10,6 +10,9 @@ import UIKit
 
 class EffectsControlsController: UIViewController {
 
+    @IBOutlet weak var modulationType: UISegmentedControl!
+    var center = NSNotificationCenter.defaultCenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,10 +25,26 @@ class EffectsControlsController: UIViewController {
     }
     
     @IBAction func toggleMenu(){
-        var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("toggleMenu", object: nil, userInfo: ["view": self.view])
     }
 
+    @IBAction func addModEffect(sender: UIButton) {
+        var axis = modulationType.selectedSegmentIndex // 0 for vert, 1 for horz
+        
+        var parentVC = self.parentViewController as EditControlsViewController
+        
+        println(parentVC.currentNote!)
+        
+        if let note = parentVC.currentNote {
+            println("sending notif")
+            
+            var id = note.id
+            center.postNotificationName("updateModEffect", object: nil,
+                userInfo: ["axis": axis, "effect": sender.tag, "id": id])
+
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
