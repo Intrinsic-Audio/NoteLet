@@ -1,6 +1,6 @@
-#N canvas 450 211 261 135 10;
+#N canvas 833 177 261 135 10;
 #X obj 101 52 r effects;
-#N canvas 172 210 86 93 init 0;
+#N canvas 893 193 86 93 init 0;
 #X obj -151 5 loadbang;
 #X obj -151 27 f \$0;
 #X msg -151 48 \; pd dsp 1 \;;
@@ -7913,6 +7913,10 @@
 #X connect 6 0 3 0;
 #X connect 7 0 2 0;
 #X restore 2 91 pd cleanup~;
+#N canvas 926 284 328 95 META 0;
+#X text 52 21 Copyright 2015 Intrinsic Audio;
+#X text 47 41 Created by Chris Penny & Connor Taylor;
+#X restore 139 4 pd META;
 #X connect 0 0 4 1;
 #X connect 0 0 5 0;
 #X connect 4 0 9 0;
