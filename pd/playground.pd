@@ -1,63 +1,63 @@
-#N canvas 272 172 1028 634 10;
-#X obj 96 49 piano;
-#X obj 335 228 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#N canvas 0 23 1385 675 10;
+#X obj 9 260 s note1;
+#X obj 7 41 piano;
+#X obj 255 357 s effects;
+#X obj 7 -3 loadbang;
+#X msg 6 19 legato 1;
+#X obj 26 293 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 363 416 s effects;
-#X msg 549 269 delay on 1;
-#X msg 619 269 delay time \$1;
-#X msg 708 268 delay feedback \$1;
-#X floatatom 618 249 5 0 0 0 - - -;
-#X floatatom 709 249 5 0 0 0 - - -;
-#X msg 821 267 delay amount \$1;
-#X floatatom 821 248 5 0 0 0 - - -;
-#X obj 231 322 s all;
-#X msg 241 297 flush;
-#X msg 331 247 filter frequency \$1;
-#X msg 358 273 filter on 1;
-#X msg 213 275 waveform 13_table;
-#X msg 466 272 tremolo on 0;
-#X msg 108 300 adsr 1 200 0 0;
-#X msg 665 370 pan \$1;
-#X obj 673 335 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X msg 23 320 chorus auto \$1;
+#X obj 163 293 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 113 457 s all;
-#X msg 41 408 mode \$1;
-#X obj 41 381 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
--1 0;
-#X msg 106 407 phase \$1;
-#X obj 107 383 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X msg 160 320 ringmod auto \$1;
+#X obj 814 320 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5400 1;
+#X msg 811 347 delay auto \$1;
+#X msg 304 304 delay on \$1;
+#X obj 304 281 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 56 221 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 178 409 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4600 1;
-#X msg 174 428 effect filter frequency \$1;
-#X floatatom 203 451 5 0 0 0 - - -;
-#X obj 96 268 s note1;
-#X obj 111 -158 piano;
-#X obj 111 24 s note2;
-#X msg 119 242 waveform sine_table;
-#X connect 0 0 27 0;
-#X connect 1 0 12 0;
-#X connect 3 0 2 0;
-#X connect 4 0 2 0;
-#X connect 5 0 2 0;
-#X connect 6 0 4 0;
-#X connect 7 0 5 0;
+#X msg 53 240 pitchbend \$1;
+#X obj 186 261 s note2;
+#X obj 690 46 piano;
+#X obj 690 261 s note2;
+#X obj 715 223 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 712 242 pitchbend \$1;
+#X msg 383 304 delay time \$1;
+#X obj 387 287 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 521 286 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 517 303 delay feedback \$1;
+#X obj 657 288 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 653 305 delay amount \$1;
+#X msg 1046 251 new;
+#X msg 1070 254 reset;
+#X obj 1052 282 s master;
+#X connect 1 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 8 0;
 #X connect 8 0 2 0;
-#X connect 9 0 8 0;
-#X connect 11 0 10 0;
-#X connect 12 0 2 0;
-#X connect 13 0 2 0;
-#X connect 14 0 10 0;
-#X connect 15 0 2 0;
-#X connect 16 0 10 0;
-#X connect 17 0 2 0;
-#X connect 18 0 17 0;
-#X connect 20 0 19 0;
+#X connect 9 0 10 0;
+#X connect 10 0 2 0;
+#X connect 11 0 2 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 0 0;
+#X connect 16 0 17 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
+#X connect 20 0 2 0;
 #X connect 21 0 20 0;
-#X connect 22 0 19 0;
-#X connect 23 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 2 0;
 #X connect 24 0 25 0;
-#X connect 24 0 26 0;
-#X connect 25 0 19 0;
-#X connect 28 0 29 0;
-#X connect 30 0 27 0;
+#X connect 25 0 2 0;
+#X connect 26 0 28 0;
+#X connect 27 0 28 0;

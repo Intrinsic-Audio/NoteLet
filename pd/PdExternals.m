@@ -15,6 +15,7 @@ extern void sinh_tilde_setup(void);
 extern void setup_0x3c0x7e(void);
 extern void setup_0x3d0x3d0x7e(void);
 extern void s2l_setup(void);
+extern void limiter_tilde_setup(void);
 
 @interface PdExternals ()
 
@@ -30,6 +31,8 @@ extern void s2l_setup(void);
     setup_0x3c0x7e();
     setup_0x3d0x3d0x7e();
     s2l_setup();
+    limiter_tilde_setup();
+    
 }
 
 
