@@ -1381,6 +1381,7 @@
 		FA048ECF1AA7A02500765157 /* PdExternals.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0489941AA7A02400765157 /* PdExternals.m */; };
 		FA048ED01AA7A02500765157 /* playground.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA0489951AA7A02400765157 /* playground.pd */; };
 		FA048ED11AA7A02500765157 /* wavetable_synth.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA0489961AA7A02400765157 /* wavetable_synth.pd */; };
+		FA2BE2821AA8224D0076972B /* synth2~.pd in Resources */ = {isa = PBXBuildFile; fileRef = FA2BE2811AA8224D0076972B /* synth2~.pd */; };
 		FC71BB9C06BA030FAC7669C7 /* libPods-NoteLet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */; };
 /* End PBXBuildFile section */
 
@@ -2790,6 +2791,7 @@
 		FA0489941AA7A02400765157 /* PdExternals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdExternals.m; sourceTree = "<group>"; };
 		FA0489951AA7A02400765157 /* playground.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = playground.pd; sourceTree = "<group>"; };
 		FA0489961AA7A02400765157 /* wavetable_synth.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wavetable_synth.pd; sourceTree = "<group>"; };
+		FA2BE2811AA8224D0076972B /* synth2~.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "synth2~.pd"; path = "../../../../../pd/pd-for-libpd/synth2~.pd"; sourceTree = "<group>"; };
 		FC118A217379A336FB9F1F69 /* libPods-NoteLet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NoteLet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -2999,6 +3001,7 @@
 			children = (
 				FA04844E1AA7A01D00765157 /* externals */,
 				FA0484671AA7A01D00765157 /* master.pd */,
+				FA0489961AA7A02400765157 /* wavetable_synth.pd */,
 				FA0484681AA7A01D00765157 /* master_effects.pd */,
 				FA0484691AA7A01D00765157 /* note_effects.pd */,
 				FA04846A1AA7A01D00765157 /* pd-extended */,
@@ -3007,7 +3010,6 @@
 				FA0489931AA7A02400765157 /* PdExternals.h */,
 				FA0489941AA7A02400765157 /* PdExternals.m */,
 				FA0489951AA7A02400765157 /* playground.pd */,
-				FA0489961AA7A02400765157 /* wavetable_synth.pd */,
 			);
 			path = pd;
 			sourceTree = SOURCE_ROOT;
@@ -4351,6 +4353,7 @@
 				FA04897C1AA7A02400765157 /* switch2.pd */,
 				FA04897D1AA7A02400765157 /* switch3.pd */,
 				FA04897E1AA7A02400765157 /* synth1~.pd */,
+				FA2BE2811AA8224D0076972B /* synth2~.pd */,
 				FA04897F1AA7A02400765157 /* synth4~.pd */,
 				FA0489801AA7A02400765157 /* synth8~.pd */,
 				FA0489811AA7A02400765157 /* synth~.pd */,
@@ -4627,6 +4630,7 @@
 				FA048B581AA7A02500765157 /* list-delete.pd in Resources */,
 				FA048A601AA7A02500765157 /* delta~.pd in Resources */,
 				FA048D4D1AA7A02500765157 /* sinh-help.pd in Resources */,
+				FA2BE2821AA8224D0076972B /* synth2~.pd in Resources */,
 				FA048C981AA7A02500765157 /* moses.pd in Resources */,
 				FA048AA21AA7A02500765157 /* filtercoeff.mmb~.pd in Resources */,
 				FA048CA41AA7A02500765157 /* my_numbox.pd in Resources */,
