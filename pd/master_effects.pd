@@ -6,16 +6,16 @@
 #X obj 15 171 multitremolo~;
 #X obj 15 215 multifilter~;
 #X obj 174 18 inlet METHODS;
-#N canvas 374 353 368 204 methods 1;
+#N canvas 374 353 368 204 methods 0;
 #X obj -143 -27 inlet;
 #X obj 121 20 s \$0-volume;
 #N canvas 720 412 395 196 init 0;
 #X obj 0 -2 loadbang;
 #X obj 0 160 outlet;
-#X msg 0 20 chorus rate 120 \, chorus depth 127 \, chorus mix 64 \,
+#X msg 0 19 chorus rate 120 \, chorus depth 127 \, chorus mix 64 \,
 chorus on 0 \, ringmod rate 64 \, ringmod depth 127 \, ringmod on 0
-\, delay time 50 \, delay feedback 64 \, delay amount 127 \, delay
-on 0 \, tremolo rate 20 \, tremolo depth 127 \, tremolo shape 2 \,
+\, delay time 40 \, delay feedback 64 \, delay amount 127 \, delay
+on 0 \, tremolo rate 15 \, tremolo depth 127 \, tremolo shape 2 \,
 tremolo on 0 \, filter type lowpass \, filter frequency 127 \, filter
 resonance 10 \, filter gain 30 \, filter on 0 \, pan 64 \, volume 127
 \,;
