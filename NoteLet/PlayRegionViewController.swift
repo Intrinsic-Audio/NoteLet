@@ -66,13 +66,15 @@ class PlayRegionViewController: UIViewController {
         var major = [2, 2, 1, 2, 2, 2, 1]
         // Start at C
         var midiNote = 0
+        var currentMidiNote = 0
+        
         var scale_index = 0
         var currentChord = 0
         var nextChord = 1
         var octave = 2
+        
         // Add 1 since we're modding on this
         var scale_len = major.count
-        println("length \(scale_len)")
         
         // Create 4 rows of 2 chords.  Each chord has 2 octaves and 4 notes
         for var rows = 0; rows < 4; rows += 1 {
@@ -118,20 +120,24 @@ class PlayRegionViewController: UIViewController {
                         x += 70.0
                     }
                     scale_index = currentChord
+                    midiNote = currentMidiNote
                     x -= 280.0
                     y += 70.0
                 }
+                currentMidiNote = (currentMidiNote + major[scale_index]) % 12
+                midiNote = currentMidiNote
+                
                 scale_index = nextChord
                 currentChord = nextChord
                 nextChord = (nextChord + 1) % scale_len
+                
+
 
                 x += 350.0
                 y -= 140.0
             }
             y += 170.0
             x = 60.0
-            
-            println("x: \(x) y: \(y)")
         }
         NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
     }

@@ -28,7 +28,9 @@
     PdDispatcher *dispatcher = [PdDispatcher new];
     [PdBase setDelegate:dispatcher];
     [PdExternals setup];
+    
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"NoteLet"];
+    
     
     return YES;
 }
