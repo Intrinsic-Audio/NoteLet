@@ -20,7 +20,8 @@ class MainMenuViewController : UIViewController {
     }
     
     @IBAction func returnFromInstrument(segue: UIStoryboardSegue) {
-        // Do nothing for now
+        println("resetting")
+        PdBase.sendMessage("reset", withArguments: [], toReceiver: "master")
     }
     
 }

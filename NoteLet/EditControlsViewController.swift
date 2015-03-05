@@ -101,7 +101,7 @@ class EditControlsViewController: UIViewController {
         if let info = notification.userInfo as? Dictionary<String, NoteView> {
             currentNote = info["note"] as NoteView!
             
-            println(currentNote!.note.details.midiNumber)
+            println(currentNote!.id)
         }
     }
     
