@@ -1,22 +1,22 @@
-#N canvas 0 23 962 653 10;
+#N canvas 610 23 1298 603 10;
 #X obj 9 260 s note1;
 #X obj 7 41 piano;
 #X obj 255 457 s effects;
 #X obj 7 -3 loadbang;
 #X msg 6 19 legato 1;
 #X obj 26 393 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8200 1;
+-1 -1 0 1;
 #X msg 23 420 chorus auto \$1;
 #X obj 163 393 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X msg 160 420 ringmod auto \$1;
 #X obj 14 451 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5400 1;
+-1 -1 0 1;
 #X msg 11 478 delay auto \$1;
 #X obj 303 377 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 56 221 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6900 1;
+-1 -1 0 1;
 #X msg 53 240 pitchbend \$1;
 #X obj 186 261 s note2;
 #X obj 690 46 piano;
@@ -49,17 +49,21 @@
 #X obj 390 218 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 346 457 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2000 1;
+-1 -1 0 1;
 #X msg 342 474 tremolo auto \$1;
 #X obj 261 242 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3400 1;
+-1 -1 0 1;
 #X msg 258 269 phase \$1;
 #X obj 323 497 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7300 1;
+-1 -1 0 1;
 #X msg 319 514 filter auto \$1;
 #X obj 117 504 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3500 1;
+-1 -1 0 1;
 #X msg 113 521 filter resonance \$1;
+#X obj 337 312 hradio 15 1 0 27 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 337 335 waveform \$1_table;
+#X floatatom 465 345 5 0 0 0 - - -;
 #X connect 1 0 0 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
@@ -100,3 +104,6 @@
 #X connect 43 0 2 0;
 #X connect 44 0 45 0;
 #X connect 45 0 2 0;
+#X connect 46 0 47 0;
+#X connect 46 0 48 0;
+#X connect 47 0 0 0;

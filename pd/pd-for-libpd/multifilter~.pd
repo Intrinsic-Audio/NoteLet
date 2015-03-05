@@ -20,6 +20,9 @@
 #X obj 59 33 route frequency resonance gain type on auto;
 #X msg 49 -1 frequency 127 \, resonance 20 \, gain 6 \, type lowpass
 \, on 1;
+#X obj 227 63 t f f;
+#X obj 245 89 > 0.1;
+#X obj 244 111 change;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 2 0 10 0;
@@ -42,6 +45,10 @@
 #X connect 18 2 6 0;
 #X connect 18 3 10 4;
 #X connect 18 4 1 2;
-#X connect 18 5 7 0;
+#X connect 18 5 20 0;
 #X connect 18 6 3 0;
 #X connect 19 0 18 0;
+#X connect 20 0 7 0;
+#X connect 20 1 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 1 2;
