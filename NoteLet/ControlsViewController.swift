@@ -41,6 +41,7 @@ class ControlsViewController: UIViewController {
         
         var center = NSNotificationCenter.defaultCenter()
         center.postNotificationName("toggleEditMode", object: nil)
+        center.postNotificationName("removeNote", object: nil)
     }
 
     // MARK: - Navigation

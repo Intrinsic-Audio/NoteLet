@@ -41,6 +41,8 @@
 		BE995D351A9D5E3C00B6F8E4 /* EffectsControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D341A9D5E3C00B6F8E4 /* EffectsControlsController.swift */; };
 		BE995D3B1A9D62B600B6F8E4 /* EditMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE995D3A1A9D62B600B6F8E4 /* EditMenuController.swift */; };
 		BECBF51B1AA6D73900AE1E5C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECBF51A1AA6D73900AE1E5C /* Enums.swift */; };
+		BECBF51D1AA7AF3900AE1E5C /* CurrentNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECBF51C1AA7AF3900AE1E5C /* CurrentNoteViewController.swift */; };
+		BECBF51F1AA7B49B00AE1E5C /* CurrentPlayNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECBF51E1AA7B49B00AE1E5C /* CurrentPlayNoteViewController.swift */; };
 		FA0489971AA7A02500765157 /* 0x260x260x7e.c in Sources */ = {isa = PBXBuildFile; fileRef = FA04844F1AA7A01D00765157 /* 0x260x260x7e.c */; };
 		FA0489981AA7A02500765157 /* 0x3c0x7e.c in Sources */ = {isa = PBXBuildFile; fileRef = FA0484501AA7A01D00765157 /* 0x3c0x7e.c */; };
 		FA0489991AA7A02500765157 /* 0x3d0x3d0x7e.c in Sources */ = {isa = PBXBuildFile; fileRef = FA0484511AA7A01D00765157 /* 0x3d0x3d0x7e.c */; };
@@ -1436,6 +1438,8 @@
 		BE995D341A9D5E3C00B6F8E4 /* EffectsControlsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsControlsController.swift; sourceTree = "<group>"; };
 		BE995D3A1A9D62B600B6F8E4 /* EditMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMenuController.swift; sourceTree = "<group>"; };
 		BECBF51A1AA6D73900AE1E5C /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		BECBF51C1AA7AF3900AE1E5C /* CurrentNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentNoteViewController.swift; sourceTree = "<group>"; };
+		BECBF51E1AA7B49B00AE1E5C /* CurrentPlayNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentPlayNoteViewController.swift; sourceTree = "<group>"; };
 		D1C1896D08D91A1A84A05649 /* Pods-NoteLet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteLet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteLet/Pods-NoteLet.debug.xcconfig"; sourceTree = "<group>"; };
 		FA04844F1AA7A01D00765157 /* 0x260x260x7e.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 0x260x260x7e.c; sourceTree = "<group>"; };
 		FA0484501AA7A01D00765157 /* 0x3c0x7e.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 0x3c0x7e.c; sourceTree = "<group>"; };
@@ -2975,6 +2979,8 @@
 				BE995D301A9D5DFF00B6F8E4 /* SynthControlsController.swift */,
 				BE995D321A9D5E1100B6F8E4 /* SettingsControlsController.swift */,
 				BE995D341A9D5E3C00B6F8E4 /* EffectsControlsController.swift */,
+				BECBF51C1AA7AF3900AE1E5C /* CurrentNoteViewController.swift */,
+				BECBF51E1AA7B49B00AE1E5C /* CurrentPlayNoteViewController.swift */,
 			);
 			name = Edit;
 			sourceTree = "<group>";
@@ -5843,6 +5849,7 @@
 				BE097C871AA41781007BC73E /* Composition.swift in Sources */,
 				BE0A87DD1A88038D00288EE6 /* EffectSlider.swift in Sources */,
 				BE995D3B1A9D62B600B6F8E4 /* EditMenuController.swift in Sources */,
+				BECBF51F1AA7B49B00AE1E5C /* CurrentPlayNoteViewController.swift in Sources */,
 				BE995D351A9D5E3C00B6F8E4 /* EffectsControlsController.swift in Sources */,
 				BE645C111A985C130045A0B5 /* RadialGradientLayer.m in Sources */,
 				BE645C0C1A98309F0045A0B5 /* PlayRegionViewController.swift in Sources */,
@@ -5867,6 +5874,7 @@
 				FA04899E1AA7A02500765157 /* loud.c in Sources */,
 				BE097C851AA41781007BC73E /* NoteEffect.swift in Sources */,
 				FA0489A41AA7A02500765157 /* zexy.c in Sources */,
+				BECBF51D1AA7AF3900AE1E5C /* CurrentNoteViewController.swift in Sources */,
 				FA04899A1AA7A02500765157 /* 0x3e0x7e.c in Sources */,
 				BE097C7F1AA41781007BC73E /* GlobalEffect.swift in Sources */,
 				BE0A87F01A8A68A300288EE6 /* LoadCompositionViewController.swift in Sources */,

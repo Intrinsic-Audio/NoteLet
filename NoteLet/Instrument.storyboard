@@ -138,6 +138,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="knT-Ei-vvQ">
+                                <rect key="frame" x="16" y="60" width="224" height="224"/>
+                                <connections>
+                                    <segue destination="EyR-hm-XlC" kind="embed" id="R8g-Dr-kBK"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -200,9 +206,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="toggleEffects" destination="HgD-Ft-vCX" eventType="touchUpInside" id="jgf-Z1-oxK"/>
                                     <action selector="toggleMenu" destination="VCa-hx-Pjw" eventType="touchUpInside" id="NDS-ch-8fr"/>
-                                    <action selector="toggleSynth" destination="HgD-Ft-vCX" eventType="touchUpInside" id="T9A-UF-Nm0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -266,9 +270,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="toggleEffects" destination="HgD-Ft-vCX" eventType="touchUpInside" id="DZF-EZ-BNv"/>
                                     <action selector="toggleMenu" destination="BG7-Mm-MuB" eventType="touchUpInside" id="qgR-xW-x9L"/>
-                                    <action selector="toggleSynth" destination="HgD-Ft-vCX" eventType="touchUpInside" id="zjK-VP-9Cz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -313,9 +315,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="toggleEffects" destination="HgD-Ft-vCX" eventType="touchUpInside" id="tdy-83-RXM"/>
                                     <action selector="toggleMenu" destination="hVJ-rB-QqO" eventType="touchUpInside" id="LDz-WD-Lkw"/>
-                                    <action selector="toggleSynth" destination="HgD-Ft-vCX" eventType="touchUpInside" id="fMR-AE-XK5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -341,7 +341,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drD-ZA-WD9">
-                                <rect key="frame" x="74" y="8" width="109" height="40"/>
+                                <rect key="frame" x="74" y="0.0" width="109" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -407,28 +407,112 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76C-sR-QYx">
-                                <rect key="frame" x="78" y="56" width="100" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kNQ-lt-rQS">
-                                <rect key="frame" x="78" y="85" width="100" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZU9-SD-nTS">
+                                <rect key="frame" x="16" y="60" width="224" height="224"/>
+                                <connections>
+                                    <segue destination="0em-sL-woJ" kind="embed" id="uL1-NN-5uy"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="256" height="712"/>
-                    <connections>
-                        <outlet property="currentNoteView" destination="kNQ-lt-rQS" id="QtC-qJ-Tlf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5O-cq-LyD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="747" y="3118"/>
+        </scene>
+        <!--Current Note View Controller-->
+        <scene sceneID="kjl-20-mTR">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="0em-sL-woJ" customClass="CurrentNoteViewController" customModule="NoteLet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UDc-kV-om4"/>
+                        <viewControllerLayoutGuide type="bottom" id="OX3-VY-0HO"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LBt-Vl-CpQ">
+                        <rect key="frame" x="0.0" y="0.0" width="224" height="224"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7M-Sb-jhj">
+                                <rect key="frame" x="62" y="8" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HN3-Y6-pGk">
+                                <rect key="frame" x="62" y="50" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="currentNoteView" destination="HN3-Y6-pGk" id="DLP-K0-0DD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dmh-Jr-r36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103" y="2990"/>
+        </scene>
+        <!--Current Play Note View Controller-->
+        <scene sceneID="GED-Ck-KqA">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="EyR-hm-XlC" customClass="CurrentPlayNoteViewController" customModule="NoteLet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6cP-EX-8sL"/>
+                        <viewControllerLayoutGuide type="bottom" id="gsR-cs-9wy"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iSa-aL-d9K">
+                        <rect key="frame" x="0.0" y="0.0" width="224" height="224"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRW-wF-xNP">
+                                <rect key="frame" x="62" y="8" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gT-KD-NWq">
+                                <rect key="frame" x="62" y="50" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hold" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv7-lM-NBg">
+                                <rect key="frame" x="91" y="158" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxa-gE-IVj">
+                                <rect key="frame" x="88" y="185" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleHold:" destination="EyR-hm-XlC" eventType="valueChanged" id="EhD-Kr-lfj"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="currentNoteView" destination="3gT-KD-NWq" id="2oH-Ap-YvN"/>
+                        <outlet property="holdSwitch" destination="hxa-gE-IVj" id="MBG-ig-nQ6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ts-Da-Plf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="2005"/>
         </scene>
     </scenes>
 </document>

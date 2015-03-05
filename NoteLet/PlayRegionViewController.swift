@@ -75,12 +75,18 @@ class PlayRegionViewController: UIViewController {
         println("length \(scale_len)")
         
         // Create 4 rows of 2 chords.  Each chord has 2 octaves and 4 notes
-        for var rows = 0; rows < 2; rows += 1 {
+        for var rows = 0; rows < 4; rows += 1 {
             for var chords = 0; chords < 2; chords += 1 {
                 for var octaves = 0; octaves < 2; octaves += 1 {
                     for var notes = 0; notes < 4; notes += 1 {
+                        
+                        // Create the entities and ensure they are saved before setting positions
                         var note : Note = Note.MR_createEntity() as Note
+                        var noteDetails = NoteAudioDetails.MR_createEntity() as NoteAudioDetails
+                        noteDetails.note = note
+                        note.details = noteDetails
                         NSManagedObjectContext.MR_defaultContext().MR_saveToPersistentStoreAndWait()
+                        
                         note.x = x
                         note.y = y
                         note.name = self.getNoteName(midiNote)

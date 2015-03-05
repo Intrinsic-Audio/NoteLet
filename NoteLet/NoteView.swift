@@ -53,7 +53,6 @@ class NoteView : UIView {
 
         self.layer.insertSublayer(gradientLayer, atIndex: 0)
         gradientLayer.setNeedsDisplay()
-        
     }
     
     deinit {
@@ -73,7 +72,11 @@ class NoteView : UIView {
         
         // start playing the note
         if !self.editMode {
-            self.play()
+            if self.playing{
+                self.stop()
+            } else {
+                self.play()
+            }
         }
     }
     
@@ -90,6 +93,7 @@ class NoteView : UIView {
         animation.fromValue = 1.0
         animation.toValue = 0.3
         self.layer.addAnimation(animation, forKey: "animatePlaying")
+        self.playing = true
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent){
@@ -107,7 +111,16 @@ class NoteView : UIView {
     }
     
     func bendWithXdiff(xdiff: CGFloat, ydiff: CGFloat){
-        println("\(xdiff) \(ydiff)")
+        var convertedY = ydiff * 0.33 + 64
+        
+        if convertedY > 127{
+            convertedY = 127
+        } else if convertedY < 0 {
+            convertedY = 0
+        }
+        
+        var receiver = String(dollarZero) + "-note"
+        PdBase.sendMessage("pitchbend", withArguments: [convertedY], toReceiver: receiver)
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent){
@@ -117,16 +130,20 @@ class NoteView : UIView {
             
             self.saveNotePosition()
         } else {
-            self.stop()
+            if !Bool(note.details.hold) && self.playing {
+                self.stop()
+            }
         }
     }
     
     func stop () {
         var receiver = String(dollarZero) + "-note"
         println(receiver)
+        
         PdBase.sendList([50, 0], toReceiver: receiver)
         
         self.layer.removeAllAnimations()
+        self.playing = false
     }
 
     func saveNotePosition(){
