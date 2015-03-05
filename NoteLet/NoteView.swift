@@ -84,7 +84,10 @@ class NoteView : UIView {
         var receiver = String(dollarZero) + "-note"
         println(receiver)
         
-        PdBase.sendList([50, 50], toReceiver: receiver)
+        var scaledNote = Int(note.details.midiNumber) + (Int(note.details.note.details.octave) * 12)
+        println("Note \(scaledNote)")
+        
+        PdBase.sendList([scaledNote, 50], toReceiver: receiver)
         
         var animation = CABasicAnimation(keyPath: "transform.scale")
         animation.repeatCount = HUGE
@@ -139,8 +142,10 @@ class NoteView : UIView {
     func stop () {
         var receiver = String(dollarZero) + "-note"
         println(receiver)
+        var scaledNote = Int(note.details.midiNumber) + (Int(note.details.note.details.octave) * 12)
+        println("Note \(scaledNote)")
         
-        PdBase.sendList([50, 0], toReceiver: receiver)
+        PdBase.sendList([scaledNote, 0], toReceiver: receiver)
         
         self.layer.removeAllAnimations()
         self.playing = false

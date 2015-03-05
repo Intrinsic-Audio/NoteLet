@@ -96,10 +96,14 @@ class PlayRegionViewController: UIViewController {
                         MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) in
                             var localNote: Note = note.MR_inContext(localContext) as Note
                             var localComposition = self.composition.MR_inContext(localContext) as Composition
+                            var localDetails = note.details.MR_inContext(localContext)  as NoteAudioDetails
                             
                             localNote.x = x
                             localNote.y = y
                             localNote.name = note.name
+                            
+                            localDetails.midiNumber = midiNote
+                            localDetails.octave = octaves + 4
                             
                             localNote.composition = localComposition
                             localComposition.notes.addObject(note)

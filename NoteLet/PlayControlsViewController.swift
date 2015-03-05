@@ -10,6 +10,8 @@ import UIKit
 
 class PlayControlsViewController: UIViewController {
 
+    @IBOutlet var sliders: [EffectSlider]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
