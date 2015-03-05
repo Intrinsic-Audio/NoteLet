@@ -7896,7 +7896,7 @@
 #N canvas 452 337 239 296 trackers 0;
 #X obj 115 4 loadbang;
 #X msg 115 25 set;
-#X msg 98 136 1952-wavetable \, 2029-wavetable \,;
+#X msg 98 136 2522-wavetable \,;
 #X obj 71 25 symbol;
 #X msg 71 89 addcomma;
 #X obj 5 3 inlet ALL;

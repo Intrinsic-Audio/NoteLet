@@ -23,7 +23,7 @@
 #X obj 139 88 print TO_WAVETABLE_EFFECTS-\$0;
 #X obj 119 -57 r \$0-wavetable;
 #X obj 119 -35 route effect;
-#X obj 24 6 synth4~;
+#X obj 24 6 synth2~;
 #X connect 0 0 10 0;
 #X connect 0 0 14 0;
 #X connect 1 0 11 0;
